@@ -2,7 +2,7 @@
 
 ## 📚 Table of Contents
 
-1. [Module 1: Getting Started with Streamlit](.Module 1/Module 1.md)  
+1. [Module 1: Getting Started with Streamlit](Module 1/Module 1.md)  
    - Introduction & Setup  
    - Daily Quote Board  
    - Running Streamlit Apps  
@@ -23,3 +23,4 @@
    - File Uploads → Resume Reviewer  
    - Media Uploads → Selfie Booth  
    - Chat Elements → Simple FAQ Bot  
+
