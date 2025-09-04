@@ -14,7 +14,7 @@
    - Code & Formulas  
    - Status Messages  
 
-3. [Module 3: Input Forms & Media Uploads]()  
+3. [Module 3: Input Forms & Media Uploads](https://github.com/smaranjitghose/streamlit_course/blob/master/Module%203/Module%203.md)  
    - Buttons & Checkboxes → Task Toggle App  
    - Radio & Select Menus → Coffee Order App  
    - Text & Number Inputs → Tip Calculator  
@@ -23,6 +23,7 @@
    - File Uploads → Resume Reviewer  
    - Media Uploads → Selfie Booth  
    - Chat Elements → Simple FAQ Bot  
+
 
 
 
