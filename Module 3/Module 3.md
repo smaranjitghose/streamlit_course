@@ -321,42 +321,139 @@ They make data processing secure and user-friendly—users don’t have to email
 
 **Tip:**  Always specify supported file types. Show a preview when possible (even partial content), so users see instant feedback.
 
+
 ### Mini Project: Resume Reviewer
 
-File uploads allow users to upload files to your Streamlit app.
-Let's create an app where users upload a resume, and the app previews its first few lines.
+File uploads in Streamlit let users provide documents, images, or data directly to your app.
 
-**Code:**
+Think of it like a **job portal** — candidates upload their resumes, and the app can preview or analyze them. This is super useful for:
 
-```python
+-   Checking the format of resumes.
+    
+-   Extracting key details.
+    
+-   Quickly previewing uploaded content.
+    
+**Code**
+
+```
 import streamlit as st
+import PyPDF2
 
-st.title("Resume Reviewer")
+st.title("📄 Resume Reviewer")
 
 uploaded_file = st.file_uploader("Upload your resume (PDF or TXT)", type=["pdf", "txt"])
 
 if uploaded_file is not None:
-    file_contents = uploaded_file.read().decode("utf-8")
-    first_few_lines = "\n".join(file_contents.splitlines()[:5])
     st.write("---")
-    st.write("First few lines of your resume:")
+    st.subheader("First few lines of your resume:")
+
+    if uploaded_file.type == "text/plain":
+        # Handle TXT files
+        file_contents = uploaded_file.read().decode("utf-8")
+        first_few_lines = "\n".join(file_contents.splitlines()[:5])
+        st.text(first_few_lines)
+
+    elif uploaded_file.type == "application/pdf":
+        # Handle PDF files
+        pdf_reader = PyPDF2.PdfReader(uploaded_file)
+        text = ""
+        for page in pdf_reader.pages[:1]:  # Read first page only
+            text += page.extract_text() or ""
+        first_few_lines = "\n".join(text.splitlines()[:5])
+        st.text(first_few_lines)
+
 ```
+
 ----------
+
+**Expected Output**
+
+-   A **file upload box** that accepts TXT or PDF resumes.
+    
+-   When a file is uploaded:
+    
+    -   If TXT → The first 5 lines are shown.
+        
+    -   If PDF → The first few lines of the first page are extracted and displayed.  
+        (Screenshot placeholder: file uploader with a preview of extracted text.)
+        
+
+**Key Takeaways**
+
+-   `st.file_uploader()` accepts files directly from users.
+    
+-   Always check file type before processing (PDF vs TXT vs others).
+    
+-   Libraries like **PyPDF2** help extract text from PDF files.
+----------
+
 
 ### Topic 3.7 Media Uploads
 
 **Introduction**
 
-Modern apps are multimedia hubs. Users may wish to share  **photos, audio, or video**—whether for fun (like a selfie booth), proof (ID checks), or creativity (profile pics, artwork).
+Modern digital experiences go beyond text and numbers—**media uploads transform apps into interactive studios and creative workspaces**. Whether users want to share a selfie, provide identity proof, or upload audio for a podcast, these widgets empower personal and professional expression.
 
--   **Camera inputs**  (`st.camera_input`) let users snap pictures directly.
+-   **Camera inputs**  (`st.camera_input`) work like a photo booth in your device, allowing direct image capture—from profile photos to on-the-spot document verification.
     
--   **Image, video, and audio uploaders**  allow sharing recordings or files.
+-   **Image, video, and audio uploaders**  collect a variety of media files, turning your app into a versatile entry point for creativity, evidence submission, or social sharing.
     
 
-This turns your app into a mini studio or kiosk, bridging online interaction and the real world.
+By supporting media, your app bridges the virtual and physical worlds, becoming a portal for identity, memory, and creativity.
 
-**Tip:**  Use media elements for apps that need to  **capture identity, creativity, or evidence.**  Always confirm successful uploads and show results in the app.
+**Tip:**  
+Always provide clear guidance about what types of media are supported, and confirm successful uploads with visual feedback. Previewing the user’s submitted media helps build trust and excitement, making the app feel personal and responsive.
+
+### Mini Project: Selfie Booth
+
+Beyond files, users can also upload or capture **images, audio, and video** directly in Streamlit.
+
+Think of this as turning your app into a **mini photo booth** or **media kiosk**. Instead of just showing numbers and charts, your app now feels like a place where users can actively contribute their own content.
+
+This makes your app much more **engaging and personal**. For example:
+
+-   Selfie verification for accounts.
+    
+-   Photo kiosks for events.
+    
+-   Fun apps like meme generators or filters.
+
+**Code**
+
+```
+import streamlit as st
+
+st.title("📸 Selfie Booth")
+
+st.write("Take a selfie and add a fun caption!")
+
+picture = st.camera_input("Say cheese!") if picture:
+    st.image(picture, caption="Your Selfie", use_column_width=True)
+    
+    caption = st.text_input("Add a caption to your selfie:") if caption:
+        st.success(f"Saved selfie with caption: '{caption}'")
+        st.write("Thanks for sharing your selfie!")
+```
+
+**Expected Output**
+
+-   A camera widget appears to capture a photo.
+    
+-   Once the picture is taken, it is displayed with a caption field below.
+    
+-   User can add a custom caption (e.g., “Best day ever!”), and the app confirms it was saved.  
+    (Screenshot placeholder: webcam capture, displayed selfie with caption underneath.)
+    
+
+**Key Takeaways**
+
+-   Media uploads make apps **fun and personal**.
+    
+-   Adding extra inputs (like captions) increases engagement.
+    
+-   Perfect for photo apps, ID verification, or creative tools.
+    
 
 ----------
 
@@ -364,26 +461,82 @@ This turns your app into a mini studio or kiosk, bridging online interaction and
 
 **Introduction**
 
-Chat interfaces make apps  **feel alive and responsive**—users type a question, get instant feedback, and the app feels like a conversation with a helpful friend or assistant.
+Today’s users expect apps to “listen” and “talk back”—**chat widgets turn a static app into a living, conversational experience**. Chatting feels natural and engaging, whether for support, learning, or playful Q&A.
 
--   **Chat bubbles**  show dialogue, making interfaces less formal and more engaging.
+-   **Chat bubbles**  dynamically display the dialogue, replacing stiff forms with warm, friendly feedback—just like a real conversation.
     
--   **Input boxes**  let users enter freeform text, just like a messaging app.
-    
-
-Great for FAQs, customer support, or interactive Q&A bots—these elements build trust and foster ongoing engagement, not just single-use transactions.
-
-**Tip:**  Structure chatbot answers clearly. Repeat the user’s question for clarity before replying. Always respond even if the answer is unknown—to keep the conversation flowing.
-
-----------
-
-## Conclusion
-
--   **Input elements are the voice and hands of your app**—they gather, confirm, and process what users want.
-    
--   Each widget has a real-world analogy—think physical gadgets, forms, and kiosks.
-    
--   Good input controls make apps intuitive, trustworthy, and a joy to use.
+-   **Input boxes**  invite users to type freely, supporting questions, messages, or commands in context.
     
 
-Streamlit’s widgets let any app move beyond passive reading and into true two-way interaction—**where users create, choose, and connect, not just watch.**
+Well-designed chat interfaces foster  **trust and repeat engagement**, moving beyond simple transactions to build relationships with users. They're indispensable for automated help desks, FAQs, and interactive guides.
+
+**Tip:**  
+Organize chat exchanges for clarity—echo the user’s query before responding, keep answers concise yet helpful, and always offer a response (even if it’s "I don't know yet") to maintain momentum and keep users engaged.
+
+
+### Mini Project: Simple FAQ Bot
+
+Chat interfaces are like a **virtual help desk**. Instead of navigating menus, users can **ask questions in plain language** and get answers.
+
+In Streamlit, chat features include:
+
+-   `st.chat_message()` → shows chat bubbles (like messages in WhatsApp).
+    
+-   `st.chat_input()` → lets the user type and send messages.
+    
+
+This makes your app feel **alive and conversational**. Great for FAQs, small bots, and even interactive storytelling.
+
+**Code**
+
+```
+import streamlit as st
+
+st.title("Simple FAQ Bot 💬")
+
+faq = {
+    "What is Streamlit?": "Streamlit is an open-source Python library for building web apps.",
+    "How do I install Streamlit?": "Run `pip install streamlit` in your terminal.",
+    "How do I run a Streamlit app?": "Use `streamlit run your_app.py`.",
+    "Who created Streamlit?": "Streamlit was created by Adrien Treuille, Thiago Teixeira, and Amanda Kelly."
+}
+
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        {"role": "assistant", "content": "Hi! I'm your FAQ bot. Ask me something about Streamlit."}
+    ]
+
+for message in st.session_state.messages:
+    st.chat_message(message["role"]).write(message["content"])
+
+user_input = st.chat_input("Ask a question...")
+
+if user_input:
+    
+    st.session_state.messages.append({"role": "user", "content": user_input})
+
+    
+    answer = faq.get(user_input, "Sorry, I don’t know that one yet. Try another question!")
+    st.session_state.messages.append({"role": "assistant", "content": answer})
+
+``` 
+
+**Expected Output**
+
+-   Chat opens with a friendly **bot greeting**.
+    
+-   User types a question (e.g., “What is Streamlit?”).
+    
+-   The bot replies with the correct FAQ answer.
+    
+-   If the bot doesn’t know, it politely says so.  
+    (Screenshot placeholder: chat bubbles showing Q&A.)
+
+
+**Key Takeaways**
+
+-   Chat features make apps **conversational and engaging**.
+    
+-   Store chat history with `st.session_state` so it feels like a real conversation.
+    
+-   Great for FAQs, help desks, or interactive storytelling apps.
