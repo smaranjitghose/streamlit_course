@@ -80,8 +80,9 @@ st.write("Phone: +1 234 567 890")
 -   **Sidebar with navigation**: Home, About Us, Contact.
     
 -   Each page displays its own content when selected.  
-    (Screenshot placeholder: sidebar menu with three pages and corresponding page content.)
-    
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/company_website.png">
+
 **Key Takeaways**
 
 -   Creating a `pages/` folder makes Streamlit auto-generate navigation.
@@ -136,7 +137,10 @@ if col2.button("Next") and st.session_state.page < len(recipes) - 1:
 -   Displays a recipe (title + steps).
     
 -   Buttons for **Previous** and **Next** to navigate between recipes.  
-    (Screenshot placeholder: recipe page with steps and navigation buttons.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/recipe1.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/recipe2.png">
     
 **Key Takeaways**
 
@@ -238,7 +242,14 @@ st.write(f"Your final score: {st.session_state.score}")
 -   Sidebar navigation for quiz questions.
     
 -   Score tracked across pages using `utils.py`.  
-    (Screenshot placeholder: quiz question pages with results page showing score.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/quiz1.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/quiz2.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/quiz3.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%207/quiz4.png">
     
 **Key Takeaways**
 

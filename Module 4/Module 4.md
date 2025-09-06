@@ -29,7 +29,7 @@ Let's build digital gradebook that shows student grades in a neatly formatted ta
 import streamlit as st
 import pandas as pd
 
-st.title("📘 Student Gradebook Viewer")
+st.title("Student Gradebook Viewer 📘")
 
 # Mock dataset
 data = {
@@ -54,7 +54,7 @@ st.metric("Class Average", f"{average_grade:.2f}")
 
 - A metric card displaying the class average.
 
-(Screenshot placeholder: Gradebook table + metric box for average.)
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%204/studentgradbook.png">
 
 **Key Takeaways**
 
@@ -86,12 +86,11 @@ Let`s build a simple crypto dashboard that fetches (or simulates) live Bitcoin p
 
 **Code**
 
-```
+```python
 import streamlit as st
-import requests
 import random
 
-st.title("💰 Crypto Price Monitor")
+st.title("Crypto Price Monitor 💰")
 
 # Mock data (instead of API to keep it simple for beginners)
 price = random.uniform(25000, 30000)  # Random Bitcoin price
@@ -106,7 +105,7 @@ st.metric(label="Bitcoin Price (USD)", value=f"${price:,.2f}", delta=f"{change:+
 
 - A delta arrow showing if the price went up or down.
 
-(Screenshot placeholder: Bitcoin price metric with green/red delta.)
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%204/crypto_price.png">
 
 **Key Takeaways**
 
@@ -139,11 +138,11 @@ Let's build an expense tracker that lets users upload a CSV file of their monthl
 
 **Code**
 
-```
+```python
 import streamlit as st
 import pandas as pd
 
-st.title("💸 Budget Tracker")
+st.title("Budget Tracker 💸")
 
 uploaded_file = st.file_uploader("Upload your expense CSV", type="csv")
 
@@ -170,7 +169,7 @@ if uploaded_file is not None:
 
 - A total expenses metric displayed if the file has an Amount column.
 
-(Screenshot placeholder: expense table with total expenses metric.)
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%204/budget_tracker.png">
 
 **Key Takeaways**
 

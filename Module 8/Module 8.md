@@ -26,7 +26,7 @@ Think of it as a **shopping basket** that remembers what you’ve added.
 
 **Code**
 
-```
+```python
 import streamlit as st
 
 st.title("🛒 Shopping Cart App")
@@ -54,8 +54,9 @@ for i, product in enumerate(st.session_state.cart, start=1):
 -   A text box to enter an item.
     
 -   Clicking “Add to Cart” keeps items in the list, even after new inputs.  
-    (Screenshot placeholder: cart with multiple added items.)
-    
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/shopping_cart.png">    
+
 **Key Takeaways**
 
 -   `st.session_state` remembers data between user interactions.
@@ -76,7 +77,7 @@ Think of it as filling out an **order slip** — you don’t send it until you�
 
 **Code**
 
-```
+```python
 import streamlit as st
 
 st.title("📝 Feedback Collector") 
@@ -96,7 +97,8 @@ with st.form("feedback_form"):
 -   A form with text input, slider, and text area.
     
 -   Submits only when “Submit” is clicked.  
-    (Screenshot placeholder: feedback form before and after submission.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/feedback.png">
     
 **Key Takeaways**
 
@@ -144,7 +146,12 @@ st.markdown(f"<h1 style='text-align: center; font-size: 72px;'>{st.session_state
 -   A button labeled “Increase.”
     
 -   Each click increases the counter by 1.  
-    (Screenshot placeholder: counter going from 0 → 1 → 2.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/counter1.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/counter2.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/counter3.png">
     
 **Key Takeaways**
 
@@ -164,7 +171,9 @@ Fetching data repeatedly can be slow. **Caching** stores results so the app reus
 Think of it like **meal prep** — once you’ve cooked a dish, reheating it is faster than cooking again.
 
 **Code**
-```
+
+```python
+
 import streamlit as st
 import time
 import random
@@ -186,11 +195,15 @@ if st.button("Get Price"):
 **Expected Output**
 
 -   Input for stock symbol.
-    
+
+    <img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/stock1.png">
+
 -   Clicking “Get Price” shows a metric.
     
 -   First call takes ~2 seconds, repeated calls return instantly.  
-    (Screenshot placeholder: AAPL price with metric card.)
+
+    <img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/stock2.png">
+
     
 **Key Takeaways**
 
@@ -212,7 +225,8 @@ Think of it as a **loading bar on a file upload** — it keeps users patient.
 
 **Code**
 
-```
+```python
+
 import streamlit as st
 import time
 
@@ -239,7 +253,8 @@ if uploaded_file:
 -   Progress bar fills up after file upload.
     
 -   Ends with a success message.  
-    (Screenshot placeholder: progress bar during upload.)
+
+<im src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/fileupload.png">
     
 
 **Key Takeaways**

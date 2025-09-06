@@ -36,18 +36,32 @@ Let's build a simple to-do list where tasks can be toggled on or off using check
 ```python
 import streamlit as st
 
-st.title("Task Toggle App")
+st.set_page_config(page_title="Basic Task App")
 
-task1 = st.checkbox("Buy groceries")
-task2 = st.checkbox("Walk the dog")
-task3 = st.checkbox("Pay bills")
+st.title("Basic Task Toggle App")
 
-if task1:
-    st.write("Groceries purchased!")
-if task2:
-    st.write("Dog walked!")
-if task3:
-    st.write("Bills paid!")
+# Input for new task
+tasks =  ["Learn Streamlit", "Build an app", "Deploy to Cloud"] 
+completed = []
+
+new_task = st.text_input("Enter a new task")
+if st.button("Add Task ➕"):
+    tasks.append(new_task)
+
+st.markdown("------")
+
+# Show tasks
+st.subheader("Your Tasks 📝")
+for t in tasks:
+    if st.checkbox(t, key=t):
+        completed.append(t)
+
+st.markdown("------")
+
+st.subheader("Completed Tasks 📌")
+for c in completed:
+    st.write(f"✅ {c}")
+
 
 ```
 
@@ -60,9 +74,11 @@ if task3:
 -   We use `if` statements to check the state of each checkbox and display a message accordingly.
     
 
-**Output:**
+**Expected Output:**
 
 The app displays three checkboxes labeled "Buy groceries," "Walk the dog," and "Pay bills." When a checkbox is checked, a message appears below it confirming the task completion.
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/task_toggle.png">
 
 **Key Takeaways:**
 
@@ -94,15 +110,28 @@ Let's create an app where users can select their coffee type and size, then disp
 **Code:**
 
 ```python
-import streamlit as st
+import streamlit as st;
 
-st.title("Coffee Order App")
+st.set_page_config(page_title='Coffee Order App')
 
-coffee_type = st.radio("Choose your coffee:", ("Latte", "Cappuccino", "Espresso"))
-coffee_size = st.selectbox("Select size:", ("Small", "Medium", "Large"))
+st.title('Coffee Order App ☕')
 
-st.write("---")
-st.write(f"You ordered a {coffee_size.lower()} {coffee_type.lower()}.")
+coffee_type = st.radio('Choose your favourite Coffee',('Latte', 'Cappuccino', 'Espresso'))
+
+coffee_size = st.radio('Select Size',('Small', 'Medium', 'Large'))
+
+prices=['$10','$15', '$20']
+if st.button("Order Coffee"):
+    if coffee_size=='Small':
+        coffee_price='$10'
+    elif coffee_size=='Medium':
+        coffee_price='$15'
+    else:
+        coffee_price='$20'
+
+    st.write("------")
+    st.write(f'You ordered {coffee_type} in size {coffee_size.lower()}')
+    st.info(f'Your bill is {coffee_price}')
 
 ```
 
@@ -117,7 +146,7 @@ st.write(f"You ordered a {coffee_size.lower()} {coffee_type.lower()}.")
 -   We use an f-string to display the order summary.
     
 
-**Output:**
+**Expected Output:**
 
 The app displays radio buttons for coffee types (Latte, Cappuccino, Espresso) and a dropdown menu for sizes (Small, Medium, Large). After selecting options, an order summary is displayed, e.g., "You ordered a small latte."
 
@@ -126,6 +155,9 @@ The app displays radio buttons for coffee types (Latte, Cappuccino, Espresso) an
 -   Radio buttons are best for mutually exclusive choices when all options should be visible.
     
 -   Select menus are useful when you have many options and want to save screen space.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/coffee.png">
+
 ----------
 
 ### Topic 3.3 Text & Number Inputs
@@ -151,9 +183,11 @@ Let's build a tip calculator where users enter the bill amount and tip percentag
 **Code:**
 
 ```python
-import streamlit as st
+import streamlit as st;
 
-st.title("Tip Calculator")
+st.set_page_config(page_title='Tip Calculator App')
+
+st.title('Tip Calculator')
 
 bill_amount = st.number_input("Enter bill amount:", min_value=0.0)
 tip_percentage = st.number_input("Enter tip percentage:", min_value=0, max_value=100, value=15)
@@ -176,15 +210,19 @@ st.write(f"Total amount: ${total_amount:.2f}")
 -   We use f-strings with formatting (`:.2f`) to display the amounts with two decimal places.
     
 
-**Output:**
+**Expected Output:**
 
 The app displays number input fields for the bill amount and tip percentage. After entering values, the calculated tip amount and total amount are displayed.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/tip_calculator.png">
 
 **Key Takeaways:**
 
 -   Number inputs are ideal for numerical data entry.
     
 -   You can use `min_value`, `max_value`, and `value` to control the input range and default value.
+
+
 ----------
 
 ### Topic 3.4 Date & Time Pickers
@@ -213,15 +251,23 @@ Let's Create an app where users select a birthday, and the app displays how many
 import streamlit as st
 import datetime
 
-st.title("Birthday Countdown")
+st.set_page_config(page_title='Birthday Countdown')
 
-birthday = st.date_input("Select your birthday:", datetime.date.today())
+st.title('Birthday Countdown 🎊')
 
-today = datetime.date.today()
-days_left = (birthday - today).days
+birth_date=st.date_input("Select your Birthday", value=datetime.date(2002,5,2), min_value=datetime.date(1990,1,1), max_value=datetime.date.today())
 
-st.write("---")
-st.write(f"Days left until your birthday: {days_left}")
+today = datetime.date.today() 
+
+next_birthday = birth_date.replace(year=today.year)
+
+if next_birthday < today:
+    next_birthday = next_birthday.replace(year=today.year + 1)
+
+days_left=(next_birthday - today).days
+
+st.write('-----')
+st.write(f'🎂Days left until your birthday {days_left} days ')
 
 ```
 
@@ -234,9 +280,11 @@ st.write(f"Days left until your birthday: {days_left}")
 -   We extract the number of days from the difference using `.days`.
     
 
-**Output:**
+**Expected Output:**
 
 The app displays a date picker for selecting a birthday. After selecting a date, the number of days left until that birthday is displayed.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/birthday.png">
 
 **Key Takeaways:**
 
@@ -282,7 +330,7 @@ monthly_interest_rate = interest_rate / (12 * 100)
 emi = (loan_amount * monthly_interest_rate * (1 + monthly_interest_rate)**(loan_tenure * 12)) / ((1 + monthly_interest_rate)**(loan_tenure * 12) - 1)
 
 st.write("---")
-st.write(f"Estimated EMI: ${emi:.2f}")
+st.info(f"Estimated EMI: ${emi:.2f}")
 
 ```
 
@@ -295,9 +343,11 @@ st.write(f"Estimated EMI: ${emi:.2f}")
 -   We display the estimated EMI with two decimal places.
     
 
-**Output:**
+**Expected Output:**
 
 The app displays sliders for loan amount, interest rate, and loan tenure. As the user adjusts the sliders, the estimated EMI is updated in real-time.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/loan_emi.png">
 
 **Key Takeaways:**
 
@@ -376,7 +426,8 @@ if uploaded_file is not None:
     -   If TXT → The first 5 lines are shown.
         
     -   If PDF → The first few lines of the first page are extracted and displayed.  
-        (Screenshot placeholder: file uploader with a preview of extracted text.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/resume_viewer.png">
         
 
 **Key Takeaways**
@@ -405,54 +456,91 @@ By supporting media, your app bridges the virtual and physical worlds, becoming 
 **Tip:**  
 Always provide clear guidance about what types of media are supported, and confirm successful uploads with visual feedback. Previewing the user’s submitted media helps build trust and excitement, making the app feel personal and responsive.
 
-### Mini Project: Selfie Booth
+### Mini Project: Background Remover
 
-Beyond files, users can also upload or capture **images, audio, and video** directly in Streamlit.
+Sometimes, you don’t just want to capture a photo — you want to transform it. That’s where background removal comes in.
 
-Think of this as turning your app into a **mini photo booth** or **media kiosk**. Instead of just showing numbers and charts, your app now feels like a place where users can actively contribute their own content.
+Think of it like cutting a person out of a magazine picture: you keep the subject but remove the clutter behind them. Streamlit makes this super easy when combined with tools like rembg.
 
-This makes your app much more **engaging and personal**. For example:
+**Why is this useful?**
 
--   Selfie verification for accounts.
-    
--   Photo kiosks for events.
-    
--   Fun apps like meme generators or filters.
+ID card photos need plain backgrounds.
+
+E-commerce product listings often require clean, transparent images.
+
+Fun apps can let users swap backgrounds (like Zoom virtual backgrounds).
+
+With just a few lines of code, you can upload or capture an image, process it, and instantly get a clean cut-out with no background.
 
 **Code**
 
-```
+```python
+
 import streamlit as st
+from rembg import remove
+from PIL import Image
+import io
 
-st.title("📸 Selfie Booth")
+st.title("🖼️ Background Remover")
 
-st.write("Take a selfie and add a fun caption!")
+st.write("Upload an image or take a selfie, and remove its background instantly.")
 
-picture = st.camera_input("Say cheese!") if picture:
-    st.image(picture, caption="Your Selfie", use_column_width=True)
-    
-    caption = st.text_input("Add a caption to your selfie:") if caption:
-        st.success(f"Saved selfie with caption: '{caption}'")
-        st.write("Thanks for sharing your selfie!")
+# Choose input method
+option = st.radio("Choose an option:", ["Upload an image", "Take a selfie"])
+
+if option == "Upload an image":
+    uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
+    if uploaded_file:
+        input_image = Image.open(uploaded_file)
+elif option == "Take a selfie":
+    picture = st.camera_input("Take a picture")
+    if picture:
+        input_image = Image.open(picture)
+else:
+    input_image = None
+
+if "input_image" in locals():
+    st.subheader("Original Image")
+    st.image(input_image, use_column_width=True)
+
+    with st.spinner("Removing background..."):
+        output_image = remove(input_image)
+
+    st.subheader("Image without Background")
+    st.image(output_image, use_column_width=True)
+
+    # Allow download
+    buf = io.BytesIO()
+    output_image.save(buf, format="PNG")
+    st.download_button(
+        label="Download without Background",
+        data=buf.getvalue(),
+        file_name="no_bg.png",
+        mime="image/png"
+    )
 ```
 
 **Expected Output**
 
--   A camera widget appears to capture a photo.
-    
--   Once the picture is taken, it is displayed with a caption field below.
-    
--   User can add a custom caption (e.g., “Best day ever!”), and the app confirms it was saved.  
-    (Screenshot placeholder: webcam capture, displayed selfie with caption underneath.)
-    
+A radio button lets users choose between uploading an image or taking a selfie.
+<img src =" https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/bgremove1.png">
+
+Once the photo is provided, the original image is displayed.
+<img src =" https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/bgremove2.png">
+
+The app processes the picture and shows a new version with the background removed.
+
+A download button appears so users can save the clean image.
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/bgremove3.png">
 
 **Key Takeaways**
 
--   Media uploads make apps **fun and personal**.
-    
--   Adding extra inputs (like captions) increases engagement.
-    
--   Perfect for photo apps, ID verification, or creative tools.
+Streamlit can handle both uploads and live camera input.
+
+Background removal makes apps practical (ID photos, product images) and fun (creative edits, virtual backdrops).
+
+Combining Streamlit with external libraries like rembg unlocks AI-powered image processing inside your web apps.
     
 
 ----------
@@ -495,29 +583,37 @@ import streamlit as st
 st.title("Simple FAQ Bot 💬")
 
 faq = {
-    "What is Streamlit?": "Streamlit is an open-source Python library for building web apps.",
-    "How do I install Streamlit?": "Run `pip install streamlit` in your terminal.",
-    "How do I run a Streamlit app?": "Use `streamlit run your_app.py`.",
-    "Who created Streamlit?": "Streamlit was created by Adrien Treuille, Thiago Teixeira, and Amanda Kelly."
+    "what is streamlit": "Streamlit is an open-source Python library for building web apps.",
+    "how do i install streamlit": "Run `pip install streamlit` in your terminal.",
+    "how do i run a streamlit app": "Use `streamlit run your_app.py`.",
+    "who created streamlit": "Streamlit was created by Adrien Treuille, Thiago Teixeira, and Amanda Kelly."
 }
 
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Hi! I'm your FAQ bot. Ask me something about Streamlit."}
-    ]
+# Initial assistant message
+st.chat_message("assistant").write("Hi! I'm your FAQ bot. Ask me something about Streamlit.")
 
-for message in st.session_state.messages:
-    st.chat_message(message["role"]).write(message["content"])
-
+# Get user input
 user_input = st.chat_input("Ask a question...")
 
 if user_input:
-    
-    st.session_state.messages.append({"role": "user", "content": user_input})
+    # Display user message
+    st.chat_message("user").write(user_input)
 
-    
-    answer = faq.get(user_input, "Sorry, I don’t know that one yet. Try another question!")
-    st.session_state.messages.append({"role": "assistant", "content": answer})
+    # Normalize input (lowercase, strip spaces)
+    normalized = user_input.lower().strip()
+
+    # Try to find a match (exact or partial)
+    answer = None
+    for question, response in faq.items():
+        if question in normalized:  # partial match
+            answer = response
+            break
+
+    if not answer:
+        answer = "Sorry, I don’t know that one yet. Try another question!"
+
+    # Display assistant answer
+    st.chat_message("assistant").write(answer)
 
 ``` 
 
@@ -530,7 +626,9 @@ if user_input:
 -   The bot replies with the correct FAQ answer.
     
 -   If the bot doesn’t know, it politely says so.  
-    (Screenshot placeholder: chat bubbles showing Q&A.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%203/faqbot.png">
+
 
 
 **Key Takeaways**

@@ -33,14 +33,16 @@ Now,  let’s see how to create a useful **Travel Planner app** where the sideba
 
 **Code**
 
-```
+```python
 import streamlit as st
+
 st.title("Travel Planner ✈️") # Sidebar inputs 
 st.sidebar.header("Plan Your Trip")
 destination = st.sidebar.text_input("Destination", "Paris")
 start_date = st.sidebar.date_input("Start Date")
 end_date = st.sidebar.date_input("End Date")
 budget = st.sidebar.number_input("Budget ($)", min_value=100, step=50)
+
 # Main content 
 st.subheader("Your Trip Summary")
 st.write(f"Destination: {destination}")
@@ -53,7 +55,8 @@ st.write(f"Budget: ${budget}")
 -   Sidebar with input fields for destination, dates, and budget.
     
 -   Main area displays a trip summary based on inputs.  
-    (Screenshot placeholder: sidebar with fields + main summary text.)
+    
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/travel_planner.png">
 
 **Key Takeaways**
 
@@ -94,7 +97,8 @@ with col2:
 -   Left shows USD to EUR rate.
     
 -   Right shows EUR to USD rate.  
-    (Screenshot placeholder: two-column layout with metrics.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/currency_comparison.png">
     
     
 **Key Takeaways**
@@ -112,7 +116,7 @@ Let’s build a **Sports Stats Dashboard** with three tabs—Football, Basketbal
 
 ### Mini Project: Sports Stats Tabs
 
-```
+```python
 import streamlit as st
 
 st.title("Sports Stats Dashboard 🏅")
@@ -134,7 +138,10 @@ with tab3:
 -   Tabs labeled “Football”, “Basketball”, “Cricket”.
     
 -   Clicking each tab shows the respective stats.  
-    (Screenshot placeholder: three tabs with content switching.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/tabs1.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/tabs2.png">
 
 
 **Key Takeaways**
@@ -153,14 +160,16 @@ We’ll create an **FAQ Section** with common questions hidden inside expanders�
 
 ### Mini Project: FAQ Section
 
-```
+```python
 import streamlit as st
 
 st.title("FAQ Section ❓") 
 with st.expander("What is Streamlit?"):
-    st.write("Streamlit is an open-source Python library for building web apps.") 
+    st.write("Streamlit is an open-source Python library for building web apps.")
+
 with st.expander("Is Streamlit free?"):
     st.write("Yes, Streamlit is free and open-source.") 
+    
 with st.expander("How do I install Streamlit?"):
     st.code("pip install streamlit", language="bash")
 ``` 
@@ -170,7 +179,8 @@ with st.expander("How do I install Streamlit?"):
 -   Three FAQ questions with expanders.
     
 -   Clicking one reveals the answer.  
-    (Screenshot placeholder: collapsible sections opening on click.)
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/expander.png">
 
 **Key Takeaways**
 
@@ -186,7 +196,7 @@ To demonstrate, we’ll create a **Live Scoreboard** that updates its value ever
 
 ### Mini Project: Live Scoreboard
 
-```
+```python
 import streamlit as st 
 import time
 
@@ -198,7 +208,7 @@ score = 0
 for i in  range(5):
     score += 4  # Imagine scoring runs 
     score_placeholder.metric("Current Score", f"{score}")
-    time.sleep(1)
+    time.sleep(3)
 ```
 
 **Expected Output**
@@ -206,7 +216,8 @@ for i in  range(5):
 -   A metric card labeled “Current Score”.
     
 -   Updates every second as the loop runs.  
-    (Screenshot placeholder: live-updating score counter.)
+
+<iimg src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%206/live_scoreboard.png">
     
 **Key Takeaways**
 

@@ -27,14 +27,19 @@ Now let’s see how easy it is to create a simple visualization with Streamlit�
 
 ```python
 
-import streamlit as st 
-import pandas as pd import numpy as np 
-st.title("👟 Step Tracker App")  
-#Generate 7 days of mock step data  
-days = pd.date_range(start="2023-01-01", periods=7)  
-steps = np.random.randint(3000,  12000, size=7)  
-data = pd.DataFrame({"Steps": steps}, index=days)  
-st.subheader("Daily Step Counts")  
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title("Step Tracker App 👟")
+
+# Generate 7 days of mock step data
+days = pd.date_range(start="2023-01-01", periods=7)
+steps = np.random.randint(3000, 12000, size=7)
+
+data = pd.DataFrame({"Steps": steps}, index=days)
+
+st.subheader("Daily Step Counts")
 st.line_chart(data)
 
 ```
@@ -45,7 +50,7 @@ st.line_chart(data)
     
 -   Each point represents the steps walked on that day.
     
--   _(Screenshot: Line chart with 7 points spanning one week.)_
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/steptracker.png">
     
 
 **Key Takeaways**
@@ -77,22 +82,27 @@ Let’s use Matplotlib and Seaborn to create a more customized and polished char
 
 ```python
 
-import streamlit as st 
+import streamlit as st
 import pandas as pd
-import numpy as np 
-import matplotlib.pyplot as plt 
-import seaborn as sns 
-st.title("📊 Student Marks Visualizer")  
-# Generate mock marks  
-marks = np.random.normal(70,  10,  100)  
-df = pd.DataFrame({"Marks": marks})  
-st.subheader("Distribution of Marks")  
-# Plot histogram with KDE  
-fig, ax = plt.subplots()  
-sns.histplot(df["Marks"], bins=10, kde=True, ax=ax)  
-ax.set_xlabel("Marks")  
-ax.set_ylabel("Number of Students")  
-ax.set_title("Student Marks Distribution")  
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+st.title("Student Marks Visualizer 📊")
+
+# Generate mock marks
+marks = np.random.normal(70, 10, 100)
+df = pd.DataFrame({"Marks": marks})
+
+st.subheader("Distribution of Marks")
+
+# Plot histogram with KDE
+fig, ax = plt.subplots()
+sns.histplot(df["Marks"], bins=10, kde=True, ax=ax)
+ax.set_xlabel("Marks")
+ax.set_ylabel("Number of Students")
+ax.set_title("Student Marks Distribution")
+
 st.pyplot(fig)
 
 ```
@@ -103,7 +113,7 @@ st.pyplot(fig)
     
 -   A smooth KDE curve overlay indicating the general shape.
     
--   _(Screenshot: Histogram with KDE overlay.)_
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/marksvisualizer.png">
     
 
 **Key Takeaways**
@@ -135,17 +145,22 @@ Next, we’ll explore interactive plotting with Plotly. Build a sales dashboard 
 
 ```python
 
-import streamlit as st 
-import pandas as pd 
-import numpy as np 
-import plotly.express as px 
-st.title("Sales Dashboard 💼")  
-months = pd.date_range("2023-01-01", periods=6, freq="M")  
-sales = np.random.randint(1000,  5000, size=6)  
-df = pd.DataFrame({"Month": months,  "Sales": sales})  
-st.subheader("Monthly Sales Overview")  
-fig = px.bar(df, x="Month", y="Sales", title="Sales Over Time", text="Sales")  
-fig.update_traces(textposition="outside")  
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+
+st.title("Sales Dashboard 📈")
+
+months = pd.date_range("2023-01-01", periods=6, freq="M")
+sales = np.random.randint(1000, 5000, size=6)
+df = pd.DataFrame({"Month": months, "Sales": sales})
+
+st.subheader("Monthly Sales Overview")
+
+fig = px.bar(df, x="Month", y="Sales", title="Sales Over Time", text="Sales")
+fig.update_traces(textposition="outside")
+
 st.plotly_chart(fig, use_container_width=True)
 
 ```
@@ -156,7 +171,7 @@ st.plotly_chart(fig, use_container_width=True)
     
 -   Hover over bars for detailed values; zoom and pan on chart.
     
--   _(Screenshot: Plotly bar chart with hover tooltips.)_
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales_dashboard.png">
     
 
 **Key Takeaways**
@@ -189,17 +204,30 @@ Finally, we’ll visualize geospatial data by mapping tourist spots with Pydeck,
 
 ```python
 
-import streamlit as st 
-import pandas as pd 
-import pydeck as pdk 
-st.title("🗺️ City Explorer")  
-data = pd.DataFrame({   "city":  ["Paris",  "New York",  "Tokyo",  "Sydney"],   "lat":  [48.8566,  40.7128,  35.6895,  -33.8688],   
-"lon":  [2.3522,  -74.0060,  139.6917,  151.2093]  })  
-st.subheader("Tourist Spots Map")  
-layer = pdk.Layer("ScatterplotLayer",  
-data,  get_position=["lon",  "lat"],  
-get_color=[200,  30,  0,  160],  get_radius=50000,  )  
-view_state = pdk.ViewState(latitude=20, longitude=0, zoom=1)  
+import streamlit as st
+import pandas as pd
+import pydeck as pdk
+
+st.title("City Explorer 🗺️")
+
+data = pd.DataFrame({
+    "city": ["Paris", "New York", "Tokyo", "Sydney"],
+    "lat": [48.8566, 40.7128, 35.6895, -33.8688],
+    "lon": [2.3522, -74.0060, 139.6917, 151.2093]
+})
+
+st.subheader("Tourist Spots Map")
+
+layer = pdk.Layer(
+    "ScatterplotLayer",
+    data,
+    get_position=["lon", "lat"],
+    get_color=[200, 30, 0, 160],
+    get_radius=50000,
+)
+
+view_state = pdk.ViewState(latitude=20, longitude=0, zoom=1)
+
 st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state))
 
 ```
@@ -210,8 +238,7 @@ st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state))
     
 -   Red dots marking Paris, New York, Tokyo, and Sydney locations.
     
--   _(Screenshot: interactive map with city markers.)_
-    
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/cityexplorer.png">
 
 **Key Takeaways**
 
