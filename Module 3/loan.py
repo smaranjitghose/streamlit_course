@@ -10,4 +10,4 @@ monthly_interest_rate = interest_rate / (12 * 100)
 emi = (loan_amount * monthly_interest_rate * (1 + monthly_interest_rate)**(loan_tenure * 12)) / ((1 + monthly_interest_rate)**(loan_tenure * 12) - 1)
 
 st.write("---")
-st.write(f"Estimated EMI: ${emi:.2f}")
+st.info(f"Estimated EMI: ${emi:.2f}")

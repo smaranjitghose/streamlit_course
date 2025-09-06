@@ -9,4 +9,4 @@ score = 0
 for i in  range(5):
     score += 4  # Imagine scoring runs 
     score_placeholder.metric("Current Score", f"{score}")
-    time.sleep(1)
+    time.sleep(3)
