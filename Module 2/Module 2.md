@@ -43,18 +43,37 @@ import streamlit as st
 
 st.title("Welcome to Our Restaurant!")
 
-st.header("Starters")
-st.write("Garlic Bread - $5")
-st.write("Soup of the Day - $7")
+col1,col2=st.columns(2)
 
-st.header("Main Course")
-st.write("Steak - $25")
-st.write("Pasta Carbonara - $18")
+with col1:
+    st.header("Starters")
+    st.write("Cheese Burger")
+    st.write("Cheese Sandwich")
+    st.write("Hot Dog")
+    st.write("Chicken Sandwich")
 
-st.subheader("Desserts")
-st.write("Chocolate Cake - $8")
-st.write("Ice Cream - $6")
+    st.header("Main Course")
+    st.write("Steak ")
+    st.write("Pasta Carbonara")
 
+    st.subheader("Desserts")
+    st.write("Chocolate Cake")
+    st.write("Ice Cream ")
+
+with col2:
+    st.header("")
+    st.write("$34")
+    st.write("$21")    
+    st.write("$30")
+    st.write("$34")
+
+    st.header("")
+    st.write("$40")
+    st.write("$54")
+
+    st.subheader("")
+    st.write("$25")
+    st.write("$20")
 ```
 
 **Explanation:**
@@ -71,6 +90,8 @@ st.write("Ice Cream - $6")
 **Expected Output:**
 
 The Streamlit app will display a title "Welcome to Our Restaurant!", followed by headers for "Starters" and "Main Course", and a subheader for "Desserts". Each section will list the menu items and their prices.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/restaurant.png">
 
 **Key Takeaways:**
 
@@ -124,6 +145,32 @@ Welcome to my first blog post built with **Streamlit**!
 In this post, I’ll walk you through how I created a simple blog page using 
 Streamlit’s `st.markdown()` feature.
 """)
+
+st.header("Why Streamlit for Blogging?")
+st.markdown("""
+- 🖥️ Easy to set up, no heavy frameworks  
+- 🎨 Supports Markdown for clean formatting  
+- 📊 Can embed charts, dataframes, and even interactive apps  
+- ☁️ Easy deployment using Streamlit Cloud  
+""")
+
+st.header("Code Example")
+st.code("""
+import streamlit as st
+
+st.title("My Blog Page")
+st.markdown("Hello, this is my blog written in **Markdown**")
+""", language="python")
+
+st.header("Conclusion")
+st.markdown("""
+With just a few lines of code, you can turn Streamlit into a **lightweight blogging platform**.  
+Next, I’ll explore how to add multiple posts and a navigation sidebar. 🚀
+""")
+
+st.markdown("---")
+st.info("💡 Tip: You can use `st.image()` and `st.video()` to make posts more engaging.")
+
 ```
 
 This is a blog post about Streamlit! It's a great way to build interactive web apps using Python.
@@ -156,6 +203,8 @@ _Here are some reasons why Streamlit is awesome:_
 **Expected Output:**
 
 The Streamlit app will display a blog post with a title, publication date, an introduction with a heading, a bulleted list, emojis, and examples of italicized and bold text.
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/blog.png">
 
 **Key Takeaways:**
 
@@ -194,21 +243,33 @@ Let's create a simple app that displays some common formulas.
 ```python
 import streamlit as st
 
-st.title("Math Formula Helper")
+st.set_page_config(page_title="Math Formula Helper", layout="wide")
 
-st.write("Here are some useful formulas:")
+st.title("Math Formula Helper 📐")
+st.write("Select a category to see useful math formulas:")
 
-st.latex(r'''
-    a + b x^2 + c
-    ''')
+category = st.sidebar.radio("Choose a topic:", ["Algebra", "Calculus", "Geometry"])
 
-st.latex(r'''
-    \int_a^b f(x) \,dx
-    ''')
+if category == "Algebra":
+    st.subheader("Algebra Formulas")
+    st.latex(r'a^2 - b^2 = (a-b)(a+b)')
+    st.latex(r'(a+b)^2 = a^2 + 2ab + b^2')
+    st.latex(r'(a-b)^2 = a^2 - 2ab + b^2')
 
-st.latex(r'''
-    e^{i\pi} + 1 = 0
-    ''')
+elif category == "Calculus":
+    st.subheader("Calculus Formulas")
+    st.latex(r'\frac{d}{dx} \big( x^n \big) = nx^{n-1}')
+    st.latex(r'\int_a^b f(x)\,dx')
+    st.latex(r'e^{i\pi} + 1 = 0')
+
+elif category == "Geometry":
+    st.subheader("Geometry Formulas")
+    st.latex(r'Area\ of\ Circle = \pi r^2')
+    st.latex(r'Perimeter\ of\ Circle = 2 \pi r')
+    st.latex(r'Pythagoras:\ a^2 + b^2 = c^2')
+
+st.markdown("---")
+st.info("💡 Tip: Use `st.latex()` to render any LaTeX formula in Streamlit.")
 
 ```
 
@@ -224,6 +285,8 @@ st.latex(r'''
 **Expected Output:**
 
 The Streamlit app will display the title "Math Formula Helper" followed by the three LaTeX equations, rendered as mathematical formulas.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/math.png">
 
 **Key Takeaways:**
 
@@ -267,18 +330,33 @@ Status messages are useful for providing feedback to users about the progress of
 
 ```python
 import streamlit as st
-import time
 
-st.title("Customer Support Panel")
+# Page config
+st.set_page_config(page_title="Customer Support Panel", layout="wide")
 
-ticket_id = st.text_input("Enter Ticket ID:")
+st.title("💬 Customer Support Panel")
 
-if ticket_id:
-    st.info(f"Ticket ID: {ticket_id}")
-    st.warning("Please wait while we process your request.")
-    time.sleep(2) # Simulate processing time
-    st.success("Your request has been processed successfully!")
-    st.error("There might be a slight delay in the update. Please check again in 5 minutes.")
+st.write("Welcome! Submit your issue below and track support status.")
+
+# User issue form
+with st.form("support_form"):
+    name = st.text_input("Your Name")
+    email = st.text_input("Email")
+    issue = st.text_area("Describe your issue")
+    submitted = st.form_submit_button("Submit Ticket")
+
+if submitted:
+    if not name or not email or not issue:
+        st.error("⚠️ Please fill out all fields before submitting.")
+    else:
+        st.success(f"✅ Ticket submitted successfully! A support agent will contact {email}.")
+        st.info("📌 Your Ticket ID: #12345")
+
+st.subheader("📂 Support History")
+st.chat_message("user").write("I am facing login issues.")
+st.chat_message("assistant").write("Thanks for reporting. We are checking it.")
+st.chat_message("user").write("Any update?")
+st.chat_message("assistant").write("✅ Issue fixed. Please try again.")
 
 ```
 
@@ -299,6 +377,8 @@ if ticket_id:
 
 The Streamlit app will display a text input field for entering a ticket ID. When a ticket ID is entered, it will display an info message with the ticket ID, followed by a warning message. After a 2-second delay, it will display a success message, and finally an error message indicating a potential delay in the update.
 
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/customerpanel.png">
+
 **Key Takeaways:**
 
 -   Use `st.info` to display informational messages.
@@ -310,15 +390,3 @@ The Streamlit app will display a text input field for entering a ticket ID. When
 -   Use `st.error` to display error messages.
     
 -   Use status messages to provide feedback to users and improve the user experience.
-----------
-
-### **Conclusion**
-
--   Text is structure + style + feedback.
-    
--   Headings organize, Markdown styles, code/math explain, and messages guide.
-    
--   Good text = Clear app navigation + engaging communication + user confidence.
-    
-
- In short, treat your app’s text as a  **conversation with the user**—guide them, reassure them, and keep them engaged.

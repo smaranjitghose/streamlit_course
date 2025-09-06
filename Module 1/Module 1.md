@@ -18,7 +18,7 @@ Imagine you want to share a cool data analysis you did in Python with your colle
     
 -   **Data Visualization:** Streamlit integrates seamlessly with popular data visualization libraries like Matplotlib, Seaborn, and Plotly.
     
-<img src=".\image\Module 1\module1.png" alt="Features of Streamlit" style="width: 500px; height: auto;" />
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/module1.png" alt="Features of Streamlit" style="width: 500px; height: auto;" />
 
 #### **Traditional Approach vs. Streamlit:**
 
@@ -127,46 +127,6 @@ quotes = [
     "The only way to do great work is to love what you do. - Steve Jobs",
     "Strive not to be a success, but rather to be of value. - Albert Einstein",
     "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-    "Tell me and I forget. Teach me and I remember. Involve me and I learn. - Benjamin Franklin",
-    "Be the change that you wish to see in the world. - Mahatma Gandhi"
-]
-
-st.title("Daily Quote")
-
-quote = random.choice(quotes)
-st.write(quote)
-
-```
-
-Save this code as `quote_app.py` and run it using `streamlit run quote_app.py`.
-
-**Running the App:**
-
-When you run the app, Streamlit will display a random quote from the list. Refresh the page to see a different quote.
-
-**Expected Output:**
-
-The browser window will display the following:
-
--   Title: Daily Quote
-    
--   Content: A random quote from the list.
-    
-
-(A screenshot of the Daily Quote app would appear here)
-
-**Interactivity Basics:**
-
-Let's add a button to generate a new quote. We'll use the `st.button()` function.
-
-```python
-import streamlit as st
-import random
-
-quotes = [
-    "The only way to do great work is to love what you do. - Steve Jobs",
-    "Strive not to be a success, but rather to be of value. - Albert Einstein",
-    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
     "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart. - Helen Keller",
     "Be the change that you wish to see in the world. - Mahatma Gandhi"
 ]
@@ -181,6 +141,8 @@ else:
 
 ```
 
+Save this code as `quote_app.py` and run it using `streamlit run quote_app.py`.
+
 Now, the app will only display a quote when you click the "Get New Quote" button.
 
 **Expected Output:**
@@ -194,7 +156,7 @@ Initially, the browser window will display:
 
 After clicking the "Get New Quote" button, a random quote will be displayed.
 
-(A screenshot of the Daily Quote app with the button would appear here)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/dailyquote.png">
     
 
 **Key Takeaways:**
@@ -248,4 +210,4 @@ with col2:
 -   `layout="wide"`: Makes the app full width
 
 
-(A screenshot of the Custom News Page app with the button would appear here)
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/customnews.png">
