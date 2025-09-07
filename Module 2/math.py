@@ -1,29 +1,31 @@
 import streamlit as st
 
-st.set_page_config(page_title="Math Formula Helper", layout="wide")
+st.title("📘 Aptitude Formula Cheatsheet")
+st.write("Quick reference for common aptitude formulas 🧮")
 
-st.title("Math Formula Helper 📐")
-st.write("Select a category to see useful math formulas:")
+# Section 1: Percentages
+st.header("📊 Percentages")
+st.latex(r"\text{Percentage (\%)} = \frac{\text{Value}}{\text{Total}} \times 100")
+st.latex(r"\text{Profit \%} = \frac{\text{Profit}}{\text{Cost Price}} \times 100")
+st.latex(r"\text{Loss \%} = \frac{\text{Loss}}{\text{Cost Price}} \times 100")
 
-category = st.sidebar.radio("Choose a topic:", ["Algebra", "Calculus", "Geometry"])
+# Section 2: Simple & Compound Interest
+st.header("💰 Interest")
+st.latex(r"SI = \frac{P \times R \times T}{100}")
+st.latex(r"CI = P \times \left(1 + \frac{R}{100}\right)^T - P")
+st.caption("where P = Principal, R = Rate %, T = Time")
 
-if category == "Algebra":
-    st.subheader("Algebra Formulas")
-    st.latex(r'a^2 - b^2 = (a-b)(a+b)')
-    st.latex(r'(a+b)^2 = a^2 + 2ab + b^2')
-    st.latex(r'(a-b)^2 = a^2 - 2ab + b^2')
+# Section 3: Averages
+st.header("📈 Averages")
+st.latex(r"\text{Average} = \frac{\text{Sum of terms}}{\text{Number of terms}}")
 
-elif category == "Calculus":
-    st.subheader("Calculus Formulas")
-    st.latex(r'\frac{d}{dx} \big( x^n \big) = nx^{n-1}')
-    st.latex(r'\int_a^b f(x)\,dx')
-    st.latex(r'e^{i\pi} + 1 = 0')
+# Section 4: Probability
+st.header("🎲 Probability")
+st.latex(r"P(E) = \frac{\text{Favorable outcomes}}{\text{Total outcomes}}")
 
-elif category == "Geometry":
-    st.subheader("Geometry Formulas")
-    st.latex(r'Area\ of\ Circle = \pi r^2')
-    st.latex(r'Perimeter\ of\ Circle = 2 \pi r')
-    st.latex(r'Pythagoras:\ a^2 + b^2 = c^2')
+# Section 5: Permutations & Combinations
+st.header("🔢 Permutations & Combinations")
+st.latex(r"nPr = \frac{n!}{(n-r)!}")
+st.latex(r"nCr = \frac{n!}{r!(n-r)!}")
 
-st.markdown("---")
-st.info("💡 Tip: Use `st.latex()` to render any LaTeX formula in Streamlit.")
+st.success("✅ Cheatsheet ready! Use this as a quick reference during practice.")

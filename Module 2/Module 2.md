@@ -132,44 +132,38 @@ Markdown is a lightweight markup language that allows you to format text using s
 ```python
 import streamlit as st
 
-st.set_page_config(page_title="My Blog Post", layout ='wide')
+st.set_page_config(page_title="My Fitness Blog", layout="centered")
 
-st.title("Building My First Streamlit Blog Page")
-st.markdown("**Author:** John Doe | 📅 August 16, 2025")
-
+st.title("🏋️ My Fitness Journey")
+st.markdown("**Author:** John Doe | 📅 Sept 6, 2025")
 st.markdown("---")
 
-st.header("Introduction")
+st.header("🌟 Why I Started")
 st.markdown("""
-Welcome to my first blog post built with **Streamlit**!  
-In this post, I’ll walk you through how I created a simple blog page using 
-Streamlit’s `st.markdown()` feature.
+I wanted **more energy**, *better health*, and a stronger body.  
+Sitting all day was taking its toll, so I committed to change. 💪
 """)
 
-st.header("Why Streamlit for Blogging?")
+st.header("💪 My Routine")
 st.markdown("""
-- 🖥️ Easy to set up, no heavy frameworks  
-- 🎨 Supports Markdown for clean formatting  
-- 📊 Can embed charts, dataframes, and even interactive apps  
-- ☁️ Easy deployment using Streamlit Cloud  
+- 🏃 **Cardio**: 3 times a week  
+- 🏋️ **Strength Training**: 4 times a week  
+- 🧘 **Stretching**: every day  
 """)
 
-st.header("Code Example")
-st.code("""
-import streamlit as st
-
-st.title("My Blog Page")
-st.markdown("Hello, this is my blog written in **Markdown**")
-""", language="python")
-
-st.header("Conclusion")
+st.header("🥗 Nutrition")
 st.markdown("""
-With just a few lines of code, you can turn Streamlit into a **lightweight blogging platform**.  
-Next, I’ll explore how to add multiple posts and a navigation sidebar. 🚀
+> *"You can’t out-train a bad diet."*  
+I focus on whole foods, hydration 💧, and balance — but I still enjoy a 🍕 sometimes!
 """)
 
-st.markdown("---")
-st.info("💡 Tip: You can use `st.image()` and `st.video()` to make posts more engaging.")
+st.header("💡 Key Lesson")
+st.markdown("""
+✅ **Consistency > Motivation**  
+Small daily habits compound into big results over time.
+""")
+
+st.success("🚀 Stay strong, stay consistent, and enjoy the process!")
 
 ```
 
@@ -204,7 +198,7 @@ _Here are some reasons why Streamlit is awesome:_
 
 The Streamlit app will display a blog post with a title, publication date, an introduction with a heading, a bulleted list, emojis, and examples of italicized and bold text.
 
-<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/blog.png">
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/blog1.png">
 
 **Key Takeaways:**
 
@@ -243,33 +237,36 @@ Let's create a simple app that displays some common formulas.
 ```python
 import streamlit as st
 
-st.set_page_config(page_title="Math Formula Helper", layout="wide")
+st.title("📘 Aptitude Formula Cheatsheet")
+st.write("Quick reference for common aptitude formulas 🧮")
 
-st.title("Math Formula Helper 📐")
-st.write("Select a category to see useful math formulas:")
+# Section 1: Percentages
+st.header("📊 Percentages")
+st.latex(r"\text{Percentage (\%)} = \frac{\text{Value}}{\text{Total}} \times 100")
+st.latex(r"\text{Profit \%} = \frac{\text{Profit}}{\text{Cost Price}} \times 100")
+st.latex(r"\text{Loss \%} = \frac{\text{Loss}}{\text{Cost Price}} \times 100")
 
-category = st.sidebar.radio("Choose a topic:", ["Algebra", "Calculus", "Geometry"])
+# Section 2: Simple & Compound Interest
+st.header("💰 Interest")
+st.latex(r"SI = \frac{P \times R \times T}{100}")
+st.latex(r"CI = P \times \left(1 + \frac{R}{100}\right)^T - P")
+st.caption("where P = Principal, R = Rate %, T = Time")
 
-if category == "Algebra":
-    st.subheader("Algebra Formulas")
-    st.latex(r'a^2 - b^2 = (a-b)(a+b)')
-    st.latex(r'(a+b)^2 = a^2 + 2ab + b^2')
-    st.latex(r'(a-b)^2 = a^2 - 2ab + b^2')
+# Section 3: Averages
+st.header("📈 Averages")
+st.latex(r"\text{Average} = \frac{\text{Sum of terms}}{\text{Number of terms}}")
 
-elif category == "Calculus":
-    st.subheader("Calculus Formulas")
-    st.latex(r'\frac{d}{dx} \big( x^n \big) = nx^{n-1}')
-    st.latex(r'\int_a^b f(x)\,dx')
-    st.latex(r'e^{i\pi} + 1 = 0')
+# Section 4: Probability
+st.header("🎲 Probability")
+st.latex(r"P(E) = \frac{\text{Favorable outcomes}}{\text{Total outcomes}}")
 
-elif category == "Geometry":
-    st.subheader("Geometry Formulas")
-    st.latex(r'Area\ of\ Circle = \pi r^2')
-    st.latex(r'Perimeter\ of\ Circle = 2 \pi r')
-    st.latex(r'Pythagoras:\ a^2 + b^2 = c^2')
+# Section 5: Permutations & Combinations
+st.header("🔢 Permutations & Combinations")
+st.latex(r"nPr = \frac{n!}{(n-r)!}")
+st.latex(r"nCr = \frac{n!}{r!(n-r)!}")
 
-st.markdown("---")
-st.info("💡 Tip: Use `st.latex()` to render any LaTeX formula in Streamlit.")
+st.success("✅ Cheatsheet ready! Use this as a quick reference during practice.")
+
 
 ```
 
@@ -286,7 +283,7 @@ st.info("💡 Tip: Use `st.latex()` to render any LaTeX formula in Streamlit.")
 
 The Streamlit app will display the title "Math Formula Helper" followed by the three LaTeX equations, rendered as mathematical formulas.
 
-<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/math.png">
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%202/math1.png">
 
 **Key Takeaways:**
 

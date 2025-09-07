@@ -1,40 +1,34 @@
 import streamlit as st
 
-st.set_page_config(page_title="My Blog Post", layout ='wide')
+st.set_page_config(page_title="My Fitness Blog", layout="centered")
 
-st.title("Building My First Streamlit Blog Page")
-st.markdown("**Author:** John Doe | 📅 August 16, 2025")
-
+st.title("🏋️ My Fitness Journey")
+st.markdown("**Author:** John Doe | 📅 Sept 6, 2025")
 st.markdown("---")
 
-st.header("Introduction")
+st.header("🌟 Why I Started")
 st.markdown("""
-Welcome to my first blog post built with **Streamlit**!  
-In this post, I’ll walk you through how I created a simple blog page using 
-Streamlit’s `st.markdown()` feature.
+I wanted **more energy**, *better health*, and a stronger body.  
+Sitting all day was taking its toll, so I committed to change. 💪
 """)
 
-st.header("Why Streamlit for Blogging?")
+st.header("💪 My Routine")
 st.markdown("""
-- 🖥️ Easy to set up, no heavy frameworks  
-- 🎨 Supports Markdown for clean formatting  
-- 📊 Can embed charts, dataframes, and even interactive apps  
-- ☁️ Easy deployment using Streamlit Cloud  
+- 🏃 **Cardio**: 3 times a week  
+- 🏋️ **Strength Training**: 4 times a week  
+- 🧘 **Stretching**: every day  
 """)
 
-st.header("Code Example")
-st.code("""
-import streamlit as st
-
-st.title("My Blog Page")
-st.markdown("Hello, this is my blog written in **Markdown**")
-""", language="python")
-
-st.header("Conclusion")
+st.header("🥗 Nutrition")
 st.markdown("""
-With just a few lines of code, you can turn Streamlit into a **lightweight blogging platform**.  
-Next, I’ll explore how to add multiple posts and a navigation sidebar. 🚀
+> *"You can’t out-train a bad diet."*  
+I focus on whole foods, hydration 💧, and balance — but I still enjoy a 🍕 sometimes!
 """)
 
-st.markdown("---")
-st.info("💡 Tip: You can use `st.image()` and `st.video()` to make posts more engaging.")
+st.header("💡 Key Lesson")
+st.markdown("""
+✅ **Consistency > Motivation**  
+Small daily habits compound into big results over time.
+""")
+
+st.success("🚀 Stay strong, stay consistent, and enjoy the process!")

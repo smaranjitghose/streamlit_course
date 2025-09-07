@@ -21,7 +21,7 @@ Think of them as your fast food option for visualization—ready in seconds, goo
 
 **Introduction**
 
-Now let’s see how easy it is to create a simple visualization with Streamlit’s built-in charts. We’ll build a step tracker that displays your daily steps as a clear line chart.
+Now let’s build a simple fitness dashboard using Streamlit’s built-in charts to track steps, calories burned, and sleep patterns.
 
 **Code**
 
@@ -31,26 +31,51 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title("Step Tracker App 👟")
+st.set_page_config(page_title="Fitness Dashboard", layout="wide")
+st.title("📊 My Fitness Dashboard")
 
-# Generate 7 days of mock step data
+# Fake dataset for 7 days
 days = pd.date_range(start="2023-01-01", periods=7)
-steps = np.random.randint(3000, 12000, size=7)
+data = pd.DataFrame({
+    "Steps": np.random.randint(3000, 12000, size=7),
+    "Calories Burned": np.random.randint(1800, 2800, size=7),
+    "Hours Slept": np.random.uniform(5, 9, size=7).round(1)
+}, index=days)
 
-data = pd.DataFrame({"Steps": steps}, index=days)
+# Dashboard sections
+st.subheader("👟 Daily Steps")
+st.line_chart(data["Steps"])
 
-st.subheader("Daily Step Counts")
-st.line_chart(data)
+st.subheader("🔥 Calories Burned")
+st.bar_chart(data["Calories Burned"])
+
+st.subheader("💤 Sleep Hours")
+st.area_chart(data["Hours Slept"])
+
+# Preview of raw data
+st.subheader("📋 Data Table")
+st.dataframe(data)
+
 
 ```
 
 **Expected Output**
 
--   A line chart showing dates on the x-axis and steps on the y-axis.
-    
--   Each point represents the steps walked on that day.
-    
-<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/steptracker.png">
+- 📈 A line chart showing dates on the x-axis and steps on the y-axis (daily step count).
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/step1.png">
+
+- 📊 A bar chart showing dates vs. calories burned each day.
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/step2.png">
+
+
+- 🌙 An area chart showing dates vs. hours slept per night.
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/step3.png">
+
+
+- 📋 A data table displaying all the metrics (Steps, Calories Burned, Sleep Hours).
     
 
 **Key Takeaways**
@@ -88,33 +113,51 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title("Student Marks Visualizer 📊")
+st.set_page_config(page_title="Student Marks Visualizer", layout="centered")
+st.title("📊 Student Marks Visualizer")
 
-# Generate mock marks
-marks = np.random.normal(70, 10, 100)
-df = pd.DataFrame({"Marks": marks})
+# Generate mock marks for multiple subjects
+np.random.seed(42)
+subjects = {
+    "Math": np.random.normal(75, 12, 100),
+    "Science": np.random.normal(70, 15, 100),
+    "English": np.random.normal(65, 10, 100),
+    "History": np.random.normal(68, 8, 100)
+}
+df = pd.DataFrame(subjects)
 
-st.subheader("Distribution of Marks")
+# Sidebar input
+st.sidebar.header("⚙️ Settings")
+subject_choice = st.sidebar.selectbox("Choose a subject:", df.columns)
+bins = st.sidebar.slider("Number of bins:", 5, 20, 10)
 
-# Plot histogram with KDE
+# Plot
+st.subheader(f"Distribution of Marks in {subject_choice}")
 fig, ax = plt.subplots()
-sns.histplot(df["Marks"], bins=10, kde=True, ax=ax)
+sns.histplot(df[subject_choice], bins=bins, kde=True, color="skyblue", ax=ax)
 ax.set_xlabel("Marks")
 ax.set_ylabel("Number of Students")
-ax.set_title("Student Marks Distribution")
+ax.set_title(f"{subject_choice} Marks Distribution")
 
 st.pyplot(fig)
+
+# Extra insight
+st.subheader("📋 Summary Statistics")
+st.write(df[subject_choice].describe().round(2))
+
 
 ```
 
 **Expected Output**
 
--   A histogram showing frequency distribution of marks.
+-   A histogram showing frequency distribution of marks by subject.
     
 -   A smooth KDE curve overlay indicating the general shape.
     
-<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/marksvisualizer.png">
-    
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/marks1.png">
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/marks2.png">
+
 
 **Key Takeaways**
 
@@ -139,7 +182,7 @@ Streamlit’s native support means you can embed and control these powerful tool
 
 **Introduction**
 
-Next, we’ll explore interactive plotting with Plotly. Build a sales dashboard with an interactive bar chart that lets users hover, zoom, and explore monthly sales data.
+Next, we’ll explore interactive plotting with Plotly. Build a sales dashboard with an interactive bar chart that lets users hover, zoom, and explore monthly sales data by region.
 
 **Code**
 
@@ -150,28 +193,70 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-st.title("Sales Dashboard 📈")
+st.set_page_config(page_title="Sales Dashboard", layout="wide")
+st.title("📊 Sales Dashboard")
 
-months = pd.date_range("2023-01-01", periods=6, freq="M")
-sales = np.random.randint(1000, 5000, size=6)
-df = pd.DataFrame({"Month": months, "Sales": sales})
+# Fake dataset (12 months for more flexibility)
+months = pd.date_range("2023-01-01", periods=12, freq="M")
+data = pd.DataFrame({
+    "Month": np.tile(months, 3),
+    "Region": np.repeat(["North", "South", "West"], 12),
+    "Sales": np.random.randint(1000, 5000, size=36),
+    "Profit": np.random.randint(200, 1500, size=36)
+})
 
-st.subheader("Monthly Sales Overview")
+# Sidebar filter
+st.sidebar.header("🔎 Filters")
+months_to_show = st.sidebar.slider("Select number of recent months:", 3, 12, 6)
+region_choice = st.sidebar.selectbox("Select Region for Detailed View:", data["Region"].unique())
 
-fig = px.bar(df, x="Month", y="Sales", title="Sales Over Time", text="Sales")
-fig.update_traces(textposition="outside")
+# Filter dataset by recent months
+latest_months = data["Month"].sort_values().unique()[-months_to_show:]
+filtered_data = data[data["Month"].isin(latest_months)]
 
-st.plotly_chart(fig, use_container_width=True)
+# Chart 1: Sales overview
+st.subheader("📈 Monthly Sales Overview")
+fig1 = px.bar(filtered_data, x="Month", y="Sales", color="Region", barmode="group",
+              title="Sales by Region")
+st.plotly_chart(fig1, use_container_width=True)
+
+# Chart 2: Profit trend
+st.subheader("💰 Profit Trend")
+fig2 = px.line(filtered_data, x="Month", y="Profit", color="Region", markers=True,
+               title="Monthly Profit by Region")
+st.plotly_chart(fig2, use_container_width=True)
+
+# Chart 3: Regional focus
+st.subheader(f"🎯 Sales Trend in {region_choice}")
+region_data = filtered_data[filtered_data["Region"] == region_choice]
+fig3 = px.area(region_data, x="Month", y="Sales",
+               title=f"Sales Trend in {region_choice}", markers=True)
+st.plotly_chart(fig3, use_container_width=True)
+
+# Raw data
+st.subheader("📋 Filtered Data Table")
+st.dataframe(filtered_data)
+
 
 ```
+**Expected**
 
-**Expected Output**
+- 📊 An interactive bar chart showing monthly sales by region (with zoom, pan, and hover tooltips).
 
--   An interactive bar chart showing sales per month.
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales1.png">
+
+- 📈 An interactive line chart showing profit trends across regions over time.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales2.png">
+
+- 🌍 An interactive area chart that updates dynamically based on the selected region in the sidebar.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales3.png">
+
+- 📋 A data table displaying only the filtered months and region, matching the charts.
     
--   Hover over bars for detailed values; zoom and pan on chart.
-    
-<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales_dashboard.png">
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/sales4.png">
+
     
 
 **Key Takeaways**
@@ -208,37 +293,73 @@ import streamlit as st
 import pandas as pd
 import pydeck as pdk
 
-st.title("City Explorer 🗺️")
+st.set_page_config(page_title="Tourist Spot Explorer", layout="centered")
+st.title("🕌 Explore Indian Tourist Spots")
 
+# Dataset with 2 places
 data = pd.DataFrame({
-    "city": ["Paris", "New York", "Tokyo", "Sydney"],
-    "lat": [48.8566, 40.7128, 35.6895, -33.8688],
-    "lon": [2.3522, -74.0060, 139.6917, 151.2093]
+    "spot": ["Taj Mahal", "Golden Temple"],
+    "city": ["Agra", "Amritsar"],
+    "description": [
+        "One of the Seven Wonders of the World, a symbol of love in Agra.",
+        "The holiest gurdwara and a central religious place for Sikhs, in Amritsar."
+    ],
+    "lat": [27.1751, 31.6200],
+    "lon": [78.0421, 74.8765],
+    "image": [
+        "https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/3/34/Golden_Temple_in_Amritsar_India.jpg"
+    ]
 })
 
-st.subheader("Tourist Spots Map")
+# Dropdown to choose tourist spot
+choice = st.selectbox("Select a tourist spot:", data["spot"])
 
+# Filter data
+selected = data[data["spot"] == choice].iloc[0]
+
+# Show details
+st.header(f"{selected['spot']} ({selected['city']})")
+st.write(selected["description"])
+st.image(selected["image"], use_container_width=True)
+
+# Show map for selected place
+st.subheader("📍 Location on Map")
 layer = pdk.Layer(
     "ScatterplotLayer",
-    data,
+    pd.DataFrame([selected]),
     get_position=["lon", "lat"],
     get_color=[200, 30, 0, 160],
-    get_radius=50000,
+    get_radius=40000,
+    pickable=True
 )
 
-view_state = pdk.ViewState(latitude=20, longitude=0, zoom=1)
+view_state = pdk.ViewState(latitude=selected["lat"], longitude=selected["lon"], zoom=10)
 
-st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state))
+st.pydeck_chart(pdk.Deck(
+    layers=[layer],
+    initial_view_state=view_state,
+    tooltip={"text": "{spot}, {city}"}
+))
+
 
 ```
 
 **Expected Output**
 
--   A zoomable, pannable world map centered broadly on the globe.
+- When a user selects Taj Mahal or Golden Temple from the dropdown, the app first displays the spot’s name and city.
+
+- Below that, the app shows a short description of the tourist spot.
+
+- Next, an image of the selected location is displayed.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/city1.png">
+
+- Finally, an interactive zoomable map appears, centered on the chosen spot, with a red marker highlighting its location.
+
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/city2.png">
+
     
--   Red dots marking Paris, New York, Tokyo, and Sydney locations.
-    
-<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%205/cityexplorer.png">
 
 **Key Takeaways**
 
