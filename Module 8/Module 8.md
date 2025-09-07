@@ -264,7 +264,7 @@ if uploaded_file:
     
 -   Ends with a success message.  
 
-<im src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/fileupload1.png">
+<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/Module%208/fileupload1.png">
     
 
 **Key Takeaways**
