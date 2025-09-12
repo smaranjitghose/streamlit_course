@@ -1,6 +1,6 @@
 # Module 1: Getting Started with Streamlit
 
-### Topic 1.1: Introduction & Setup
+### Topic 1.1: Introduction 
 
 #### **What is Streamlit ?**
 
@@ -20,194 +20,146 @@ Imagine you want to share a cool data analysis you did in Python with your colle
     
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/module1.png" alt="Features of Streamlit" style="width: 500px; height: auto;" />
 
+
 #### **Traditional Approach vs. Streamlit:**
 
-Traditionally, creating web apps required knowledge of front-end technologies (HTML, CSS, JavaScript) and back-end frameworks (Flask, Django). Streamlit simplifies this process by handling the front-end complexity, allowing you to focus on the Python logic.
+| Feature               | Traditional Web Dev (Flask/Django + Frontend) | Streamlit                         |
+| --------------------- | --------------------------------------------- | --------------------------------- |
+| **Learning Curve**    | Requires HTML, CSS, JS, plus backend skills   | Pure Python                       |
+| **Development Speed** | Slow, more boilerplate                        | Very fast, minimal code           |
+| **Prototyping**       | Takes days/weeks                              | Minutes                           |
+| **Focus**             | Split between frontend + backend + deployment | Purely on Python and logic        |
+| **Use Case**          | Full production apps                          | Data apps, dashboards, prototypes |
 
-**Installation:**
 
-Before you start, make sure you have Python installed (version 3.8 or higher is recommended). Open your terminal or command prompt and install Streamlit using pip:
-
-```bash
-pip install streamlit
-
-```
-
-**Hello, World! Demo:**
-
-Let's create a simple "Hello, World!" Streamlit app. Create a new Python file named `hello.py` and add the following code:
-
-```python
-import streamlit as st
-
-st.title("My First Streamlit App")
-st.write("Hello, World!")
-
-```
-
-Save the file. Now, run the app from your terminal:
-
-```bash
-streamlit run hello.py
-
-```
-
-This command will launch your app in your default web browser. You should see a page with the title "My First Streamlit App" and the text "Hello, World!".
-
-**Expected Output:**
-
-The browser window will display the following:
-
--   Title: My First Streamlit App
-    
--   Content: Hello, World!
-    
-
-(A screenshot of the "Hello, World!" app would appear here)
-
-**Hands-on Exercise:**
-
-1.  Modify the `hello.py` file to display your name instead of "Hello, World!".
-    
-2.  Add a subtitle to your app using `st.subheader()`.
-    
-
-**Key Takeaways:**
-
--   Streamlit is a Python library for creating interactive web apps.
-    
--   It simplifies web development by handling the front-end complexity.
-    
--   You can install Streamlit using `pip install streamlit`.
-    
--   The `streamlit run` command launches your app in a web browser.
+If your goal is data exploration, dashboards, reporting, or ML model demos, Streamlit is much faster and simpler than the traditional stack.
 
 ---
-### Topic 1.2: Running Streamlit Apps
+### Topic 1.2: Setup
 
+#### **Setting Up Your First Streamlit Project**
 
-**The** `streamlit run` **Command:**
+When starting any new Python project, it’s best practice to keep dependencies isolated.
+With uv (a fast and reliable Python package/dependency manager), you can quickly set up a clean environment and start building.
 
-As you've seen, the `streamlit run` command is used to launch your Streamlit apps. It takes the path to your Python script as an argument.
+---
 
-```bash
-streamlit run your_app.py
+##### **Step 1: Create a new directory**
+
+```
+mkdir streamlit-app
+cd streamlit-app
+```
+----
+
+##### **Step 2: Initialize uv in your project**
+
+```
+uv init
 
 ```
 
-**Browser Workflow:**
+<img src ="https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/uvinit.png" width=400>
 
-When you run a Streamlit app, Streamlit starts a local web server and opens your app in your default web browser. Any changes you make to your Python code will automatically be reflected in the browser after you save the file. This is called "hot reloading" and it's a huge time-saver.
-
-**Localhost URL:**
-
-Streamlit apps typically run on `localhost` (also known as `127.0.0.1`) on a specific port (usually 8501). You can access your app by navigating to `http://localhost:8501` in your web browser. The terminal output after running `streamlit run` will show the exact URL.
-    
-
-**Key Takeaways:**
-
--   `streamlit run` starts a local web server and opens your app in a browser.
-    
--   Streamlit uses hot reloading to automatically update your app when you save changes.
-    
--   Apps are typically accessible at `http://localhost:8501`.
-    
 ---
-### Topic 1.2: Daily Quote Board
+
+- It does not automatically create a `.venv/` folder until you add your first dependency (uv add streamlit)
+---
+
+##### **Step 2: Install Streamlit**
+
+```
+uv add streamlit
+```
+
+
+<img src ="https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/installstreamlit.png" width=700>
+
+---
+
+<img src= "https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/foldervenv.png" width =400 height=200 >
+
+---
+
+- This will create a `.venv/` folder
+
+----
+##### **Step 4: Activate the Virtual environment**
+
+```
+.venv\Scripts\Activate.ps1
+
+```
+---
+
+##### **Step 5: Start your App**
+
+
+```
+streamlit hello
+```
+
+This launches Streamlit’s built-in demo app in your browser. 🎉
+
+
+##### **Expected Output**
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/defaultstreamlit.png)
+
+
+ 
+---
+### Topic 1.3: Build your First Project
+
 
 #### **Building a Random Quote App:**
 
 Let's create a more interesting app that displays a random quote each time the page is refreshed. First, we need a list of quotes.
+- Create a file `app.py`
 
 ```python
 import streamlit as st
 import random
 
 quotes = [
-    "The only way to do great work is to love what you do. - Steve Jobs",
-    "Strive not to be a success, but rather to be of value. - Albert Einstein",
-    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-    "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart. - Helen Keller",
-    "Be the change that you wish to see in the world. - Mahatma Gandhi"
+    "The best way to predict the future is to invent it.",
+    "Simplicity is the soul of efficiency.",
+    "Do one thing every day that scares you.",
+    "Code is like humor. When you have to explain it, it’s bad."
 ]
 
-st.title("Daily Quote")
+st.title("Daily Quote Board")
+st.write("Refresh the page for a new dose of inspiration!")
 
-if st.button("Get New Quote"):
-    quote = random.choice(quotes)
-    st.write(quote)
-else:
-    st.write("Click the button to see a quote!")
+quote = random.choice(quotes)
+st.write(quote)
 
 ```
+---
 
-Save this code as `quote_app.py` and run it using `streamlit run quote_app.py`.
+**Running the App**
 
-Now, the app will only display a quote when you click the "Get New Quote" button.
+- Save as `app.py`
+
+- Run with:
+  ```
+  streamlit run app.py
+  ```
+
+---
+
+**Browser opens showing:**
+
+Title “Daily Quote Board”
+
+Message about refreshing
+
+A randomly chosen quote displayed in a highlighted box.
+
+---
 
 **Expected Output:**
 
-Initially, the browser window will display:
-
--   Title: Daily Quote
-    
--   Content: Click the button to see a quote!
-    
-
-After clicking the "Get New Quote" button, a random quote will be displayed.
-
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/dailyquote.png">
     
-
-**Key Takeaways:**
-
--   You can display text and data using `st.write()`.
-    
--   `st.button()` creates an interactive button.
-    
--   Streamlit apps automatically re-run when the code changes or a widget is interacted with.
-
----
-### Topic 1.4: Custom News Page
-
-**Page Configuration:**
-
-Let's create a custom news page with a title, icon, and layout. We can configure the page using `st.set_page_config()`.
-
-```python
-import streamlit as st
-
-st.set_page_config(
-    page_title="My Awesome News Page",
-    page_icon="📰",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
-st.title("Welcome to My Awesome News Page!")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.subheader("Top Stories")
-    st.write("- Story 1: Streamlit makes Python apps easy!")
-    st.write("- Story 2: Data Science trends in 2025")
-
-with col2:
-    st.subheader("Weather Update")
-    st.write("☀️ Sunny, 32°C")
-```
-
-**Titles and Icons:**
-
--   `page_title`: Sets the title that appears in the browser tab.
-    
--   `page_icon`: Sets the icon that appears in the browser tab. You can use emojis or URLs to image files.
-    
-
-**Layouts:**
-
--   `layout="wide"`: Makes the app full width
-
-
-<img src = "https://github.com/smaranjitghose/streamlit_course/blob/master/image/Module%201/customnews.png">

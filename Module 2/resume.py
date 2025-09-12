@@ -1,0 +1,15 @@
+import streamlit as st
+
+st.title("💼 John Doe - Data Scientist")  
+st.header("Experience")  
+st.subheader("Machine Learning Engineer at XYZ Corp (2020-Present)")  
+st.write("- Built scalable NLP pipelines using LSTM and Transformers.")  
+st.write("- Improved sentiment analysis accuracy by 15%.")  
+st.divider()  
+st.header("Education")  
+st.subheader("M.Sc. in Artificial Intelligence")  
+st.write("University of Example, 2018-2020")  
+st.divider()  
+st.header("Skills")  
+st.write("- Python, TensorFlow, PyTorch")  
+st.write("- Natural Language Processing, Deep Learning, Data Visualization")

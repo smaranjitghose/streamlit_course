@@ -2,15 +2,14 @@ import streamlit as st
 import random
 
 quotes = [
-    "The best way to get started is to quit talking and begin doing.",
-    "Dream bigger. Do bigger.",
-    "Do something today that your future self will thank you for.",
-    "Push yourself, because no one else is going to do it for you."
+    "The best way to predict the future is to invent it.",
+    "Simplicity is the soul of efficiency.",
+    "Do one thing every day that scares you.",
+    "Code is like humor. When you have to explain it, it’s bad."
 ]
 
 st.title("🌟 Daily Quote Board")
+st.write("Refresh the page for a new dose of inspiration!")
 
-if st.button("Get a New Quote ✨"):
-    st.write(random.choice(quotes))
-else:
-    st.write("Click the button to get a motivational quote!")
+quote = random.choice(quotes)
+st.title(quote)
