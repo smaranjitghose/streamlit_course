@@ -63,8 +63,7 @@ streamlit run app.py
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2d7z3v/resume1mod2.png)
-
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/resume1mod2.png">
 
 
 ---
@@ -190,10 +189,10 @@ streamlit run app.py
 
 ##### **Output**
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dgcsg/mod2menu1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2menu1.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dgcsg/mod2menu2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2menu2.png">
 
 
 ----
@@ -296,11 +295,11 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dz7rw/exam1mod2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/exam1mod2.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dz7rw/exam2mod2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/exam2mod2.png">
 
 
 ---

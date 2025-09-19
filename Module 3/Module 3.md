@@ -75,11 +75,10 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wd7efkx/expense1mod3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/expense1mod3.png">
 
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wd7efkx/expense2mod3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/expense2mod3.png">
 
 
 ----
@@ -156,7 +155,7 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wd83f8h/metricmod3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/metricmod3.png">
 
 
 ----
@@ -249,7 +248,7 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wd8ad3z/weathermod3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/weathermod3.png">
 
 -----
 

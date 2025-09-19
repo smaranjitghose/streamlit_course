@@ -12,8 +12,7 @@ Instead of emailing yet another static report, you fire up Streamlit. With just 
 
 That’s what Streamlit is: an open-source Python library for building interactive web application, dashboards, and reporting tools in pure Python. It lets technical teams—and anyone with Python know-how to bring their data, models, and analysis to life for everyone.
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w289qxr/whatissysdes1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/whatissysdes1.png">
 
 
 
@@ -35,8 +34,7 @@ Streamlit was built for data scientists, analysts, and researchers who want to s
 
 While building a web application can take weeks with traditional methods, Streamlit allows you to create one in a matter of minutes.
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w289qxr/tradvsstreamlit1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/tradvsstreamlit1.png">
 
 
 #### **How Streamlit Works**
@@ -112,7 +110,7 @@ In the following chapters, you'll build increasingly sophisticated applications 
 `uv init`
 
 
-<img src ="https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/uvinit.png" width=400>
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/uvinit.png" width=400>
 
 ---
 
@@ -124,14 +122,14 @@ In the following chapters, you'll build increasingly sophisticated applications 
 `uv add streamlit`
 
 
-<img src ="https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/installstreamlit.png" width=700>
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/installstreamlit.png" width=700>
 
 ---
 
 - This will create a `.venv/` folder
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/foldervenv1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/foldervenv1.png">
 
 
 ----
@@ -158,7 +156,7 @@ In the following chapters, you'll build increasingly sophisticated applications 
 This launches Streamlit’s built-in demo app in your browser. 🎉
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43waq8uyt/defaultstreamlit.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/defaultstreamlit.png">
 
 ---
  Congratulations🎉! You have successfully run your first Streamlit project.
@@ -226,7 +224,7 @@ streamlit run app.py
 
 ##### **Output**
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2ayhht/quotemod1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/quotemod1.png">
 
 
 ----
