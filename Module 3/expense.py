@@ -1,41 +1,34 @@
 import streamlit as st
 import pandas as pd
 
-# Page setup
-st.title("💰 Personal Expense Tracker")
+st.title("Personal Expense Tracker")
+st.write("Track and analyze your monthly spending")
 
-# Sample expense log
+# Sample expense data
 data = {
-    "Date": ["2025-09-01", "2025-09-02", "2025-09-05", "2025-09-08", "2025-09-12"],
+    "Date": ["2024-09-01", "2024-09-02", "2024-09-05", "2024-09-08", "2024-09-12"],
     "Category": ["Food", "Transport", "Shopping", "Bills", "Food"],
-    "Amount (₹)": [450, 120, 999, 2200, 300]
+    "Amount": [450, 120, 999, 2200, 300]
 }
+
 df = pd.DataFrame(data)
 
-# Display interactive expense table
-st.header("📊 Expense Log")
-st.write("Here is the record of all your expenses:")
+st.header("Expense Records")
 st.dataframe(df)
 
-# Show summary stats (using write instead of metric)
-total_expense = df["Amount (₹)"].sum()
-avg_expense = df["Amount (₹)"].mean()
-max_expense = df["Amount (₹)"].max()
-
-st.divider()
-st.header("📈 Expense Summary")
-st.subheader("Key Insights")
-st.write(f"✅ **Total Expense**: ₹{total_expense}")
-st.write(f"✅ **Average Expense**: ₹{avg_expense:.2f}")
-st.write(f"✅ **Highest Expense**: ₹{max_expense}")
+# Calculate summary statistics
+total_expense = df["Amount"].sum()
+avg_expense = df["Amount"].mean()
+max_expense = df["Amount"].max()
 
 st.divider()
 
-# Static snapshot (useful for reports/exports)
-st.header("📋 Summary Table")
-summary = {
-    "Total": [total_expense],
-    "Average": [avg_expense],
-    "Highest": [max_expense]
+# Create summary table
+summary_data = {
+    "Metric": ["Total Spent", "Average Transaction", "Highest Expense"],
+    "Value": [total_expense, f"{avg_expense:.2f}", max_expense]
 }
-st.table(pd.DataFrame(summary))
+summary_df = pd.DataFrame(summary_data)
+
+st.subheader("Quick Summary Table")
+st.table(summary_df)

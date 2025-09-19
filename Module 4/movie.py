@@ -2,36 +2,43 @@ import streamlit as st
 
 st.title("🎥 Movie Night Planner")
 
-# Select movie genres
+# Select multiple movie genres
 genres = st.multiselect(
     "Select your favorite movie genres:",
     ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance"]
 )
 
-# Select streaming service
-service = st.radio(
+# Select streaming service using pills
+service = st.pills(
     "Choose your preferred streaming service:",
     ["Netflix", "Hulu", "Disney+", "Amazon Prime"]
 )
 
-# Simple movie recommendation mapping
+# Movie recommendations based on genre
 recommendations = {
     "Action": "Extraction",
-    "Comedy": "The Mask",
+    "Comedy": "The Mask", 
     "Drama": "The Godfather",
     "Horror": "A Quiet Place",
     "Sci-Fi": "Interstellar",
     "Romance": "La La Land"
 }
 
-# Recommend a movie based on first selected genre 
-if genres:
+# Show recommendation if genres selected
+if genres and service:
     recommended_movie = recommendations.get(genres[0], "Movie Not Found")
-    st.subheader(f"🎬 Recommended Movie: {recommended_movie} on {service}")
+    st.subheader(f"🎬 Recommended: {recommended_movie}")
+    st.write(f"Available on {service}")
+    
+    # Collect feedback using st.feedback
+    st.write("Rate this recommendation:")
+    feedback = st.feedback("stars")
+    
+    if feedback is not None:
+        rating_text = ["Poor", "Fair", "Good", "Very Good", "Excellent"]
+        st.write(f"Thanks for rating: {rating_text[feedback]} ({feedback + 1} stars)")
 else:
-    st.write("Select at least one genre to get a recommendation.")
-
-# Feedback
-st.subheader("⭐ Rate this recommendation")
-feedback = st.radio("Your feedback:", ["Loved it ❤️", "It’s okay 🙂", "Not interested 😢"])
-st.write(f"You selected: {feedback}")
+    if not genres:
+        st.write("Select at least one genre to get started.")
+    if not service:
+        st.write("Choose a streaming service to see recommendations.")

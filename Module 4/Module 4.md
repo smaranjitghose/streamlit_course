@@ -1,422 +1,402 @@
 # Module 4: Input & Interaction with Widgets
 
-## Topic 4.1: Widgets
-
-### What are Widgets?
-
-Widgets are  **interactive components**  in Streamlit apps that allow users to input data or make selections. Examples include buttons, checkboxes, sliders, text inputs, dropdowns, and more.
-
-### Widget Basics & Streamlit’s Rerun Model
-
--   Every time a user interacts with a widget,  **Streamlit reruns your entire script from top to bottom**, preserving widget states automatically.
-    
--   Each widget returns its  **current value**  as a Python variable, which you can use to update the app.
-    
--   This rerun model means you write simple, declarative Python code. When a widget changes, the entire app uses the new input to execute fresh and update the UI instantly.
-    
--   Widgets have parameters like  `label`,  `default value`, and optional  `key`  (to uniquely identify and persist state).
-    
-
-This  **simplicity allows you to build complex, dynamic interfaces without callbacks or frontend code**.
+### Topic 4.1: Buttons
 
 
-### Tips on Widgets
+<br>
 
--   Use  `st.text_input()`,  `st.slider()`,  `st.checkbox()`,  `st.selectbox()`, etc. to gather different types of user input.
-    
--   Use  `st.sidebar.*`  variants to neatly organize input widgets in a sidebar panel.
-    
--   Widgets can be controlled and accessed programmatically via  `st.session_state`  for advanced scenarios.
-----------
+#### **Introduction**
 
+Ever used a website where you could filter data, type something into a search bar, or click a button to see a result? Those little interactive components are called **widgets.** They're the magic that turns a static page into a dynamic application that responds to what you do. In Streamlit, widgets like buttons, sliders, text inputs, and checkboxes are your secret to building powerful, user-friendly tools. The moment a user interacts with a widget—say, by moving a slider or clicking a button—Streamlit automatically reruns your entire script from top to bottom. It's a bit like pressing a refresh button that knows what to keep and what to change.
 
-### **Mini Project: Add a Button**
+Let's start with the simplest and most powerful widget: the button (`st.button`). Just like a "Submit" or "Buy Now" button you click every day, a Streamlit button allows your users to trigger an action with a single click. When a user clicks a button, it briefly returns a `True` value. This triggers Streamlit's rerun, and your script can then check for that `True` value to execute a specific action. This straightforward, declarative approach is what makes building interactive apps in Streamlit so fast and intuitive.
 
-Streamlit makes it easy to add **interactive widgets** that respond to user actions. The simplest one is a **button**, which runs code when clicked.
+#### **Mini Project**
 
-- Create a fie `app.py`
+You’re at a lively party. In the corner stands a playful robot entertainer. Guests can walk up and press one of two big glowing buttons:
+- Hit the **Balloon Button**, and the robot gleefully releases colorful balloons that float around, filling the room with a festive vibe.
+- Press the **Snowflake Button**, and suddenly the space transforms into a magical winter scene, with snowflakes gently falling around you.
+
+That’s exactly what MoodSwitch does in app form. With just one click, you can flip the entire mood — from festive fun to magical calm — showing how interactive buttons can instantly transform the experience.
+
+##### **Project Setup**
+
+Create a new file `app.py`:
 
 ```python
 import streamlit as st
 
-st.title("Widget Demo: Button")
+# App title
+st.title("🌀 MoodSwitch")
 
-if st.button("Say Hello"):
-    st.write("Hello!")
-else:
-    st.write("Click the button to greet.")
+st.write("Flip the vibe instantly — will it be balloons or snow?")
 
-``` 
-----
-
-**Run the app**
-- `streamlit run app.py`
-----------
-
-### **Expected Output**
-
--   A **title**: “Widget Demo: Button”.
-    
--   A **button** labeled _“Say Hello”_.
-    
--   Before clicking → text shows _“Click the button to greet.”_
-    
--   After clicking → text changes to _“Hello!”_
-    
-
-----------
-
-### **Explanation**
-
--   **`st.button("Say Hello")`** → creates a clickable button.
-    
--   The button **returns `True` only when clicked**, which triggers the first branch of the `if`.
-    
--   On click → the app reruns and displays _Hello!_.
-    
--   Otherwise → it prompts the user to click.
-    
-This demo helps learners see **Streamlit’s rerun behavior** in real-time: each interaction triggers a re-execution of the script.
-
----
-
-
-## Topic 4.2: Button 
-
-
-### Introduction
-
-Buttons are fundamental interactive elements in almost every web or mobile app. They act as the  **main triggers**  for events—from submitting a form, starting a calculation, to triggering animations or fun visual effects.
-
-In Streamlit, buttons are incredibly straightforward to use yet powerful. Each button creates a clickable widget that  **returns  `True`  only on the instant it is clicked**, causing Streamlit to rerun the script and update the app. This rerun model means that button clicks act as  **events**  that your app can respond to gracefully with simple, linear Python code — no complex frontend or callback management required.
-
-Using buttons, you can build highly interactive and engaging apps with  **event-driven reactions**  like showing celebratory balloons, snow effects, or switching app modes. This immediate visual feedback creates a delightful user experience and solidifies the concept of interactivity for learners.
-
-----------
-
-### Mini Project : Celebration App with Buttons
-
-This mini project demonstrates how to use Streamlit buttons to trigger  **fun, event-based effects**  that respond instantly to user input.
-
-The app will have:
-
--   A  **“🎉 Party Mode” button**  that, when clicked, displays a balloon animation using  `st.balloons()`.
-    
--   A  **“❄️ Snow Mode” button**  that triggers a snow animation using  `st.snow()`.
-    
------
-- Create a file `app.py`
-
-```python
-import streamlit as st
-
-st.title("🎊 Celebration App")
-
-if st.button("🎉 Party Mode"):
+# Party Mode button
+if st.button("🎈 Party Mode"):
     st.balloons()
+    st.write("The mood is set: 🎉 It's party time with balloons!")
 
+# Snow Mode button
 if st.button("❄️ Snow Mode"):
     st.snow()
+    st.write("The mood is set: ❄️ A magical winter wonderland begins!")
 ```
-----
-**Run the app**
-- `streamlit run app.py`
 
-----
+**Run your app with:**
 
-### Expected Output
+```bash
+streamlit run app.py
+```
+##### **Output**
 
------
 
-### Explanation
--   **`st.button()`** → creates interactive buttons. Each click reruns the app and evaluates the condition.
-    
--   **`st.balloons()`** → launches a **balloon animation** for a celebration effect.
-    
--   **`st.snow()`** → launches a **snow animation**, adding a cool visual effect.
-    
--   By combining these with buttons, we make the app **event-driven** — animations trigger instantly when users interact.
-    
-This project shows how Streamlit can go beyond data apps and be used for **playful, interactive experiences**.
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgrjzbj/mod4button1.png)
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgrjzbj/mod4button2.png)
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgrjzbj/mod4button3.png)
+
 
 ---
 
-## Topic 4.3: Basic Input Widgets 
+#### **Step-by-Step Walkthrough**
 
-
-### Introduction
-
-User inputs are the heart of interactivity in Streamlit apps. Widgets like  `st.number_input`,  `st.text_input`, and  `st.slider`  let users feed  **numeric or text data**  into your app effortlessly. Streamlit then  **reruns the script automatically**  and uses the new input values to update outputs instantly — no complex callback code needed.
-
-This declarative, real-time reaction model makes it easy to build apps where user input controls live computations and visualizations.
-
-One practical and relatable example is a  **Restaurant Tip Calculator**  — where the bill amount and tip percent are inputs, and the app dynamically calculates the final amount to pay. This helps learners:
-
--   Understand how to collect numeric inputs with  `st.number_input`.
+-   The `st.button()` function creates a clickable button with the text you provide as the label. When clicked, the button returns `True` for exactly one script run, and then immediately goes back to returning `False`. This makes buttons perfect for triggering quick, one-time actions or events.
     
--   Perform live calculations based on input values.
+-   In our **MoodSwitch** app, we have two separate `if` statements, each tied to a different button. When the **"🎈 Party Mode"** button is clicked, `st.button("🎈 Party Mode")` evaluates to `True`, and the code inside that block executes, calling `st.balloons()` to release a fun balloon animation across the screen.
     
--   Display updated results dynamically as users change inputs.
+-   Similarly, when the **"❄️ Snow Mode"** button is clicked, `st.snow()` is triggered, which creates a snowfall animation effect. These built-in Streamlit effects are designed to add delightful, interactive touches to your apps with just a single line of code.
+
+----
+
+#### **Key Learning Points**
+
+- **User experience design:** Buttons should signal clear intent — use descriptive labels or emojis to make their purpose instantly obvious.
+
+- **Grouping actions:** When multiple buttons exist, arrange them logically (e.g., side by side or under related sections) to reduce user confusion.
+
+- **Feedback matters:** Pair buttons with visible outcomes (animations, status messages, or results) so users know their click was successful.
+
+- **Scalability tip:** For many related actions, consider menus or radio buttons instead of crowding the interface with too many buttons.
+----
+
+#### **Conclusion**
+
+Buttons are the foundation of interactivity in Streamlit. They turn a static app into a dynamic experience that responds to a user's direct input. With just a few lines of Python, you can give users the power to control your application, making your data-driven projects feel responsive and alive.
+-----
+
+### Topic 4.2: Basic Input Widgets
+
+
+<br>
+
+#### **Introduction**
+
+Think of Streamlit apps as conversations between the user and your code. The moment someone types their name into a box or slides a number up and down, your app listens and reacts instantly. Widgets like `st.text_input()` and `st.number_input()` make it effortless for users to provide information, while Streamlit automatically turns that input into variables your Python code can use right away.
+
+The magic is in how seamless it feels: no “Submit” buttons, no complex event handling — just type, click, or adjust, and watch the results change in real time. This declarative, reactive model transforms static scripts into interactive tools that feel alive and responsive.
+
+#### **Mini Project**
+
+Dinner’s done, the check is on the table, and now comes the moment of truth: the tip. Instead of fumbling with mental math, you pull up **TipMate**.
+
+-   Enter your **name**, so the app can personalize the calculation.
+    
+-   Choose your **tip percentage**, whether it’s a quick 10% or a generous 25%.
+    
+-   The app instantly shows the **tip amount** and the **final bill total**, making the process smooth and stress-free.
     
 
-This project connects basic input widgets with real-world usefulness, reinforcing the power of interactive apps.
+That’s exactly what **TipMate** does — a simple, interactive app that turns the end-of-dinner math into a one-click experience, showing how input widgets can power real-time calculations.
 
-----------
+##### **Project Setup**
 
-
-### Mini  Tip Calculator
-
-You often dine out and want a quick way to calculate the **total bill including tip**. This app helps you do just that in seconds.
-
-- Create a file `app.py`
+Create a new file `app.py`:
 
 ```python
 import streamlit as st
 
-st.title("💸 Tip Calculator")
+# App Title
+st.title("💸 TipMate")
 
-# Input fields
-bill_amount = st.number_input("Enter Bill Amount (₹)", min_value=0.0, step=50.0)
-tip_percent = st.number_input("Enter Tip Percentage (%)", min_value=0.0, max_value=100.0, step=1.0)
+st.write("No more mental math — calculate your tip in seconds!")
+
+# Static bill amount
+bill_amount = 1000.0  # fixed bill amount (₹)
+
+# User inputs
+name = st.text_input("👤 Enter Your Name")
+tip_percent = st.number_input("💯 Enter Tip Percentage (%)", min_value=0.0, max_value=100.0, step=1.0)
 
 # Calculations
 tip_amount = (bill_amount * tip_percent) / 100
 final_bill = bill_amount + tip_amount
 
-# Results
+# Bill Summary section
 st.subheader("📊 Bill Summary")
-st.metric(label="Tip Amount", value=f"₹{tip_amount:.2f}")
-st.metric(label="Final Bill (with Tip)", value=f"₹{final_bill:.2f}")
+st.metric(label="💵 Bill Amount", value=f"₹{bill_amount:.2f}")
+st.metric(label="💰 Tip Amount", value=f"₹{tip_amount:.2f}")
+st.metric(label="🧾 Final Bill (with Tip)", value=f"₹{final_bill:.2f}")
+
+if name and tip_percent > 0:
+    st.write(f"Thanks, {name}! Your tip is ₹{tip_amount:.2f}, making the total ₹{final_bill:.2f}.")
+
 ```
+
+**Run your app with:**
+
+```bash
+streamlit run app.py
+
+```
+##### **Output**
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgsj3rz/mod4tip1.png)
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgsj3rz/mod4tip2.png)
+
+
+
 ---
 
-**Run the app**
-- `streamlit run app.py`
-----------
+#### **Step-by-Step Walkthrough**
 
-### Expected Output
-
+-   The `st.text_input()` function creates an input field where users can type text. In this app, it’s used to capture the diner’s **name**. If the field is empty, it returns an empty string; once the user types something, the value updates instantly.
+    
+-   The `st.number_input()` function creates an input field that accepts numeric values. It takes several important parameters:
+    
+    -   `label` is what users see above the input field
         
+    -   `min_value` sets the lowest acceptable number
+        
+    -   `max_value` sets the highest
+        
+    -   `step` determines how much the value changes when users click the up/down arrows.  
+        In this app, it’s used to enter the **tip percentage**.
+- When users type in these input fields or use the arrow buttons, Streamlit immediately captures the new values and stores them in the variables (`bill_amount` and `tip_percent`).
 
-----------
-
-### Explanation
-
--   **`st.number_input()`** → lets the user input numeric values (bill and tip percentage).
-    
--   **Live computation** → as inputs change, the script recalculates tip and final bill instantly.
-    
--   **`st.metric()`** → displays key results in **highlighted cards** for easy visibility.
-    
-
-Learners practice numeric input handling and connect it to **real-time calculations**, making a **practical utility app** that gives immediate visual feedback.
 
 ---
-## Topic 4.4: Selection Elements
 
-### **Introduction**
+#### **Conclusion**
 
-You walk into your favorite café. The barista smiles and asks, “What would you like today?” Your choices matter: type of coffee, size, sweetness, maybe some whipped cream on top... It’s a small but exciting decision-making moment that shapes your perfect cup.
+By combining a variety of input widgets like `st.text_input()` and `st.number_input()`, you can build a rich, two-way conversation with your users. These widgets are the fundamental building blocks of responsive apps, turning static data into interactive experiences that are both useful and easy to navigate. 
+---
 
-Just like ordering coffee,  **apps often need users to select options**—and Streamlit makes building that selection experience a breeze.
-
-----------
-
-#### **Why Selection Widgets Matter**
-
-Selection widgets are the  **interactive menus, sliders, and toggles**  of your app world. They let users  **express their preferences clearly and quickly**—and your app instantly reacts with what they choose.
-
-Here’s the secret sauce:
-
--   **`st.radio()`**  is like a set of sturdy buttons lined up. It works great when users must pick  **exactly one**  option from a handful. Like choosing your favorite brew.
-    
--   **`st.selectbox()`**  hides all choices neatly in a dropdown—perfect for longer lists where space matters, think of picking your coffee size: Small, Medium, or Large.
-    
--   **`st.slider()`**  invites users to slide a knob along a range, just like adding sugar or strength level. It’s tactile, intuitive, and fun to use.
-    
--   **`st.checkbox()`**  is a simple yes/no toggle—do you want whipped cream? Check it or leave it unchecked. Easy!
-    
-
-----------
-
-#### **How Does It Work?**
-
-Each widget waits patiently for your input. When you make a choice, Streamlit reruns the script with your new preferences baked in. Widgets return these choices as Python variables you can use right away to update your app’s display.
-
-No confusing callbacks, no boilerplate code—just  _declarative_  and  _immediate_  interaction.
-
-----
+### Topic 4.3: Selection Elements
 
 
-### **Mini Project: Coffee Order App**
+<br>
 
-Imagine walking into your favorite café where you get to be your own barista. With just a few clicks, you can customize every detail of your coffee — from the type and size to sugar levels and toppings.
+#### **Introduction**
 
-In this mini project, we’ll learn how **Streamlit selection elements** like `st.radio()`, `st.selectbox()`, `st.slider()`, and `st.checkbox()` work together to build an **interactive ordering experience**.
+Selection elements are like the conversation buttons between your app and its users — every menu click, slider slide, or toggle flip instantly tells your app what the user wants, and the app springs into action without missing a beat.
+Each type of selection element has its perfect use: 
+- `st.radio()` is ideal when a user must pick exactly one option
 
+- `st.selectbox()` keeps things tidy by hiding multiple choices in a dropdown 
 
-- Create a file `app.py`
+- `st.slider()` lets users slide along a numeric range for fine-grained input
+
+- `st.checkbox()` offers a simple yes/no toggle.
+
+#### **Mini Project**
+
+You’re at a bustling coffee shop, and the barista hands you a tablet to place your order. You pick your favorite coffee type, choose the perfect size, slide to adjust the sweetness, and tap your favorite toppings. With each choice, the order updates instantly, giving you a fully customized drink exactly the way you like it.
+This project demonstrates how selection widgets — from dropdowns to sliders to checkboxes — can work together to create a seamless, interactive experience that feels as natural as ordering in real life.
+
+##### **Project Setup**
+
+Create a new file `app.py`:
 
 ```python
 import streamlit as st
+
 st.title("☕ Coffee Order App")
 
-# Coffee type selection
+# Coffee selection widgets
 coffee_type = st.radio(
     "Choose your coffee type:",
     ["Espresso", "Latte", "Cappuccino"]
 )
 
-# Coffee size selection
 coffee_size = st.selectbox(
     "Select coffee size:",
     ["Small", "Medium", "Large"]
 )
 
-# Sugar level
 sugar = st.slider(
-    "Select sugar level (teaspoons):",
+    "Sugar level (teaspoons):",
     min_value=0, max_value=5, step=1
 )
 
-# Extra topping
 whipped_cream = st.checkbox("Add whipped cream topping")
 
 # Display order summary
-st.subheader("📝 Your Coffee Order Summary:")
+st.subheader("📝 Your Coffee Order:")
 order_summary = f"- {coffee_size} {coffee_type}\n- Sugar: {sugar} tsp"
+
 if whipped_cream:
     order_summary += "\n- With whipped cream 🍦"
 else:
     order_summary += "\n- No whipped cream"
 
 st.write(order_summary)
+
 ```
 
-----------
+**Run your app with:**
 
-### **Expected Output**
+```bash
+streamlit run app.py
 
-    
+```
+##### **Output**
 
-----------
 
-### **Explanation**
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgubuej/mod4coffee.png)
 
--   **`st.radio()`** → lets the user pick one option from a list (coffee type).
-    
--   **`st.selectbox()`** → dropdown for selecting coffee size.
-    
--   **`st.slider()`** → provides a simple way to choose a numeric value (sugar level).
-    
--   **`st.checkbox()`** → toggle option for whipped cream topping.
-    
--   **Dynamic summary logic** → combines all the above inputs into a single formatted summary.
-    
--   **`st.success()`** → adds a polished, friendly confirmation at the end.
-    
-
-This project teaches how multiple **selection widgets** can work together to create an **interactive, real-time decision-making app**.
 
 ---
 
+#### **Step-by-Step Walkthrough**
 
-## Topic 4.5: Advanced Selection Widgets
-
-
-### Introduction
-
-Planning a movie night with friends can be a fun but sometimes tricky task. Everyone has different tastes, streaming service subscriptions, and moods. What if there was an app that made this choice easier and more interactive?
-
-Advanced selection widgets in Streamlit empower you to build exactly that kind of app—where users select multiple options, enjoy sleek new styles, and even rate suggestions.
-
-
-
-### Advanced Selection Widgets:  `st.multiselect()`,  `st.pills()`, and  `st.feedback()`
-
--   **`st.multiselect()`**  lets users select  **multiple options**  from a dropdown list. Perfect for scenarios like picking several movie genres. The result is a list of all chosen items.
+-   **`st.radio()`** function creates a set of radio buttons where users can select **exactly one option** from a provided list. It takes at least two parameters:
     
--   **`st.pills()`**  displays options as  **pill-shaped clickable buttons**, great for choosing a single option with a modern look. Ideal for selecting one streaming service from a few choices.
+    -   `label`: The text displayed above the buttons.
+        
+    -   `options` (list): The set of choices users can pick from.  
+        
+-   **`st.selectbox()`** function creates a **dropdown menu**, which saves vertical space while offering multiple choices. Like `st.radio()`, it takes:
     
--   **`st.feedback()`**  provides an icon-based feedback widget (like stars, thumbs up/down, or faces) that lets users rate or give sentiment about recommendations or app responses easily.
+    -   `label`: The text shown above the dropdown.
+        
+    -   `options` (list): The set of values to choose from. 
+        
+-   **`st.slider()`** provides an intuitive way to select numeric values within a range. Users can drag the slider handle or click to jump to a specific value. Parameters include:
     
-
-Together, these widgets allow your app to collect  **rich input**, present it with style, and gather  **valuable feedback**  for an engaging user experience.
+    -   `label`: Text shown above the slider.
+        
+    -   `min_value` / `max_value`: Define the numeric range.
+        
+    -   `step`: The increment for each move. 
+        
+-   **`st.checkbox()`** returns `True` when checked and `False` when unchecked, making it ideal for optional add-ons like whipped cream. It takes:
     
+    -   `label`: Text displayed next to the checkbox.  
+      
 
-----------
+---
 
-### Mini Project: Movie Night Planner
+#### **Conclusion**
+
+Selection widgets like `st.selectbox`, `st.radio`, `st.slider` and `st.checkbox` are essential for guiding users through choices in a natural, intuitive way. They are the building blocks of powerful, user-friendly applications, allowing you to transform static data displays into interactive experiences where users can explore and customize information with ease.
 
 
-Planning a movie night can be tricky when everyone has different tastes. This mini project shows how Streamlit’s **selection widgets** can be combined to create a fun, interactive **Movie Night Planner**. Users can pick genres, choose their preferred streaming service, get a movie recommendation, and even give feedback on the suggestion.
+---
 
-This project demonstrates how multiple **advanced widgets** like `st.multiselect()`, `st.pills()`, and `st.feedback()` work together to build a **real-world, interactive app**.
+### Topic 4.4: Advanced Selection
 
-- Create a file `app.py`
+
+<br>
+
+#### **Introduction**
+
+Think of `st.multiselect()` as a customizable buffet — users can pile their plate with as many options as they like. Instead of picking just one, they select multiple items from a dropdown with checkboxes, and your app immediately knows every choice.
+
+Next, `st.pills()` acts like a set of colorful buttons, letting users switch between categories or views effortlessly — almost like flipping through tabs on a menu, instantly highlighting their current selection.
+
+Finally, `st.feedback()` gives users a simple, intuitive way to express opinions, rate choices, or leave quick comments, turning passive selections into active, personalized input.
+
+Together, these advanced selection widgets create rich, interactive experiences where user preferences, choices, and feedback are captured in real time, making applications feel responsive, intuitive, and highly engaging.
+
+#### **Mini Project**
+
+You’re building a movie night planner that turns indecision into excitement. Users can pick all their favorite genres, choose the streaming platform they prefer, and get tailored film recommendations for the perfect night in. After watching, they can share feedback on the recommended movie.
+
+##### **Project Setup**
+
+Create a new file `app.py`:
+
 
 ```python
 import streamlit as st
 
 st.title("🎥 Movie Night Planner")
 
-# Select movie genres
+# Select multiple movie genres
 genres = st.multiselect(
     "Select your favorite movie genres:",
     ["Action", "Comedy", "Drama", "Horror", "Sci-Fi", "Romance"]
 )
 
-# Select streaming service
-service = st.radio(
+# Select streaming service using pills
+service = st.pills(
     "Choose your preferred streaming service:",
     ["Netflix", "Hulu", "Disney+", "Amazon Prime"]
 )
 
-# Simple movie recommendation mapping
+# Movie recommendations based on genre
 recommendations = {
     "Action": "Extraction",
-    "Comedy": "The Mask",
+    "Comedy": "The Mask", 
     "Drama": "The Godfather",
     "Horror": "A Quiet Place",
     "Sci-Fi": "Interstellar",
     "Romance": "La La Land"
 }
 
-# Recommend a movie based on first selected genre 
-if genres:
+# Show recommendation if genres selected
+if genres and service:
     recommended_movie = recommendations.get(genres[0], "Movie Not Found")
-    st.subheader(f"🎬 Recommended Movie: {recommended_movie} on {service}")
+    st.subheader(f"🎬 Recommended: {recommended_movie}")
+    st.write(f"Available on {service}")
+    
+    # Collect feedback using st.feedback
+    st.write("Rate this recommendation:")
+    feedback = st.feedback("stars")
+    
+    if feedback is not None:
+        rating_text = ["Poor", "Fair", "Good", "Very Good", "Excellent"]
+        st.write(f"Thanks for rating: {rating_text[feedback]} ({feedback + 1} stars)")
 else:
-    st.write("Select at least one genre to get a recommendation.")
-
-# Feedback
-st.subheader("⭐ Rate this recommendation")
-feedback = st.radio("Your feedback:", ["Loved it ❤️", "It’s okay 🙂", "Not interested 😢"])
-st.write(f"You selected: {feedback}")
-
+    if not genres:
+        st.write("Select at least one genre to get started.")
+    if not service:
+        st.write("Choose a streaming service to see recommendations.")
 ```
+
+**Run your app with:**
+
+```bash
+streamlit run app.py
+```
+
+##### **Output**
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wgubxat/mod4movie.png)
+
+
+
 ---
 
-**Run the app**
-- `streamlit run app.py`
-----------
+#### **Step-by-Step Walkthrough**
 
-### Expected Output
+- The `st.multiselect()` function creates a dropdown that allows users to select multiple items from the provided list, returning a list of all selected options.
 
+- The `st.pills()` function displays options as pill buttons, providing a modern, visually appealing way to select a single option. This creates a more engaging interface than traditional radio buttons.
 
-----------
+- The `st.feedback()` function creates a star rating widget that returns an integer index (0-4) representing the selected star rating, making it perfect for collecting user feedback on recommendations.
 
-###  Explanation
+- The conditional logic ensures recommendations appear only when both genres and streaming service are selected, creating a complete user input before showing results.
 
--   **`st.multiselect()`** → lets users pick multiple genres. Returns a list of selections.
-    
--   **`st.radio()` / `st.pills()`** → choose one streaming service.
-    
--   **Recommendation logic** → maps genres to a simple movie suggestion; for simplicity, it uses the first selected genre.
-    
--   **`st.feedback()` / radio for feedback** → collects user opinion on the recommendation.
-    
--   The app **updates dynamically** as selections change, showing immediate recommendations and feedback capture.
-    
+---
 
-This project illustrates **interactive decision-making** using multiple Streamlit widgets, perfect for building fun, real-world apps.
+#### **Conclusion**
+
+Advanced selection widgets like `st.multiselect()`, `st.pills()`, and `st.feedback()` enable sophisticated user interfaces that feel modern and engaging. The movie night planner demonstrates how these widgets work together to create personalized experiences with multiple input types and user feedback collection.

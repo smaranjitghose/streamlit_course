@@ -1,395 +1,338 @@
 
 # Module 2: Displaying Text and Information
 
-## Topic 2.1: Titles & Headings
+### Topic 2.1: Titles & Headings
 
-### **Introduction**
 
-In any app, text isn’t just decoration—it’s the main tool for  _guiding and reassuring_  users. Imagine opening a food delivery app: it isn’t the flashy images or buttons that first grab your attention, but the bold  **titles**  ("Welcome!"), the friendly  **messages**  ("Order received!"), and the clear  **instructions**  ("Enter your address below").
+<br>
 
-Text shapes the narrative your app tells. If the app were a book, text would be the chapters, headers, and notes that provide structure and orientation.
+#### **Introduction**
 
-Well-structured text achieves three powerful goals:
 
--   **Attracts attention**  with bold, scannable titles and highlights.
-    
--   **Breaks up information**  into digestible chunks, reducing cognitive overload.
-    
--   **Creates flow and hierarchy**, leading users step by step without confusion.
-    
+Clear visual hierarchy is essential for creating professional, scannable applications that guide users through content logically. Just as a well-structured document uses headings and sections to organize information, Streamlit apps need proper hierarchy to prevent content from appearing scattered and confusing.
 
-Without text hierarchy, users encounter a "wall of words"—overwhelmed, disoriented, and likely to abandon the app.
+Visual hierarchy is the arrangement of text and sections to show their relative importance. Think of it like organizing a filing cabinet—everything has its proper place and level of importance.
 
-----------
+Streamlit provides a simple but effective hierarchy system:
 
-### **Core Display Elements in Streamlit**
+-   **Title** (`st.title`) – The main identity of your page, used once
+-   **Header** (`st.header`) – Major section dividers that break up content
+-   **Subheader** (`st.subheader`) – Smaller sections within each major area
+-   **Divider** (`st.divider`) – Visual breathing room between unrelated content
 
-Streamlit provides several specialized text display functions that let you build this structure effectively:
+This top-down arrangement ensures users can navigate your app intuitively, finding information exactly where they expect it to be.
 
--   **st.title()**  
-    The  _main banner_  of your app—like the cover of a book or a movie poster. It should communicate the app’s purpose instantly.
-    
-    `st.title("🍕 Food Delivery Tracker")` 
-    
-    This immediately signals the app’s identity.
-    
--   **st.header()**  
-    Use headers for primary sections. They’re your chapter titles, dividing content into logical, easy-to-scan blocks.
-    
+#### **Mini Project**
 
-    `st.header("Track Your Order")` 
-    
--   **st.subheader()**  
-    Subheaders are like smaller sub-chapters. They draw attention to details inside a section—steps, tooltips, or clarifications.
-    
-    `st.subheader("Step 1: Enter Your Address")` 
-    
--   **st.divider()**  
-    Dividers visually separate different ideas or tasks. They are essential for pacing content, so users never face an endless stream of text or widgets.
- 
-    `st.divider()` 
-    
--   **st.write()**  
-    The most flexible element,  `st.write()`  can display plain text, formatted Markdown, numbers, DataFrames, and more. Use it for all-purpose explanations and inline content.
-   
-    ```python
-    st.write("Your order will be delivered in **30 minutes** 🚚")  
-    st.write("Here’s a quick summary of your details:")  
-    st.write({"Name":  "John",  "Order":  "Margherita Pizza",  "ETA":  "30 mins"})
-    ``` 
-    
+You're a data analyst in today's competitive job market, tired of sending static PDF resumes that get lost in the pile. You want something that stands out—a modern, interactive digital resume that showcases both your technical skills and creative thinking. Instead of another boring document, you'll create a shareable Streamlit app that recruiters can explore with just a click.
 
-----------
+##### **Project Setup**
 
-### **Best Practices**
-
--   Always begin with a  **clear title**  that defines the app’s core purpose.
-    
--   Break down sections using  **headers and subheaders**, just like academic papers, blog posts, or structured documents.
-    
--   Insert  **dividers**  after major actions or transitions to keep the page scannable.
-    
--   Use  **st.write()**  creatively for inline messaging, confirmations, explanations, and visual “anchors” for dynamic outputs.
-    
-
-----------
-
-### **Pro Tip**
-
-Before adding interactivity (buttons, inputs, sliders), map out your  **text hierarchy**  first. Draft your app like an outline:
-
--   A  **title**  that sets the stage.
-    
--   **Headers**  representing the big blocks of functionality.
-    
--   **Subheaders**  breaking down smaller tasks.
-    
--   Inline  **st.write() statements**  for reassurance and clarity.
-    
--   **Dividers**  to introduce breathing space.
-    
-
-This ensures that as you add logic and visuals, users always know  _what is happening_  and  _where to look next_.
-
-----------
-
-## **Mini Project: One-Page Resume**
-
-Resumes are often the first impression you make on employers. In this mini project, we’ll create a simple one-page resume app using Streamlit. It’s a fun way to showcase your profile while also learning how to organize content with different Streamlit display elements.
-
-- Create a file `app.py`  
+Create a new file called `app.py`:
 
 ```python
 import streamlit as st
 
-st.title("💼 John Doe - Data Scientist")  
-st.header("Experience")  
-st.subheader("Machine Learning Engineer at XYZ Corp (2020-Present)")  
-st.write("- Built scalable NLP pipelines using LSTM and Transformers.")  
-st.write("- Improved sentiment analysis accuracy by 15%.")  
-st.divider()  
-st.header("Education")  
-st.subheader("M.Sc. in Artificial Intelligence")  
-st.write("University of Example, 2018-2020")  
-st.divider()  
-st.header("Skills")  
-st.write("- Python, TensorFlow, PyTorch")  
-st.write("- Natural Language Processing, Deep Learning, Data Visualization")
+st.title("Rohit Raghuvanshi – Data Analyst")
+st.write("Transforming complex data into actionable business insights")
+
+st.divider()
+
+st.header("🎓 Education")
+st.subheader("Master of Science in Data Analytics")
+st.write("MIT | 2019-2021 | GPA: 3.8/4.0")
+
+st.divider()
+
+st.header("📞 Contact")
+st.write("📧 rohit.raghuvanshi@email.com")
+st.write("💼 linkedin.com/in/rohit")
+st.write("🐙 github.com/rohit")
+
 ```
+
+**Run your app with:**
+
+```bash
+streamlit run app.py
+
+```
+----
+
+##### **Output**
+
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2d7z3v/resume1mod2.png)
+
+
+
 ---
 
-**Run the app**
-- `streamlit run app.py`
+#### **Step-by-Step Walkthrough**
 
-### Expected Output
+Let's examine how each function creates the professional structure:
+
+- **`st.title("Rohit Raghuvanshi – Data Analyst")`**: This creates the most prominent heading on your page—the main identity. Notice how we use it only once at the very top. This immediately tells visitors who you are and what you do.
+
+- **`st.write("Transforming complex data into...")`**: A brief tagline that provides context. This sits naturally below the title, giving a quick professional summary without competing with the main heading.
+
+- **`st.divider()`**: These horizontal lines create visual breathing room between major sections. Without them, your resume would feel cramped and hard to scan. Each divider signals "this section is complete, here's something new."
+
+- **`st.header("🎓 Education")`**: Headers mark the beginning of major resume sections. The emoji adds visual interest and helps with quick scanning—recruiters can instantly jump to the section they want.
+
+- **`st.subheader("Master of Science...")`**: Subheaders break down each major section into specific items. Under "Education," each degree gets its own subheader, making individual qualifications easy to find.
+
+---
 
 
-### Explanation
+#### **Key Learning Points**
 
-- `st.title()` → Creates the main heading of the resume.
+-   **One title rule**: Use `st.title()` only once per app to establish clear identity and avoid visual confusion
+  
+-   **Logical grouping**: Headers should represent major categories of information that naturally belong together
+   
+-   **Breathing room matters**: Dividers prevent cognitive overload by giving users visual breaks between unrelated content
 
-- `st.header()` → Defines key sections like Experience, Education, Skills.
+-   **Scannable structure**: Users should be able to quickly jump to any section without reading everything in order
 
-- `st.subheader()` → Highlights specific details (like job role or degree).
+---
 
-- `st.write()` → Displays text, bullet points, or descriptions.
+#### **Conclusion**
 
-- `st.divider()` → Adds a clean horizontal line to separate sections.
+Structuring your app with `st.title()`, `st.header()`, and `st.subheader()` gives it instant polish and clarity. These simple commands are the foundation for building professional-looking dashboards and tools that are intuitive for any user.
+
+
+### Topic 2.2: Markdown
+
+
+<br>
+
+#### **Introduction**
+
+**Markdown** is a lightweight formatting language that transforms plain text into polished, professional content with just a few simple symbols. Instead of writing complex HTML or CSS, you can make text bold, create lists, add headings, and structure your content using intuitive shortcuts that feel natural to write.
+
+In Streamlit, the `st.markdown()` function unlocks this formatting power, letting you create visually appealing applications that look professional without any design expertise. Whether you're highlighting key insights in a data report or organizing information in a clear hierarchy, markdown helps your content stand out and stay organized.
+
+#### **Core Concepts**
+
+`st.markdown()` accepts an optional `width` parameter, which can be `"stretch"`, `"content"`, or an integer, to control the element's width. Beyond basic markdown, it supports a variety of special features to enhance your app's text:
+
+-   **Emoji Shortcodes**: Use codes like `:wave:` to insert emojis.
+    
+-   **Streamlit Logo**: Add the official Streamlit logo with `:streamlit:`.
+    
+-   **Typographical Symbols**: Automatically converts symbols like `->` to a proper arrow (`→`).
+    
+-   **Google Material Symbols**: Use the syntax `:material/icon_name:` to add icons from Google's Material Symbols library.
+    
+-   **Colored Text & Badges**: You can color text using `:color[text]` or add a colored background with `:color-background[text]`. Similarly, create colored badges with `:color-badge[text]`. Supported colors include red, orange, yellow, green, blue, violet, gray/grey, rainbow, and primary.
+    
+-   **Small Text**: Use `:small[text]` to display text in a smaller font size.
+
+---
+
+#### **Mini Project**
+
+Every morning at Sunrise Café, Sarah faces the same problem: outdated menus. Customers constantly ask about daily specials, updated prices and allergens information, while the endless cycle of reprinting is costly and laborious. Sarah needs a digital solution that can be updated instantly, making her café more efficient, modern, and eco-friendly.
+
+To simulate this challenge and build a solution, let's create a Streamlit application that serves as a dynamic, digital menu.
+
+##### **Project Setup**
+
+Create a new file called `app.py`:
+
+```python
+import streamlit as st
+
+st.title(":orange[:material/restaurant: Sunrise Café]")
+st.markdown(":small[:material/wb_sunny: Fresh Daily Specials - Updated Live!]")
+
+st.divider()
+
+st.markdown("""
+## 🌟 Today's Special  
+**Masala Chai Latte** :material/local_cafe: — :violet-background[₹120]  
+:small[_A comforting blend of spices, tea & milk — café’s signature favorite_]
+""")
+
+st.divider()
+
+st.markdown("""
+### :material/emoji_food_beverage: Appetizers  
+- **Avocado Toast** :avocado: — :green-background[₹220]  
+  :small[_Multigrain bread with fresh avocado and lime_]  
+
+- **Paneer Tikka Bites** :material/local_fire_department: — :blue-badge[₹180]  
+  :small[_Spicy marinated paneer cubes grilled to perfection_]
+""")
+
+st.divider()
+
+st.markdown("""
+### :cake: Desserts  
+- **Chocolate Brownie** :chocolate_bar: — :red-background[₹150]  
+- **Seasonal Fruit Tart** :strawberry: — :yellow-badge[₹170]  
+""")
+
+st.divider()
+st.markdown(":material/eco: :green[Eco-friendly digital menu — no reprints needed!]")
+
+```
+
+**Run your app with:**
+
+```bash
+streamlit run app.py
+```
+
+---
+
+##### **Output**
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dgcsg/mod2menu1.png)
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dgcsg/mod2menu2.png)
+
 
 ----
 
+#### **Step-by-Step Walkthrough**
 
-## Topic 2.2: Markdown
+Let's examine how each markdown element enhances your menu's readability and appeal:
 
-###  **Introduction to Markdown**
-
-Great text isn’t just  _what you say_—it’s also  _how you present it_. Imagine walking into a restaurant where the menu is typed in  **one font, one size, no bold headings**. You’d struggle to find your favorite dish, right?
-
-That’s exactly why  **Markdown**  exists. Markdown is a lightweight formatting language that helps your text stand out, stay organized, and feel polished. You don’t need CSS or HTML—just simple symbols like  `*`,  `_`, and  `#`.
-
-With Markdown in Streamlit (`st.markdown()`), you can:
-
--   Add  **bold text**  → highlight the star of the menu (e.g., dish name).
+-   **`st.markdown()`** → Converts a string into GitHub-flavored Markdown. If something other than a string is passed, it’s converted with `str(body)`. Streamlit extends Markdown with emoji shortcodes, Material icons, colors, and badges.
     
--   Use  _italics_  → make soft notes or smaller remarks.
+-   **Headings with Icons & Colors** → You can style headings using color + icons.  
+    Example: `:orange[:material/restaurant: Sunrise Café]` creates an orange title with a restaurant icon.
     
--   Create bullet  `lists`  → perfect for menus, steps, or features.
+-   **Small Text** → Use `:small[]` for footnotes or subtle text.  
+    Example: `:small[:material/wb_sunny: Fresh Daily Specials - Updated Live!]`.
     
--   Add headings (`#`,  `##`,  `###`) → structure your sections.
+-   **Multi-line Markdown** → Triple quotes `""" """` let you format multiple lines in one call.
+-   **Bulleted Lists** → Start lines with `-` for clean menus.  
+    Example: `- **Avocado Toast** :avocado: — :green-background[₹220]`.
     
--   Insert emojis 🎉 → bring personality and friendliness.
+-   **Italics for Descriptions** → Use `_..._` inside `:small[]` to style descriptions differently.  
+    Example: `:small[_Multigrain bread with fresh avocado and lime_]`.
     
--   Even mix in  **inline code**  `print("Hello")`  → for tutorials or developer apps.
+-   **Badges for Prices** → Highlight prices with colored tags.  
+    Example: `:blue-badge[₹180]` or `:yellow-badge[₹170]`.
     
+-   **Icons for Emphasis** → Add flair with emoji shortcodes (`:avocado:`) or Material icons (`:material/eco:`)
+---
 
-**Pro Tip**: Think of Markdown styling like  **seasoning food**. A small amount makes the dish delicious—too much makes it overwhelming.
+#### **Conclusion**
 
-###  **Mini Project: Restaurant Menu App**
-Digital menus are becoming increasingly popular in restaurants and cafés. In this mini project, we’ll design a **stylish restaurant menu app** using Streamlit and Markdown formatting. This will help you practice combining text, emojis, and styling to create an engaging layout.
+`st.markdown()` empowers you to transform plain text into polished, structured, and visually engaging content that guides users naturally through your app. By using simple formatting like bold, italics, and lists, you can create hierarchy, highlight key points, and make information easier to digest. This makes your Streamlit applications not only more professional-looking but also more effective at communicating without any design expertise.
 
-- Create a file `app.py`
+---
+
+### Topic 2.3: Code & Formulae
+
+
+<br>
+
+#### **Introduction**
+
+While building educational apps or technical documentation, plain text alone often falls short in conveying complex ideas clearly. Code needs proper formatting to be readable, mathematical formulas demand precise typesetting, and important concepts should stand out from the surrounding details.
+
+Streamlit provides functions designed for these needs:
+
+-   **`st.code()`**: Displays code with proper formatting and syntax highlighting, making it easy to read and understand.
+    
+-   **`st.latex()`**: Renders mathematical expressions in clean, professional typeset, perfect for formulas or equations.
+    
+-   **`st.badge()`**: Highlights important points or status indicators, drawing attention to key concepts.
+    
+-   **`st.caption()`**: Adds supporting notes or context beneath content, helping users grasp additional details without cluttering the main text.
+
+#### **Mini Project**
+
+You're preparing for a competitive exam where you need to memorize dozens of mathematical formulas and their corresponding code implementations. Instead of flipping through multiple textbooks and notebooks, you want a single digital exam prep sheet that combines clean formulas, working code examples, and priority indicators all in one place. This would let you review everything efficiently during those crucial final study sessions.
+
+##### **Project Setup**
+
+Create a new file called `app.py`:
 
 ```python
-import streamlit as st  
+import streamlit as st
 
-# Page setup
-st.set_page_config(page_title="🍽️ Bistro Café Menu", layout="centered")  
+st.title("🎓 CS Exam Prep Cheatsheet")
 
-# Title
-st.title("🍴 Welcome to Bistro Café")  
-st.markdown("### 🌟 **Today’s Special Menu**")  
-st.write("---")  
+st.divider()
+st.header("📐 Mathematics")
 
-# Starters
-st.header("🥗 Starters")  
-st.markdown("""  
-- **Bruschetta** 🥖  
-  _Toasted bread topped with fresh tomatoes, garlic & basil_ — ₹180  
+st.subheader("Quadratic Equation")
+st.badge("Medium")
+st.caption("General formula for solving ax² + bx + c = 0")
 
-- **Caesar Salad** 🥬  
-  _Crisp romaine lettuce, parmesan, and croutons_ — ₹220  
-""")  
+st.latex(r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}")
+st.latex(r"ax^2 + bx + c = 0")
 
-st.divider()  
+st.caption("Python implementation with an example")
+st.code('''
+import math
 
-# Main Course
-st.header("🍝 Main Course")  
-st.markdown("""  
-- **Pasta Alfredo** 🍝  
-  _Creamy white sauce with mushrooms & herbs_ — ₹350  
+def solve_quadratic(a,b,c):
+    d = b**2 - 4*a*c
+    if d > 0: return (-b+math.sqrt(d))/(2*a), (-b-math.sqrt(d))/(2*a)
+    if d == 0: return -b/(2*a)
+    return "No real solutions"
 
-- **Grilled Chicken** 🍗  
-  _Served with mashed potatoes and sautéed veggies_ — ₹420  
-""")  
-
-st.divider()  
-
-# Desserts
-st.header("🍰 Desserts")  
-st.markdown("""  
-- **Chocolate Lava Cake** 🍫  
-  _Warm chocolate cake with gooey center_ — ₹180  
-
-- **Cheesecake** 🍮  
-  _Classic New York style, rich & smooth_ — ₹200  
-""")  
-
-st.divider()  
-
-# Beverages
-st.header("🥂 Beverages")  
-st.markdown("""  
-- **Cold Coffee** ☕ — ₹120  
-- **Fresh Lime Soda** 🥤 — ₹100  
-- **Iced Tea** 🍹 — ₹130  
-""")  
+print(solve_quadratic(1,-5,6))  # x² - 5x + 6 = 0
+''', language='python')
 
 ```
 
----
-**Run the app**
--  streamlit run `app.py`
-----------
+**Run your app with:**
 
-### Expected Output
-
-
-----------
-
-### Explanation
-
--   `st.set_page_config()` → Defines the page title and layout.
-    
--   `st.title()` → Displays the main café welcome title.
-    
--   `st.markdown()` → Adds rich text formatting with **bold**, _italics_, and emojis.
-    
--   `st.header()` → Creates clear section titles (Starters, Main Course, etc.).
-    
--   `st.write("---")` and `st.divider()` → Insert horizontal separators for neat structure.
-
-----
-
-
-## Topic 2.3: Code & Formulas
-
-----------
-
-### **Introduction**
-
-Not every app is about menus or dashboards—some are  **teaching tools, study aids, or scientific calculators**. In these cases, plain text is often not enough. Users need  **structured code examples, neat math, and quick-reference highlights**. That’s where Streamlit shines with its academic-friendly display options:
-
--   **`st.code()`**  → Think of it as a  **digital blackboard for code**. Instead of dumping messy text, it formats your code with syntax highlighting and proper indentation—easy to read, easy to copy.
-    
--   **`st.latex()`**  → Designed for  **math and science apps**. Just like professors writing equations neatly on a board, LaTeX renders formulas beautifully. Users don’t just “see” the formula—they  _understand_  it.
-    
--   **`st.badge()`**  → A newer micro-component for emphasizing quick facts, tags, or statuses. Perfect for  **exam tips**, difficulty levels, or topic labels (e.g.,  _“Easy”, “Important”, “Formula to Memorize”_).
-    
-
-Imagine being a student revising before an exam:
-
--   Instead of a cluttered notebook, you open an app.
-    
--   All  **formulas are beautifully arranged**  with LaTeX.
-    
--   **Code snippets**  show implementation, so you know  _how to apply the math_.
-    
--   **Badges**  highlight “high-yield” or “must-memorize” items.
-    
-
-This combination makes your learning resource  **structured, professional, and exam-ready**.
-
-**Pro Tip**: Use  `st.latex()`  to present key formulas,  `st.code()`  for applying them in real-life coding, and  `st.badge()`  for tagging and prioritizing information. It’s like having a  **digital exam cheatsheet**  that looks polished and reliable.
-
-----------
-
-### **Mini Project: Exam Prep Sheet App**
-
-Revision during exams can be overwhelming if you don’t have everything in one place. In this project, we’ll build a **one-stop exam prep app** that combines math formulas, Python code snippets, and study badges to highlight the most important topics.
-
-- Create a file `app.py`
-
-```python
-import streamlit as st  
-
-# Page Setup  
-st.set_page_config(page_title="📘 Exam Prep Sheet", layout="centered")  
-
-st.title("📘 Quick Exam Prep Sheet")  
-st.write("Your go-to revision notes with formulas, code, and important highlights ✅")  
-st.divider()  
-
-# Section: Percentages  
-st.header("📊 Percentages")  
-st.badge("High Yield")  
-st.latex(r"\text{Percentage (\%)} = \frac{\text{Value}}{\text{Total}} \times 100")  
-st.code(""" 
-# Example: Calculating percentage 
-value = 45 
-total = 60 
-percentage = (value/total) * 100 
-print(percentage)  # 75.0% 
-""", language="python")  
-st.caption("👉 Percentages are often tested in competitive exams like SSC, Banking, and Aptitude tests.")  
-st.divider()  
-
-# Section: Interest  
-st.header("💰 Simple & Compound Interest")  
-st.badge("Formula to Memorize")  
-st.latex(r"SI = \frac{P \times R \times T}{100}")  
-st.latex(r"CI = P \times \left(1 + \frac{R}{100}\right)^T - P")  
-st.code(""" 
-# Example: Simple Interest 
-P = 1000  # Principal 
-R = 5     # Rate per year 
-T = 2     # Time in years 
-SI = (P*R*T)/100 
-print(SI)  # 100 
-""", language="python")  
-st.caption("Where P = Principal, R = Rate (%), T = Time (years)")  
-st.divider()  
-
-# Section: Averages  
-st.header("📈 Averages")  
-st.badge("Core Concept")  
-st.latex(r"\text{Average} = \frac{\text{Sum of terms}}{\text{Number of terms}}")  
-st.code(""" 
-# Example: Finding average 
-nums = [12, 15, 20, 25, 30] 
-average = sum(nums)/len(nums) 
-print(average)  # 20.4 
-""", language="python")  
-st.divider()  
-
-# Section: Probability  
-st.header("🎲 Probability")  
-st.badge("Exam Favorite")  
-st.latex(r"P(E) = \frac{\text{Favorable outcomes}}{\text{Total outcomes}}")  
-st.code(""" 
-# Example: Probability of rolling a 6 on dice 
-favorable = 1    # only '6' 
-total = 6        # six outcomes 
-P = favorable / total 
-print(P)  # 0.1667 or 16.67% 
-""", language="python")  
-st.divider()  
-
-# Section: Permutations & Combinations  
-st.header("🔢 Permutations & Combinations")  
-st.badge("Important")  
-st.latex(r"nPr = \frac{n!}{(n-r)!}")  
-st.latex(r"nCr = \frac{n!}{r!(n-r)!}")  
-st.code(""" 
-import math 
-
-# Example: nCr and nPr 
-n, r = 5, 2 
-nPr = math.factorial(n)//math.factorial(n-r) 
-nCr = math.factorial(n)//(math.factorial(r)*math.factorial(n-r)) 
-print(nPr, nCr)  # 20 , 10 
-""", language="python")  
-
+```bash
+streamlit run app.py
 
 ```
+
+##### **Output**
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dz7rw/exam1mod2.png)
+
+
+
+![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43w2dz7rw/exam2mod2.png)
+
+
 ---
 
-**Run the app**
-- `streamlit run app.py`
-----------
-### **Expected Output**
+#### **Step-by-Step Walkthrough**
 
------
-### **Explanation**
+Let's examine how each function enhances the presentation of technical information:
 
--   **`st.latex(...)`**  → Renders formulas like a math book for clarity.
-    
--   **`st.code(...)`**  → Shows matching Python implementation with syntax highlighting.
-    
--   **`st.badge(...)`**  → Marks critical facts (“High Yield”, “Important”) to guide learners on what’s essential for exams.
-    
--   **`st.caption(...)`**  → Provides quick notes or context below formulas.
-    
--   **`st.success(...)`**  → Acts as a motivational closer or completion note.
-    
+- **`st.latex(r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}")`**: This renders mathematical formulas in clean, textbook-quality typography. The `r` before the string tells Python to treat it as a raw string, preventing backslashes from being interpreted as escape characters. LaTeX formatting makes complex mathematical expressions readable and professional.
 
-This combination gives the  _feel of a smart revision notebook_, bridging theory with practice.
+- **`st.code()` with language parameter**: This function displays code with proper syntax highlighting, indentation, and a copy button for users. The `language="python"` parameter tells Streamlit to apply Python-specific color coding, making the code much easier to read than plain text.
+
+- **Multi-line code blocks**: The triple quotes allow you to include complete, runnable code examples that demonstrate how to implement each formula. This bridges the gap between theoretical knowledge and practical application.
+
+- **`st.badge("Medium")`**: These create small, visually distinct tags that help categorize or emphasize content. They're perfect for indicating difficulty levels, importance, or topic categories without disrupting the main content flow.
+
+- **`st.caption("General formula for solving ax² + bx + c = 0")`**: Captions provide additional context or explanatory notes in a smaller, less prominent font. 
+
+---
+
+#### **Key Learning Points**
+
+-   **LaTeX for professional formulas**: `st.latex()` renders mathematical expressions with the same quality as textbooks and academic papers
+
+-   **Syntax highlighting improves readability**: `st.code()` with language specification makes code much easier to understand than plain text
+
+-   **Badges provide visual hierarchy**: Use `st.badge()` to highlight important concepts without disrupting content flow
+
+-   **Captions add context efficiently**: `st.caption()` lets you include helpful details without cluttering the main presentation
+
+---
+
+#### **Conclusion**
+
+These specialized display functions transform technical content from confusing text blocks into clear, professional presentations. By combining `st.latex()` for formulas, `st.code()` for implementations, `st.badge()` for emphasis, and `st.caption()` for context, you can create educational resources that effectively communicate complex information.
