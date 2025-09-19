@@ -109,9 +109,7 @@ Structuring your app with `st.title()`, `st.header()`, and `st.subheader()` give
 
 #### **Introduction**
 
-**Markdown** is a lightweight formatting language that transforms plain text into polished, professional content with just a few simple symbols. Instead of writing complex HTML or CSS, you can make text bold, create lists, add headings, and structure your content using intuitive shortcuts that feel natural to write.
-
-In Streamlit, the `st.markdown()` function unlocks this formatting power, letting you create visually appealing applications that look professional without any design expertise. Whether you're highlighting key insights in a data report or organizing information in a clear hierarchy, markdown helps your content stand out and stay organized.
+**Markdown** is a lightweight formatting language that transforms plain text into polished, professional content with just a few simple symbols. Instead of writing complex HTML or CSS, you can make text bold, create lists, add headings, and structure your content using intuitive shortcuts that feel natural to write. In Streamlit, the `st.markdown()` function unlocks this formatting power, letting you create visually appealing applications that look professional without any design expertise. Whether you're highlighting key insights in a data report or organizing information in a clear hierarchy, markdown helps your content stand out and stay organized.
 
 #### **Core Concepts**
 

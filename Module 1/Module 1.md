@@ -3,13 +3,10 @@
 ### Topic 1.1: Introduction 
 
 
-<br>
-
 #### **What is Streamlit?**
 
 You’re a data scientist who’s just finished analyzing sales trends for the year. The insights are crucial—knowing which regions performed best, which months saw spikes, and where opportunities lie for the next quarter. But how do you make this information truly accessible?
 Instead of emailing yet another static report, you fire up Streamlit. With just Python, you build a web application.
-
 That’s what Streamlit is: an open-source Python library for building interactive web application, dashboards, and reporting tools in pure Python. It lets technical teams—and anyone with Python know-how to bring their data, models, and analysis to life for everyone.
 
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/whatissysdes1.png">
@@ -171,8 +168,7 @@ This launches Streamlit’s built-in demo app in your browser. 🎉
 
 #### **Introduction**
 
-The best way to learn Streamlit is by building simple, hands-on projects. Small projects allow you to see immediate results and understand how different functions work together, giving you confidence to tackle bigger challenges.
-In this chapter, we'll create your very first Streamlit project from scratch. The goal isn't complexity—it's understanding the fundamental workflow: writing Python code, running it with Streamlit, and watching it come alive in your browser.
+The best way to learn Streamlit is by building simple, hands-on projects. Small projects allow you to see immediate results and understand how different functions work together, giving you confidence to tackle bigger challenges. In this chapter, we'll create your very first Streamlit project from scratch. The goal isn't complexity—it's understanding the fundamental workflow: writing Python code, running it with Streamlit, and watching it come alive in your browser.
 
 ---
 
