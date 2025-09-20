@@ -74,20 +74,19 @@ streamlit run app.py
 #### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wveh7vh/mod6chart1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart1.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wveh7vh/mod6chart2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart2.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart3.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wveh7vh/mod6chart3.png)
 
-
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wveh7vh/chart3mod6.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart4.png">
 
 
 
@@ -210,17 +209,16 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww8xhn9/mod6matplot1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot1.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww8xhn9/mod6matplot2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot2.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww8xhn9/mod6matplot3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot3.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww8xhn9/mod6matplot4.png)
-
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot4.png">
 
 ---
 
@@ -354,23 +352,21 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9bhe6/mod6plotly1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly1.png">
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly2.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9bhe6/mod6plotly2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly3.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9bhe6/mod6plotly3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly4.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9bhe6/mod6plotly4.png)
-
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9bhe6/mod6plotly5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly5.png">
 
 
 ---
@@ -482,19 +478,18 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9q4m6/visualmod6.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visualmod6.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9q4m6/visual2mod6.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual2mod6.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9q4m6/visual1mod6.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual1mod6.png">
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual3mod6.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9q4m6/visual3mod6.png)
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43ww9q4m6/visual4mod6.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual4mod6.png">
 
 ---
 

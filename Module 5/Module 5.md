@@ -61,8 +61,7 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wpxm4j8/bdaymod5.png)
-
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bdaymod5.png">
 
 ----
 
@@ -129,11 +128,13 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wpxm8bw/color1mod5.png)
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/color1mod5.png">
+
+
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/color2mod5.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wpxm8bw/color2mod5.png)
 
 
 ---
@@ -223,11 +224,11 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wqb9tbj/csv1mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/csv1mod5.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wqb9tbj/csv2mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/csv2mod5.png">
 
 
 -----
@@ -265,6 +266,7 @@ streamlit run app.py
 #### **Conclusion**
 
 File upload and download functionality transforms Streamlit applications from static tools into dynamic data processing platforms. By enabling users to bring their own data, analyze it in real-time, and export refined results, you create self-contained workflows that integrate seamlessly into existing business processes across industries—from financial reporting to scientific research.
+
 -----
 
 ### Topic 5.4: Images
@@ -347,11 +349,10 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wqc5jeu/image1mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/image1mod5.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wqc5jeu/iamge2mod5.png)
-
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/iamge2mod5.png">
 
 ----
 
@@ -438,10 +439,10 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wruddwt/audiomod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/audiomod5.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wruddwt/audio2mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/audio2mod5.png">
 
 
 ----
@@ -569,14 +570,13 @@ streamlit run app.py
 
 ##### **Output**
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrv8fze/cameramod51.png)
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrv8fze/cameramod52.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod51.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrv8fze/cameramod53.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod52.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod53.png">
 
 
 ---
@@ -668,15 +668,15 @@ streamlit run app.py
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrvz7nk/vid1mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/vid1mod5.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrvz7nk/vid2mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/vid2mod5.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrvz7nk/video3mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/video3mod5.png">
 
 
 ----
@@ -791,15 +791,14 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrwa5s7/pdf1mod5.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/pdf1mod5.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5pdf2.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrwa5s7/mod5pdf2.png)
-
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wrwa5s7/mod5pdf3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5pdf3.png">
 
 
 ---

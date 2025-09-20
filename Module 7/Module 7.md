@@ -115,13 +115,13 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwa8pk2/col1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col1mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwa8pk2/col2mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col2mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwa8pk2/col3mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col3mod7.png">
 
 -----
 
@@ -231,16 +231,16 @@ streamlit run app.py
 
 ##### **Output**
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwakjk6/tabs1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs1mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwakjk6/tabs2mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs2mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwakjk6/tabs3mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs3mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wwakjk6/tabs4mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs4mod7.png">
 
 
 ----
@@ -356,12 +356,10 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzqpx5u/expander1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/expander1mod7.png">
 
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzqpx5u/expander2mod7.png)
-
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/expander2mod7.png">
 
 ----
 
@@ -442,7 +440,7 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzswjs5/sidemod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/sidemod7.png">
 
 
 -----
@@ -534,10 +532,9 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzun9py/cont1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/cont1mod7.png">
 
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzun9py/cont2mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/cont2mod7.png">
 
 
 ----
@@ -617,13 +614,12 @@ if st.button("Post Comment"):
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzvupns/pop1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop1mod7.png">
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop2mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzvupns/pop2mod7.png)
-
-
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzvupns/pop3mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop3mod7.png">
 
 
 ----
@@ -704,16 +700,16 @@ streamlit run app.py
 
 ##### **Output**
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzx5737/bug1mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug1mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzx5737/bug2mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug2mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzx5737/bug3mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug3mod7.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzx5737/bug4mod7.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug4mod7.png">
 
 
 ----
