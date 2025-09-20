@@ -87,7 +87,7 @@ streamlit run app.py
 
 Let's examine how each function contributes to effective data presentation:
 
-- **Pandas (pd)** is an open-source Python library widely used for data manipulation and analysis.
+- **pandas (pd)** is an open-source Python library widely used for data manipulation and analysis.
 
 - **`pd.DataFrame(data)`**: Creates a structured data table from your dictionary. The keys become column headers, and the values become rows. 
 
@@ -102,11 +102,11 @@ Let's examine how each function contributes to effective data presentation:
 
 #### **Conclusion**
 
-By mastering `st.dataframe()` and `st.table()`, you gain the power to transform raw data into professional, interactive, and user-friendly displays, a core skill for building powerful dashboards and analytical tools in Streamlit.
+The combination of `st.dataframe()` and `st.table()` transforms raw data into accessible, professional displays that users can immediately understand and interact with. These fundamental display functions form the foundation of effective data communication in Streamlit applications, enabling you to present information clearly whether building analytical dashboards or simple data exploration tools.
+
 ----
 
 ### Topic 3.2: Metrics 
-
 
 <br>
 
@@ -196,7 +196,7 @@ Streamlit's `st.json()` function solves this problem by transforming unformatted
 
 #### **Mini Project**
 
-To explore weather data, you are building an app that serves both everyday users and data professionals. A hiker planning a weekend trip can quickly see a clear summary of current temperature, humidity, and conditions to decide what gear to pack. At the same time, a meteorologist or data analyst can access the full API JSON response to track trends, compare forecasts, or debug anomalies in the underlying data. This dual view ensures the app is both practical and transparent, catering to different needs in real-world weather decision-making.
+A weekend hiker checking weather forecasts sees "partly cloudy, 22°C" but needs humidity details for gear decisions, while a meteorologist noticing unusual temperature readings requires access to raw API data to investigate sensor anomalies. You're building a weather data explorer that serves both users simultaneously—providing clean, actionable summaries for everyday decisions alongside complete JSON responses for technical analysis, demonstrating how the same dataset can be presented in multiple formats to meet different professional and personal needs.
 
 ##### **Project Setup**
 

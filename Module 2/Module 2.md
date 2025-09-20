@@ -8,10 +8,9 @@
 
 #### **Introduction**
 
+Visual hierarchy is the arrangement of text and sections to show their relative importance. Think of it like organizing a filing cabinet—everything has its proper place and level of importance.
 
 Clear visual hierarchy is essential for creating professional, scannable applications that guide users through content logically. Just as a well-structured document uses headings and sections to organize information, Streamlit apps need proper hierarchy to prevent content from appearing scattered and confusing.
-
-Visual hierarchy is the arrangement of text and sections to show their relative importance. Think of it like organizing a filing cabinet—everything has its proper place and level of importance.
 
 Streamlit provides a simple but effective hierarchy system:
 
@@ -101,6 +100,8 @@ Let's examine how each function creates the professional structure:
 
 Structuring your app with `st.title()`, `st.header()`, and `st.subheader()` gives it instant polish and clarity. These simple commands are the foundation for building professional-looking dashboards and tools that are intuitive for any user.
 
+-----
+
 
 ### Topic 2.2: Markdown
 
@@ -111,21 +112,6 @@ Structuring your app with `st.title()`, `st.header()`, and `st.subheader()` give
 
 **Markdown** is a lightweight formatting language that transforms plain text into polished, professional content with just a few simple symbols. Instead of writing complex HTML or CSS, you can make text bold, create lists, add headings, and structure your content using intuitive shortcuts that feel natural to write. In Streamlit, the `st.markdown()` function unlocks this formatting power, letting you create visually appealing applications that look professional without any design expertise. Whether you're highlighting key insights in a data report or organizing information in a clear hierarchy, markdown helps your content stand out and stay organized.
 
-#### **Core Concepts**
-
-`st.markdown()` accepts an optional `width` parameter, which can be `"stretch"`, `"content"`, or an integer, to control the element's width. Beyond basic markdown, it supports a variety of special features to enhance your app's text:
-
--   **Emoji Shortcodes**: Use codes like `:wave:` to insert emojis.
-    
--   **Streamlit Logo**: Add the official Streamlit logo with `:streamlit:`.
-    
--   **Typographical Symbols**: Automatically converts symbols like `->` to a proper arrow (`→`).
-    
--   **Google Material Symbols**: Use the syntax `:material/icon_name:` to add icons from Google's Material Symbols library.
-    
--   **Colored Text & Badges**: You can color text using `:color[text]` or add a colored background with `:color-background[text]`. Similarly, create colored badges with `:color-badge[text]`. Supported colors include red, orange, yellow, green, blue, violet, gray/grey, rainbow, and primary.
-    
--   **Small Text**: Use `:small[text]` to display text in a smaller font size.
 
 ---
 
@@ -199,8 +185,14 @@ streamlit run app.py
 
 Let's examine how each markdown element enhances your menu's readability and appeal:
 
--   **`st.markdown()`** → Converts a string into GitHub-flavored Markdown. If something other than a string is passed, it’s converted with `str(body)`. Streamlit extends Markdown with emoji shortcodes, Material icons, colors, and badges.
+-   **`st.markdown()`** → Converts a string into GitHub-flavored Markdown. If something other than a string is passed, it’s converted with `str(body)`. Streamlit extends Markdown with :
     
+    -   **Emoji Shortcodes**: Use codes like `:wave:` to insert emojis.
+    
+    -   **Streamlit Logo**: Add the official Streamlit logo with `:streamlit:`.
+        
+    -   **Typographical Symbols**: Automatically converts symbols like `->` to a proper arrow (`→`).
+        
 -   **Headings with Icons & Colors** → You can style headings using color + icons.  
     Example: `:orange[:material/restaurant: Sunrise Café]` creates an orange title with a restaurant icon.
     
