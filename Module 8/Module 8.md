@@ -96,13 +96,13 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzzj6zy/mod8uni1.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni1.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzzj6zy/mod8uni2.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni2.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43wzzj6zy/mod8uni3.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni3.png">
 
 
 ----
@@ -216,17 +216,17 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x22y9bw/emp1mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp1mod8.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x22y9bw/emp2mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp2mod8.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x22y9bw/emp3mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp3mod8.png">
 
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x22y9bw/emp4mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp4mod8.png">
 
 
 ----
@@ -365,16 +365,16 @@ streamlit run app.py
 ##### **Output**
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x2556bn/ecom1mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom1mod8.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x2556bn/ecom2mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom2mod8.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x2556bn/ecom3mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom3mod8.png">
 
 
-![](https://s3.ap-south-1.amazonaws.com/static.bytexl.app/uploads/43tfadctp/content/43x2556bn/ecom4mod8.png)
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom4mod8.png">
 
 ---
 
