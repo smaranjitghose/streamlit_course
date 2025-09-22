@@ -348,10 +348,10 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/image1mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bgremove1.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/iamge2mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bgremove2.png">
 
 ----
 
