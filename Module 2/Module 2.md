@@ -62,7 +62,7 @@ streamlit run app.py
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/resume1mod2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2resumetldraw.png">
 
 
 ---
@@ -173,10 +173,10 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2menu1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2markdowntldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2menu2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/mod2markdown1tldraw.png">
 
 
 ----
@@ -285,11 +285,11 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/exam1mod2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/code1tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/exam2mod2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%202/code2tldraw.png">
 
 
 ---

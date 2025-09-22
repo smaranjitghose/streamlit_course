@@ -220,7 +220,7 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/quotemod1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%201/quotemod1tldraw.png">
 
 
 ----

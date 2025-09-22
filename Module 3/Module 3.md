@@ -75,10 +75,10 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/expense1mod3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/dataframe1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/expense2mod3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/dataframe2tldraw.png">
 
 
 ----
@@ -155,7 +155,7 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/metricmod3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/mod3metrictldraw.png">
 
 
 ----
@@ -248,7 +248,7 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/weathermod3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%203/jsontldraw.png">
 
 -----
 
