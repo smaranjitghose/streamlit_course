@@ -90,9 +90,9 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%209/mod9cart1.png">
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%209/mod9cart2.png">
 
 ---
 
