@@ -3,46 +3,44 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-st.title("💰 Personal Finance Dashboard")
-st.write("Upload your expense tracker CSV to analyze spending patterns.")
+st.title("🍴 Restaurant Review Dashboard")
+st.write("Upload your restaurant review CSV to visualize ratings and review trends.")
 
 # Step 1: Upload CSV
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 if uploaded_file:
-    df = pd.read_csv(uploaded_file, parse_dates=['Date'])
-    st.write("Expense Data Preview:")
+    df = pd.read_csv(uploaded_file, parse_dates=['ReviewDate'])
+    st.write("Review Data Preview:")
     st.dataframe(df.head(10))
     
-    # Step 2: Line Chart for Expenses Over Time
-    st.subheader("📈 Daily Spending Over Time")
-    daily = df.groupby('Date')['Amount'].sum().reset_index()
+    # Step 2: Line Chart for Average Ratings Over Time
+    st.subheader("📈 Average Ratings Over Time")
+    daily_avg = df.groupby('ReviewDate')['Rating'].mean().reset_index()
+    st.line_chart(daily_avg.set_index('ReviewDate'))
     
-    # Streamlit built-in line chart
-    st.line_chart(daily.set_index('Date'))
-    
-    # Step 3: Bar Chart for Category Spending
-    st.subheader("🏷️ Total Spending by Category")
-    category_totals = df.groupby('Category')['Amount'].sum().sort_values(ascending=False)
+    # Step 3: Bar Chart for Total Reviews by Cuisine
+    st.subheader("🏷️ Total Reviews by Cuisine")
+    cuisine_reviews = df.groupby('Cuisine')['Rating'].count().sort_values(ascending=False)
     
     # Matplotlib horizontal bar chart
     fig, ax = plt.subplots()
-    ax.barh(category_totals.index, category_totals.values, color='skyblue')
-    ax.set_xlabel('Total Spent ($)')
-    ax.set_title('Spending by Category')
+    ax.barh(cuisine_reviews.index, cuisine_reviews.values, color='salmon')
+    ax.set_xlabel('Number of Reviews')
+    ax.set_title('Reviews by Cuisine')
     st.pyplot(fig)
     
-    # Optional: Interactive Plotly version
-    fig2 = px.bar(df.groupby('Category')['Amount'].sum().reset_index(),
-                  x='Amount', y='Category', orientation='h',
-                  color='Category', title="Interactive Category Spending")
+    # Interactive Plotly version
+    fig2 = px.bar(df.groupby('Cuisine')['Rating'].count().reset_index(),
+                  x='Rating', y='Cuisine', orientation='h',
+                  color='Cuisine', title="Interactive Reviews by Cuisine")
     st.plotly_chart(fig2, use_container_width=True)
     
-    # Step 4: Key Metrics for Top 3 Spending Categories
-    st.subheader("📊 Top Spending Categories")
-    top3 = category_totals.head(3)
-    for i, (cat, amt) in enumerate(top3.items(), 1):
-        st.metric(f"{i}. {cat}", f"${amt:,.2f}")
+    # Step 4: Key Metrics for Top 3 Cuisines
+    st.subheader("🏅 Top 3 Most Reviewed Cuisines")
+    top3 = cuisine_reviews.head(3)
+    for i, (cuisine, count) in enumerate(top3.items(), 1):
+        st.metric(f"{i}. {cuisine}", f"{count} reviews")
     
-    # Additional Insight: Average Daily Spending
-    avg_daily = daily['Amount'].mean()
-    st.metric("📈 Average Daily Spending", f"${avg_daily:,.2f}")
+    # Average Rating Across All Restaurants
+    avg_rating = df['Rating'].mean()
+    st.metric("⭐ Average Rating", f"{avg_rating:.2f}")

@@ -12,7 +12,8 @@ Each chart type has its own personality: line charts trace change over time, are
 
 #### **Mini Project**
 
-You want to track your fitness progress by analyzing weekly activity data including daily steps, calories burned, workout sessions, and sleep hours. The dashboard should display different aspects of your fitness data using appropriate chart types to reveal trends, patterns, and relationships in your health metrics.
+Jake has been tracking his steps, workouts, calories, and sleep for months but feels like he's making no progress. His fitness app shows basic daily numbers, but he can't see if his efforts are actually working or how his different health metrics connect to each other. Without clear insights into patterns and trends, Jake feels discouraged and unsure if his routine is effective.
+A comprehensive fitness dashboard would reveal the hidden progress in Jake's data and show him which habits have the biggest impact on his overall wellness.
 
 ##### **Project Setup**
 
@@ -96,15 +97,47 @@ streamlit run app.py
 
 The sample data represents a week of fitness tracking with realistic values that demonstrate healthy activity levels and balanced metrics across different aspects of fitness monitoring.
 
-- The `st.line_chart()` displays daily steps as a connected line, making it easy to spot trends and patterns in activity levels throughout the week. The line format clearly shows increases and decreases over time.
-
-- The `st.area_chart()` shows calorie burn with filled areas that emphasize the magnitude of daily energy expenditure. The filled area makes it easy to compare relative daily totals at a glance.
-
-- The `st.bar_chart()` displays workout sessions as discrete bars, perfect for comparing specific daily activity counts. Bar charts work well for categorical data like workout frequency.
-
-- The `st.scatter_chart()` explores the relationship between sleep hours and calorie burn by plotting each day as a point. This helps identify whether better sleep correlates with higher activity levels.
-
-- The summary metrics provide key statistics that complement the visual analysis, giving users both graphical trends and numerical benchmarks for their fitness progress.
+-   The `st.line_chart()` displays daily steps as a connected line, making it easy to spot trends and patterns in activity levels throughout the week. The line format clearly shows increases and decreases over time. **Parameters include:**
+    
+    -   `data`: The dataset to be plotted (e.g., a pandas DataFrame or Series).
+        
+    -   `width`: Optional, the width of the chart in pixels.
+        
+    -   `height`: Optional, the height of the chart in pixels.
+        
+    -   `use_container_width`: Optional, whether to make the chart use the full width of the container (default is True).
+        
+-   The `st.area_chart()` shows calorie burn with filled areas that emphasize the magnitude of daily energy expenditure. The filled area makes it easy to compare relative daily totals at a glance. **Parameters include:**
+    
+    -   `data`: The dataset to be plotted (pandas DataFrame or Series).
+        
+    -   `width`: Optional chart width in pixels.
+        
+    -   `height`: Optional chart height in pixels.
+        
+    -   `use_container_width`: Optional, whether the chart should expand to container width.
+        
+-   The `st.bar_chart()` displays workout sessions as discrete bars, perfect for comparing specific daily activity counts. Bar charts work well for categorical data like workout frequency. **Parameters include:**
+    
+    -   `data`: The dataset to plot as bars.
+        
+    -   `width`: Optional chart width in pixels.
+        
+    -   `height`: Optional chart height in pixels.
+        
+    -   `use_container_width`: Optional, whether the chart should expand to container width.
+        
+-   The `st.scatter_chart()` explores the relationship between sleep hours and calorie burn by plotting each day as a point. This helps identify whether better sleep correlates with higher activity levels. **Parameters include:**
+    
+    -   `data`: The dataset to be plotted (pandas DataFrame).
+        
+    -   `width`: Optional chart width in pixels.
+        
+    -   `height`: Optional chart height in pixels.
+        
+    -   `use_container_width`: Optional, whether the chart should expand to container width.
+        
+-   The summary metrics provide key statistics that complement the visual analysis, giving users both graphical trends and numerical benchmarks for their fitness progress.
 
 ---
 
@@ -131,12 +164,15 @@ Built-in Streamlit charts democratize professional data visualization by making 
 <br>
 
 #### **Introduction**
+
 Think about the last time you needed a specific type of chart - maybe a violin plot for statistical analysis, or a subplot with multiple visualizations. While Streamlit provides excellent built-in charting functions like `st.line_chart()` and `st.bar_chart()`, you quickly hit their limits when you need something more specialized. What if you could access Python's most powerful visualization library directly in your Streamlit apps?
 
 The `st.pyplot()` function bridges this gap, allowing you to display any Matplotlib figure directly in your Streamlit interface. This integration opens up advanced visualization possibilities - from statistical plots and subplots to highly customized charts that match your exact specifications. Whether you're creating scientific visualizations, detailed analytical dashboards, or simply need plotting features beyond Streamlit's native options, `st.pyplot()` gives you access to the entire Matplotlib ecosystem without leaving the simplicity of Streamlit.
 
 #### **Mini Project**
-You're a high school teacher who wants to analyze your students' exam performance across different subjects. You have a CSV file with student grades and need to create three different visualizations: a histogram to see the overall grade distribution, boxplots to compare performance across subjects, and a line plot showing average scores over time. Streamlit's built-in charts can't handle the statistical depth you need, so you'll use Matplotlib through `st.pyplot()`.
+
+Ms. Rodriguez teaches multiple subjects at Roosevelt High School and notices her students seem to be struggling more than usual this semester, but she can't pinpoint exactly where the problems lie. She has spreadsheets full of test scores and grades, but staring at rows and columns of numbers doesn't reveal the patterns she needs to see. Are students consistently weak in certain subjects? Is performance getting worse over time? Without clear visual insights, she can't identify which students need extra help or adjust her teaching strategies effectively.
+A grade analysis app would transform her confusing spreadsheet data into clear visual patterns, helping Ms. Rodriguez understand her students' performance trends and make informed decisions about where to focus her teaching efforts.
 
 ##### **Project Setup**
 
@@ -245,7 +281,7 @@ streamlit run app.py
 
 #### **Conclusion**
 
-y bridging Streamlit's simplicity with Matplotlib's comprehensive visualization ecosystem, st.pyplot() provides an elegant upgrade path from basic charts to professional-grade analytics. This capability transforms Streamlit applications from simple dashboards into sophisticated analytical platforms capable of handling complex statistical visualizations, custom branding requirements, and specialized plotting needs that rival dedicated visualization software.
+By bridging Streamlit's simplicity with Matplotlib's comprehensive visualization ecosystem, st.pyplot() provides an elegant upgrade path from basic charts to professional-grade analytics. This capability transforms Streamlit applications from simple dashboards into sophisticated analytical platforms capable of handling complex statistical visualizations, custom branding requirements, and specialized plotting needs that rival dedicated visualization software.
 
 
 ---
@@ -410,9 +446,8 @@ Streamlit makes it easy to mix line charts, bar charts, and metrics in a single 
 
 #### **Mini Project**
 
-You're building a personal finance tracker to help users understand their spending patterns and identify areas for improvement.  
-
-Users need to see their expense trends over time, understand which categories consume most of their budget, and get immediate insights through key metrics like their top spending areas. The combination of trend analysis, categorical breakdown, and highlighted KPIs will give them a complete picture of their financial health at a glance.  
+Maya is a food blogger who collects restaurant reviews from various sources but struggles to make sense of the overwhelming data scattered across spreadsheets. She has hundreds of reviews with ratings, cuisines, and dates, but can't easily identify which types of restaurants are trending, whether certain cuisines consistently perform better, or which establishments deserve her next feature article. Manually sorting through rows of data to find meaningful patterns takes hours and often leads to missed opportunities.
+A restaurant review analyzer would transform Maya's messy data into clear visual insights, helping her quickly spot dining trends and identify the standout restaurants worth writing about. 
 
 ##### **Project Setup**
 
@@ -424,49 +459,48 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-st.title("💰 Personal Finance Dashboard")
-st.write("Upload your expense tracker CSV to analyze spending patterns.")
+st.title("🍴 Restaurant Review Dashboard")
+st.write("Upload your restaurant review CSV to visualize ratings and review trends.")
 
 # Step 1: Upload CSV
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 if uploaded_file:
-    df = pd.read_csv(uploaded_file, parse_dates=['Date'])
-    st.write("Expense Data Preview:")
+    df = pd.read_csv(uploaded_file, parse_dates=['ReviewDate'])
+    st.write("Review Data Preview:")
     st.dataframe(df.head(10))
     
-    # Step 2: Line Chart for Expenses Over Time
-    st.subheader("📈 Daily Spending Over Time")
-    daily = df.groupby('Date')['Amount'].sum().reset_index()
+    # Step 2: Line Chart for Average Ratings Over Time
+    st.subheader("📈 Average Ratings Over Time")
+    daily_avg = df.groupby('ReviewDate')['Rating'].mean().reset_index()
+    st.line_chart(daily_avg.set_index('ReviewDate'))
     
-    # Streamlit built-in line chart
-    st.line_chart(daily.set_index('Date'))
-    
-    # Step 3: Bar Chart for Category Spending
-    st.subheader("🏷️ Total Spending by Category")
-    category_totals = df.groupby('Category')['Amount'].sum().sort_values(ascending=False)
+    # Step 3: Bar Chart for Total Reviews by Cuisine
+    st.subheader("🏷️ Total Reviews by Cuisine")
+    cuisine_reviews = df.groupby('Cuisine')['Rating'].count().sort_values(ascending=False)
     
     # Matplotlib horizontal bar chart
     fig, ax = plt.subplots()
-    ax.barh(category_totals.index, category_totals.values, color='skyblue')
-    ax.set_xlabel('Total Spent ($)')
-    ax.set_title('Spending by Category')
+    ax.barh(cuisine_reviews.index, cuisine_reviews.values, color='salmon')
+    ax.set_xlabel('Number of Reviews')
+    ax.set_title('Reviews by Cuisine')
     st.pyplot(fig)
     
-    # Optional: Interactive Plotly version
-    fig2 = px.bar(df.groupby('Category')['Amount'].sum().reset_index(),
-                  x='Amount', y='Category', orientation='h',
-                  color='Category', title="Interactive Category Spending")
+    # Interactive Plotly version
+    fig2 = px.bar(df.groupby('Cuisine')['Rating'].count().reset_index(),
+                  x='Rating', y='Cuisine', orientation='h',
+                  color='Cuisine', title="Interactive Reviews by Cuisine")
     st.plotly_chart(fig2, use_container_width=True)
     
-    # Step 4: Key Metrics for Top 3 Spending Categories
-    st.subheader("📊 Top Spending Categories")
-    top3 = category_totals.head(3)
-    for i, (cat, amt) in enumerate(top3.items(), 1):
-        st.metric(f"{i}. {cat}", f"${amt:,.2f}")
+    # Step 4: Key Metrics for Top 3 Cuisines
+    st.subheader("🏅 Top 3 Most Reviewed Cuisines")
+    top3 = cuisine_reviews.head(3)
+    for i, (cuisine, count) in enumerate(top3.items(), 1):
+        st.metric(f"{i}. {cuisine}", f"{count} reviews")
     
-    # Additional Insight: Average Daily Spending
-    avg_daily = daily['Amount'].mean()
-    st.metric("📈 Average Daily Spending", f"${avg_daily:,.2f}")
+    # Average Rating Across All Restaurants
+    avg_rating = df['Rating'].mean()
+    st.metric("⭐ Average Rating", f"{avg_rating:.2f}")
+
 ```
 
 **Run your app with:**
@@ -478,18 +512,18 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visualmod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual1mod6.png">
 
 
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual2mod6.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual1mod6.png">
-
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual3mod6.png">
 
-
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual4mod6.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual5mod6.png">
 
 ---
 
@@ -506,20 +540,6 @@ streamlit run app.py
 -   **Additional Insights:** Highlights extremes, averages, and monthly changes to provide context.
     
 -   **Integrated Storytelling:** Metrics, trend charts, and category charts work together to reveal patterns and support decision-making.
-
----
-
-#### **Key Learning Points**
-
--   **Data Preparation:** Correct parsing of dates and proper aggregation ensures accurate analysis.
-    
--   **Visual Variety:** Use Matplotlib for static charts and Plotly for interactive exploration.
-    
--   **Trend versus Category Analysis:** Line charts show when events occur, while bar charts show what categories contribute most.
-    
--   **Contextual Insights:** Totals, averages, and top categories provide meaningful context to the charts.
-    
--   **Simplicity and Workflow:** A clear layout and structured sequence guide the narrative effectively.
 
 ---
 

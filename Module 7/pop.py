@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Comment Box")
+st.title("Thought Box")
 
 # Main comment input
 comment = st.text_area("Leave a comment:", placeholder="What's on your mind?")

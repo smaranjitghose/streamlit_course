@@ -182,7 +182,7 @@ This function is the cornerstone of your Streamlit app, turning raw data into an
 
 ---
 
-### Topic 3.1: JSON Viewer
+### Topic 3.3: JSON Viewer
 
 
 <br>
