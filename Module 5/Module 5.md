@@ -678,8 +678,6 @@ else:
 
 **Run your app with:**
 
-bash
-
 ```bash
 streamlit run app.py
 ```
