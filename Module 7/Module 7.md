@@ -390,7 +390,8 @@ When users open your app, they immediately understand where to find controls (th
 
 #### **Mini Project**
 
-You're building a movie recommendation system for a streaming service. Users need to filter through thousands of movies by genre, minimum rating, and release year to find their next watch. The sidebar will house all the filtering controls while the main page displays the matching movies.
+Jake settles in for movie night but wastes 30 minutes scrolling through his streaming service's massive catalog, hunting for a decent sci-fi film from the last few years while constantly skipping over romantic comedies, horror movies, and outdated releases that don't interest him.
+A smart movie filter would let Jake quickly set his preferences and instantly see only the films that match his exact criteria, turning his frustrating browsing sessions into efficient discoveries of his perfect Friday night watch.
 
 ##### **Project Setup**
 
