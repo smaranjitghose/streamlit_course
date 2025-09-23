@@ -105,7 +105,7 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%2010/mod10-chat.png">
 
 
 ---
@@ -218,7 +218,7 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%2010/mod10-customer.png">
 
 ---
 
@@ -352,7 +352,7 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%2010/mod10-story.png">
 
 ----
 
@@ -484,7 +484,7 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%2010/mod10-faq.png">
 
 -----
 
