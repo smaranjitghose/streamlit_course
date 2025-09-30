@@ -2,19 +2,17 @@
 
 ### Topic 8.1: Page Basics
 
-
-<br>
+----
 
 #### **Introduction**
 
-You know how confusing it gets when you cram everything onto one page? Your friend shows you their cool app, but it's this endless scroll of different features all mashed together—a calculator, then some charts, then a form, then more stuff. By the time you scroll down, you've forgotten what was at the top. Real apps don't work like this because users expect organized, navigable experiences where each section has a clear purpose.
+Imagine opening an app that throws everything at you at once—a messy wall of calculators, charts, forms, and random features all crammed into one endless scroll. You start exploring at the top, but by the time you've scrolled halfway down, you've completely forgotten what was available at the beginning. Now compare that to opening Instagram, where you get clean tabs for your feed, search, and profile, or Netflix with its organized sections for browsing, your list, and settings. The difference is dramatic—organized apps feel intuitive and professional, while cluttered single-page apps feel overwhelming and amateur.
 
-Streamlit's pages system solves this organization challenge by allowing developers to split applications into focused, logical sections that users can navigate naturally. Just like Instagram separates feeds from profiles or Netflix divides browsing from account settings, Streamlit's multi-page functionality enables clean information architecture where each page serves a specific purpose, creating intuitive user experiences that scale effectively as applications grow in complexity.
+Streamlit's multi-page system transforms chaotic single-page applications into organized, professional experiences by enabling developers to split functionality into focused, logical sections that users can navigate naturally. This approach creates clean information architecture where each page serves a specific purpose, allowing applications to scale gracefully while maintaining the intuitive navigation patterns that users expect from modern digital experiences.
 
 #### **Mini Project**
 
-Students at TechU University are frustrated because they need different types of information at different times but everything is crammed onto one overwhelming page. When they visit the website, they can't quickly distinguish between general university information, academic program details, and ways to get help or contact staff, making simple tasks unnecessarily time-consuming and confusing.
-A multi-page university website would solve this by organizing content into dedicated sections, letting students navigate directly to the specific information they need without wading through irrelevant content.
+Students at TechU University are frustrated because they need different types of information but everything is crammed onto one overwhelming page. They can't quickly distinguish between general information, academic programs, and contact details, making simple tasks unnecessarily time-consuming. A multi-page university website would organize content into dedicated sections, letting students navigate directly to what they need.
 
 ##### **Project Setup**
 
@@ -91,19 +89,18 @@ st.write("**Email:** info@techu.edu")
 
 ```
 streamlit run app.py
-
 ```
 
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-uni1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-uni2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8uni3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-uni3tldraw.png">
 
 
 ----
@@ -128,18 +125,17 @@ Multi-page architectures elevate applications from single-purpose tools to compr
 
 ### Topic 8.2: Page Links
 
-<br>
+----
 
 #### **Introduction**
 
-Ever noticed how some apps feel more like websites? Instead of just having that sidebar menu, they have buttons right in the content that say things like "Go to Settings" or "View Your Orders." These buttons feel more natural than hunting through menus - they guide you exactly where you need to go next.
+Some apps feel like they're reading your mind—just as you finish uploading a file, a "Process Data" button appears right where you need it, or after completing a form, a "View Results" link guides you seamlessly to the next step. Compare that to apps where you constantly hunt through sidebar menus trying to figure out where to go next—the difference is striking. Modern applications use contextual navigation that feels natural and intuitive, placing navigation controls directly within content flows rather than hiding them in separate menu systems. Streamlit's page links enable this smooth, guided user experience.
 
-In Streamlit, **Page links** let you create these smooth navigation experiences. Instead of users figuring out where to click in a sidebar, you can put helpful "Next Step" buttons right where they make sense in your content flow.
+Streamlit's page link functionality allows developers to embed navigation directly into content flows, creating "Next Step" buttons, contextual redirects, and guided workflows that appear exactly where users need them. This approach transforms rigid sidebar navigation into intuitive, content-driven experiences where users naturally progress through applications without hunting for the right menu option or losing track of their workflow.
 
 #### **Mini Project**
 
-Sarah needs to check her payslip before a meeting with her financial advisor, but navigating her company's employee portal is a frustrating maze of nested menus and confusing categories. She wastes precious time clicking through "Employee Services," then "Compensation," then "Pay History" just to find a simple document, and when she needs to request time off next week, she has to start the whole navigation process over again to find the leave section.
-An efficient employee portal would give workers like Sarah direct access to their most-needed functions - payslips, leave requests, and profile updates - all from one central dashboard without the menu hunting.
+Kavita needs to check her payslip before a meeting but navigating her company's employee portal is a frustrating maze of nested menus. She wastes time clicking through multiple sections just to find simple documents. An efficient employee portal would provide Kavita with clear page links to payslips, leave requests, and profile updates from one central dashboard, eliminating the navigation maze.
 
 ##### **Project Setup**
 
@@ -212,59 +208,55 @@ st.page_link("app.py", label="← Back to Portal")
 
 ```
 streamlit run app.py
-
 ```
 
 ##### **Output**
 
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp1mod8.png">
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp2mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-emp1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp3mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-emp2tldraw.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-emp3tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/emp4mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-emp4tldraw.png">
 
 
 ----
 
 #### **Step-by-Step Walkthrough**
 
-- **st.page_link()** creates a button that navigates to another page in your app. The first parameter is the path to the page file, and you can add a custom label and icon to make it clear where the button leads.
+- **`st.page_link()`** creates a button that navigates to another page in your app. The first parameter is the path to the page file, and you can add a custom label and icon to make it clear where the button leads.
 
-- **The label parameter** lets you customize what text appears on the button. Instead of showing the filename, you can write something user-friendly like "View Payslips" or "Edit Profile."
-
-- **The icon parameter** adds a visual element that makes buttons more recognizable. Users can quickly spot the payslip button by the money emoji or the profile button by the person icon.
+  - **The label parameter** lets you customize what text appears on the button. Instead of showing the filename, you can write something user-friendly like "View Payslips" or "Edit Profile."
+  
+  - **The icon parameter** adds a visual element that makes buttons more recognizable. Users can quickly spot the payslip button by the money emoji or the profile button by the person icon.
 
 - **Bidirectional navigation** works by putting page links on both the main page and the sub-pages. The main page links forward to specific sections, while each section links back to the main dashboard, creating a smooth user flow.
 
 
 #### **Conclusion**
 
-Strategic placement of navigation elements within content creates intuitive user journeys that guide users through complex workflows without relying on traditional menu systems. This contextual navigation approach transforms fragmented interfaces into cohesive experiences where each interaction feels purposeful and logically connected to the user's current task. Mastering these flow-based navigation patterns enables developers to build applications that feel less like software tools and more like natural, guided experiences.
+Strategic placement of navigation elements within content creates intuitive user journeys that guide users through complex workflows without relying on traditional menu systems. This contextual navigation approach transforms fragmented interfaces into cohesive experiences where each interaction feels purposeful and logically connected to the user's current task. 
 
 -----
 
 ### Topic 8.3: Switch Pages
 
-
-<br>
+---
 
 #### **Introduction**
 
-You know how some apps automatically take you to the next screen after you do something? Like when you log into your bank app and it immediately shows your account dashboard, or when you complete a purchase and suddenly you're on the "Thank You" page? That's not you clicking a link - the app is moving you along automatically.
+Intelligent navigation creates smooth user experiences by automatically guiding users to their next destination after completing actions. When someone logs into their banking app, they expect to land directly on their account dashboard; when they finish an online purchase, they should automatically reach the confirmation page without manual navigation. This seamless flow eliminates confusion and makes applications feel professional and intuitive by anticipating user needs. Streamlit's switch page functionality enables these smart, automatic redirects.
 
-Streamlit switch pages help us create these smart, automatic redirects. Instead of users having to figure out where to go next after completing an action, we can programmatically send them to the right place at the right time, making our apps feel more professional and user-friendly.
+Streamlit's `st.switch_page()` function allows you to programmatically navigate users to different pages based on actions, conditions, or workflow completion. Instead of users having to figure out where to go next after completing tasks, applications can automatically guide them to the appropriate destination, creating professional, intuitive experiences where navigation happens naturally as part of the user's workflow.
 
 #### **Mini Project**
 
-Maria wants to quickly check her favorite online store for a specific item during her lunch break, but she's forced to navigate through multiple pages after logging in - first a generic welcome page, then clicking through menus to finally reach the products. By the time she gets to the actual shopping section, her break is nearly over and she's lost the momentum to browse. She just wants to log in and immediately see what's available without unnecessary steps slowing her down.
-A streamlined e-commerce login system would get customers like Maria straight to the products they want to see, eliminating frustrating delays between authentication and actual shopping.
+Anita wants to quickly check her favorite online store during lunch break, but she's forced to navigate through multiple pages after logging in - first a welcome page, then clicking through menus to reach products. By the time she gets to the shopping section, her break is nearly over. A streamlined e-commerce login system would get customers like Anita straight to the products they want to see, eliminating delays between authentication and actual shopping.
 
 ##### **Project Setup**
 
@@ -362,19 +354,18 @@ if st.button("Logout"):
 
 ```
 streamlit run app.py
-
 ```
 
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom1mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-ecom1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom2mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-ecom2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom3mod8.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/mod8-ecom3tldraw.png">
 
 
 <img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%208/ecom4mod8.png">

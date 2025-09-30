@@ -1,24 +1,22 @@
 # Module 5: Working with Media, Files & Advanced Inputs
 
 ### Topic 5.1: Date Input
-<br>
+
+----
 
 #### **Introduction**
 
-Modern applications frequently require users to interact with time-sensitive data—whether scheduling meetings, tracking project deadlines, or planning events. However, manual date entry through text fields is error-prone and creates poor user experiences, while building custom calendar interfaces from scratch is complex and time-consuming. Streamlit's `st.date_input()` addresses these challenges by providing an elegant calendar widget that transforms complex date selection into a simple, user-friendly interaction.
+Time-based data interaction is fundamental to countless applications—from scheduling meetings and tracking deadlines to planning events and analyzing trends over periods. Yet traditional date entry methods create significant user friction through error-prone text fields that require specific formatting, while developing custom calendar interfaces involves substantial complexity and cross-browser compatibility challenges. Users expect intuitive date selection that eliminates typing errors and provides visual context for their choices.
 
-The `st.date_input()` function creates an interactive calendar picker that returns Python datetime.date objects, seamlessly integrating with Python's powerful datetime module for calculations, comparisons, and formatting operations. This functionality enables developers to build sophisticated time-based features like countdown timers, scheduling applications, deadline trackers, and any application where date calculations create meaningful value for users, all while maintaining the intuitive user experience that modern applications demand.
+Streamlit's `st.date_input()` function transforms these date selection challenges into elegant, user-friendly interactions through an interactive calendar widget that returns Python datetime.date objects. This seamless integration with Python's datetime module enables powerful date calculations, comparisons, and formatting operations, allowing developers to build sophisticated time-based applications where users can easily select dates and applications can perform complex temporal logic with simple, reliable date objects.
 
 #### **Mini Project**
 
-Alex loves birthdays and always gets excited weeks in advance, but constantly finds himself trying to calculate how many days are left until his special day. He'll count on calendars, ask friends to help him figure it out, or just guess and wonder if he's getting the math right. The anticipation is half the fun, but not knowing exactly when to start planning parties or getting genuinely excited is frustrating.
-A birthday countdown app would turn this guesswork into pure excitement, giving Alex the precise countdown he craves to make every day leading up to his birthday feel special.
+Akash loves birthdays and always gets excited weeks in advance, but constantly finds himself trying to calculate how many days are left until his special day. He'll count on calendars, ask friends to help him figure it out, or just guess and wonder if he's getting the math right. The anticipation is half the fun, but not knowing exactly when to start planning parties or getting genuinely excited is frustrating. A birthday countdown app would turn this guesswork into pure excitement, giving Alex the precise countdown he craves to make every day leading up to his birthday feel special.
 
 ##### **Project Setup**
 
 Create a new file `app.py`:
-
-python
 
 ```python
 import streamlit as st
@@ -59,8 +57,7 @@ streamlit run app.py
 
 ##### **Output**
 
-
-<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bdaymod5.png">
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-bdaytldraw.png">
 
 ----
 
@@ -79,23 +76,21 @@ streamlit run app.py
 #### **Conclusion**
 
 Date input widgets combined with datetime processing libraries represent essential patterns for handling temporal data across web development frameworks and desktop applications. These integration techniques enable developers to build sophisticated time-aware systems that power everything from scheduling platforms to analytics dashboards with intuitive user experiences. The seamless connection between user-friendly interfaces and robust temporal calculations forms the foundation for creating applications that make complex time-based operations accessible and meaningful to end users.
-
 ----
 
 ### Topic 5.2: Color Input
 
+----
 
 #### **Introduction**
 
-Color selection is essential for design tools, brand development, and any application where visual consistency matters. Designers and marketers need efficient ways to create, preview, and share color palettes without switching between multiple tools. Streamlit's `st.color_picker()` provides an intuitive color selection interface that returns hex color codes for immediate use.
+Color selection is essential for design tools, brand development, and any application where visual consistency matters. Traditional workflows force designers and marketers to switch between multiple tools for color creation, preview, and sharing, disrupting creative flow and making color management cumbersome. Users need efficient ways to select, experiment with, and apply colors directly within their working environment without external dependencies or complex setup processes.
 
-The `st.color_picker()` function creates a visual color picker with familiar interfaces—color wheels, sliders, and direct hex input. The widget returns hex color strings that can be applied to styling, exported as data, or used to generate visual previews of color combinations.
-
-Color input capabilities enable you to build professional design tools, brand palette generators, and customization interfaces that provide immediate visual feedback and practical output formats.
+Streamlit's `st.color_picker()` function provides an intuitive color selection interface with familiar components—color wheels, sliders, and direct hex input—that returns hex color codes for immediate use in styling, data export, or visual preview generation. This enables you to build design tools, palette generators, and customization interfaces where users can select colors and see immediate visual results.
 
 #### **Mini Project**
 
-You're a freelance designer who needs a quick tool to create brand color palettes for clients. The tool should let you select three brand colors, display them as professional swatches with hex codes, and arrange them in a clean palette strip that clients can easily reference and approve.
+Arjun is a freelance designer who struggles to present brand colors to clients in a professional way. He currently sends scattered screenshots or confusing color codes that clients can't easily visualize or approve, leading to endless revisions and miscommunication about the brand palette. A color palette tool would let Arjun select brand colors, display them as clean swatches with hex codes, and create professional palette strips that clients can easily reference and approve.
 
 ##### **Project Setup**
 
@@ -127,13 +122,10 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/color1mod5.png">
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-color1tldraw.png">
 
 
-<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/color2mod5.png">
-
-
-
+<img src ="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-color2tldraw.png">
 
 
 ---
@@ -157,19 +149,17 @@ Color input widgets unlock possibilities beyond mere selection—they enable exp
 
 ### Topic 5.3: File Upload & Download
 
-<br>
+---
 
 #### **Introduction**
 
-File handling capabilities transform static applications into dynamic data processing tools that work with real user data. Many applications require users to upload their own datasets, documents, or media files for processing, but traditional web development makes this complex and requires significant backend infrastructure. Streamlit's file handling widgets solve this challenge by providing simple, elegant interfaces that enable seamless data exchange between users and applications.
+File handling capabilities transform static applications into dynamic data processing tools that work with real user data. Many applications require users to upload their own datasets, documents, or media files for processing, but traditional web development makes this complex and requires significant backend infrastructure. Streamlit's file handling widgets solve this challenge by providing simple, elegant interfaces that enable seamless data exchange between users and applications. 
 
 The `st.file_uploader()` function creates an intuitive drag-and-drop interface that accepts various file types and returns file objects for immediate processing. This capability enables developers to build practical applications for data analysis, document processing, report generation, and any scenario where users need to work with their own files rather than static demo data, transforming simple prototypes into fully functional data processing tools that handle real-world workflows.
 
 #### **Mini Project**
 
-Maya tries to stick to her monthly budget, but when she downloads her bank statement as a CSV file, she's faced with rows and rows of cryptic transaction codes and messy data that make no sense. She spends hours manually sorting through expenses, trying to figure out how much she spent on groceries versus dining out, often giving up halfway through and losing track of her spending patterns. Without clear insights into where her money actually goes, her budget plans always fall apart.
-
-A spending analysis app would transform this confusing data chaos into clear, actionable insights that help Maya take control of her finances and make informed decisions about her spending habits.
+Rohan tries to stick to his monthly budget, but when he downloads his bank statement as a CSV file, he's faced with rows of cryptic transaction codes and messy data that make no sense. He spends hours manually sorting through expenses, trying to figure out spending by category, often giving up halfway through and losing track of his patterns. A spending analysis app would transform this confusing data chaos into clear, actionable insights that help Rohan take control of his finances and make informed spending decisions.
 
 ##### **Project Setup**
 
@@ -223,43 +213,32 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/csv1mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-csv1tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/csv2mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-csv2tldraw.png">
 
 
 -----
 
 #### **Step-by-Step Walkthrough**
 
--   We use the **pandas** library, a powerful Python toolkit for data manipulation and analysis. It provides DataFrame objects, which are like tables in a spreadsheet, making it easy to read, process, and summarize tabular data. Here, we use it to read the CSV file, preview the data, and calculate category totals.
+-  We use the **pandas** library, a powerful Python toolkit for data manipulation and analysis. It provides DataFrame objects, which are like tables in a spreadsheet, making it easy to read, process, and summarize tabular data. Here, we use it to read the CSV file, preview the data, and calculate category totals.
     
--   The `st.file_uploader()` function creates a drag-and-drop interface for uploading files. Its parameters include:
+-   The `st.file_uploader()` function creates a drag-and-drop interface for uploading files. The `type="csv"` parameter ensures that only CSV files can be uploaded, helping prevent format errors.
     
-    -   `label`: Displays instructions to the user above the uploader.
-        
-    -   `type`: Restricts file uploads to specific types; here, `"csv"` ensures only CSV files can be uploaded.
-        
-    -   `accept_multiple_files`: Determines whether the user can upload multiple files; `False` allows only a single file.
-        
-    -   `key`: Optional unique identifier for the widget, useful if you have multiple uploaders in the same app.
-        
-    -   `help`: Optional tooltip or guidance text displayed when the user hovers over the uploader.
-        
--   When a file is uploaded, `uploaded_file` becomes a file-like object. We pass it directly to `pd.read_csv()` to convert it into a pandas DataFrame. The check `if uploaded_file is not None:` ensures that we only attempt to read the file after an upload occurs.
+-  When a file is uploaded, `uploaded_file` becomes a file-like object. We pass it directly to `pd.read_csv()` to convert it into a pandas DataFrame. The check `if uploaded_file is not None:` ensures that we only attempt to read the file after an upload occurs.
     
 -   `df.head(10)` displays the first 10 rows of the uploaded file. Using `st.dataframe()` provides an interactive table so users can quickly verify the uploaded data.
     
--   We calculate total spending per category using pandas `groupby()` and `sum()`. The conditional check `if 'category' in df.columns and 'amount' in df.columns:` ensures the expected columns exist before performing calculations, preventing errors.
+-  We calculate total spending per category using pandas `groupby()` and `sum()`. The conditional check `if 'category' in df.columns and 'amount' in df.columns:` ensures the expected columns exist before performing calculations, preventing errors.
     
--   The `st.download_button()` function allows users to download the processed summary. `category_totals.to_csv(index=False)` converts the DataFrame to CSV format without row indices. The `mime="text/csv"` parameter tells the browser to treat the file as a CSV for proper handling.
+-  The `st.download_button()` function allows users to download the processed summary. `category_totals.to_csv(index=False)` converts the DataFrame to CSV format without row indices. The `mime="text/csv"` parameter tells the browser to treat the file as a CSV for proper handling.
     
     -   **MIME (Multipurpose Internet Mail Extensions)** types are standardized labels that instruct browsers and apps how to process different file formats. Here, `"text/csv"` ensures the file opens correctly in spreadsheet applications.
 
 ---
-
 
 #### **Conclusion**
 
@@ -269,24 +248,22 @@ File upload and download capabilities represent core functionality that transfor
 
 ### Topic 5.4: Images
 
-<br>
+---
 
 #### **Introduction**
 
-Streamlit apps can do more than display data—they can become interactive visual tools that manipulate, enhance, and transform images in real time. With the `st.image()` function, you can effortlessly show images from files, URLs, PIL objects, or even numpy arrays, making it ideal for both original and processed visuals.
+Modern applications frequently need to handle visual content—whether displaying user uploads, showcasing processed results, or creating interactive image manipulation tools. However, implementing image display functionality in web applications traditionally requires handling multiple formats, responsive sizing, and browser compatibility issues, creating significant development overhead for what should be a straightforward feature. 
 
-When paired with image processing libraries, your app can create striking before-and-after comparisons, apply creative filters, or perform specialized tasks. These capabilities open the door to building practical and fun tools for photography, design, content creation, or any scenario where users want to interact with and process images directly within your app.
+Streamlit's `st.image()` function eliminates these complexities by providing seamless image display capabilities. This function enables developers to create sophisticated visual applications that can display original images, show processed results, and create compelling before-and-after comparisons. When combined with image processing capabilities, this functionality opens possibilities for building photography tools, design applications, content creation platforms, or any scenario where users need to interact with and transform visual content directly within the application interface.
 
 
 #### **Mini Project**
 
-Marcus runs a small online business and constantly needs product photos with clean, white backgrounds for his website and social media. Every time he takes photos, he faces the same frustrating problem: messy backgrounds that make his products look unprofessional. He's tried editing apps before, but manually selecting and erasing backgrounds takes forever and never looks quite right, leaving him with jagged edges and obvious mistakes that hurt his brand image.
-A background removal app would eliminate this tedious editing process and give Marcus the professional-looking product photos he needs to present his business confidently.
-
+Vikram runs a small online business and constantly needs product photos with clean, white backgrounds for his website and social media. Every time he takes photos, he faces messy backgrounds that make his products look unprofessional. He's tried editing apps before, but manually erasing backgrounds takes forever and never looks right, leaving him with jagged edges that hurt his brand image. A background removal app would eliminate this tedious editing process and give Vikram the professional-looking product photos he needs to present his business confidently.
+  
 ##### **Project Setup**
 
-First, install the required library:
-
+Install a new dependency:
 
 ```bash
 uv add rembg
@@ -348,18 +325,16 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bgremove1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-image1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/bgremove2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-image2tldraw.png">
 
 ----
 
 #### **Step-by-Step Walkthrough**
-
-
         
--   **PIL (Python Imaging Library)**: Handles image loading and manipulation. `Image.open()` converts uploaded files into Image objects suitable for display and processing.
+-   **PIL (Python Imaging Library)**: is a Python library for image processing that provides tools to open, edit, and save images in various formats, and its actively maintained fork is called Pillow.
     
 -   **`rembg`**: A Python library that uses pre-trained AI models to automatically detect and remove image backgrounds. No manual selection or green screen is needed.
     
@@ -401,24 +376,23 @@ streamlit run app.py
 
 #### **Conclusion**
 
-By bridging powerful image processing libraries with Streamlit's user-friendly interface, you can make advanced AI capabilities accessible to non-technical users who need professional-grade results. This pattern extends beyond background removal to any image manipulation task—from style transfer to object detection to medical imaging analysis—where the complexity of the underlying technology is hidden behind elegant simplicity.
-
+By bridging powerful image processing libraries with intuitive interfaces, complex AI capabilities become universally accessible while maintaining professional-grade quality. This integration pattern scales across numerous image manipulation domains—encompassing style transfer, object detection, medical imaging analysis, and countless other applications. The magic happens when sophisticated algorithms disappear behind elegant interfaces, creating tools that feel simple to use yet deliver enterprise-level results.
 
 -----
 
 ### Topic 5.5: Audio
 
-<br>
+---
 
 #### **Introduction**
 
-Audio processing applications often require users to preview, analyze, or work with sound files, but embedding audio playback in web applications traditionally involves complex HTML5 audio implementations and cross-browser compatibility issues. Users need intuitive ways to interact with their audio content—whether voice recordings, music files, or generated sounds—without leaving the application interface. Streamlit's `st.audio()` widget eliminates these technical barriers by providing a simple, browser-native audio player that handles playback seamlessly.
-The `st.audio()` function accepts uploaded files, byte data, or file paths, supporting common formats like WAV and MP3 for broad device compatibility. This flexibility enables developers to create comprehensive audio workflows where users can upload audio files, preview them instantly, and process them with Python libraries, transforming complex audio tasks into streamlined, user-friendly applications.
+Audio processing applications often require users to preview, analyze, or work with sound files, but embedding audio playback in web applications traditionally involves complex HTML5 audio implementations and cross-browser compatibility issues. Users need intuitive ways to interact with their audio content—whether voice recordings, music files, or generated sounds—without leaving the application interface. 
+
+Streamlit's `st.audio()` widget eliminates these technical barriers by providing a simple, browser-native audio player that handles playback seamlessly. This function accepts uploaded files, byte data, or file paths, supporting common formats like WAV and MP3 for broad device compatibility. This flexibility enables developers to create comprehensive audio workflows where users can upload audio files, preview them instantly, and process them with Python libraries, transforming complex audio tasks into streamlined, user-friendly applications.
 
 #### **Mini Project**
 
-Jake loves discovering new podcasts and audio content online, but he's frustrated with how difficult it is to sample episodes before committing to a subscription or download. He finds interesting audio clips shared on social media and forums, but they're often embedded in websites with poor players that buffer constantly or don't work on his device. He wants to quickly listen to these audio samples to decide if they're worth his time, but the clunky web players make the experience more annoying than enjoyable.
-A simple audio upload and playback app would let Jake easily listen to audio samples he finds online in a clean, reliable player without the frustration of broken website interfaces.
+Rajesh loves discovering new podcasts and audio content online, but he's frustrated with how difficult it is to sample episodes before committing to a subscription or download. He finds interesting audio clips shared on social media and forums, but they're often embedded in websites with poor players that buffer constantly or don't work on his device. A simple audio upload and playback app would let Rajesh easily listen to audio samples he finds online in a clean, reliable player without the frustration of broken website interfaces.
 
 ##### **Project Setup**
 
@@ -460,10 +434,10 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/audiomod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-audio1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/audio2mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-audio2tldraw.png">
 
 
 ----
@@ -490,30 +464,25 @@ streamlit run app.py
 
 The integration of user-friendly interfaces with powerful audio processing libraries creates versatile platforms that serve diverse multimedia workflows across web and desktop applications. These patterns eliminate the complexity of command-line tools while preserving professional-grade functionality, making sophisticated audio manipulation accessible to both technical and non-technical users. This approach to combining intuitive interfaces with powerful backend capabilities represents a fundamental design principle for creating applications that bring advanced technical functionality to mainstream users.
 
-
 ---
 
 ### Topic 5.6: Camera Access
 
-<br>
+---
 
 #### **Introduction**
 
-Imagine being able to snap a photo right inside a web app — no separate camera app, no extra steps. That’s exactly what Streamlit’s `st.camera_input()` makes possible. With just a single click, users can capture images directly from their browser, instantly turning them into digital objects your app can work with.
+Real-time image capture has become essential for modern applications—from profile creation and document verification to interactive visual experiences—but implementing camera functionality in web applications traditionally requires complex WebRTC APIs and extensive browser compatibility handling. Users expect seamless photo capture without leaving the application or switching to separate camera apps, yet building this functionality from scratch involves significant technical complexity. 
 
-The photos returned by `st.camera_input()` are ready for immediate processing, opening the door to applications like profile creation, document verification, or any workflow that needs fresh, live images.
-
-By adding camera input, you transform a static app into an interactive, creative tool—one that can generate personalized content, build custom graphics, or handle real-time visual data—all from within the browser itself.
+Streamlit's `st.camera_input()` eliminates these barriers by providing single-click camera access that instantly converts captured photos into processable digital objects within your application. By adding camera input, you transform a static app into a creative tool—one that can generate personalized content, build custom graphics, or handle real-time visual data—all from within the browser itself.
 
 #### **Mini Project**
 
-Mark organizes monthly community workshops and always struggles with creating professional-looking ID badges for attendees. He usually ends up hand-writing names on generic stickers or printing plain labels, which look unprofessional and don't include photos for security. The local print shop charges too much for custom ID cards, and using complex design software takes hours he doesn't have. His events would run smoother with proper identification, but the current process is too time-consuming and expensive.
-A simple ID card creator would solve this by letting Mark quickly generate professional-looking photo IDs for his events without the high costs or technical complexity.
+Suresh organizes monthly community workshops and always struggles with creating professional-looking ID badges for attendees. He usually ends up hand-writing names on generic stickers or printing plain labels, which look unprofessional and don't include photos for security. The local print shop charges too much for custom ID cards, and using complex design software takes hours he doesn't have. A simple ID card creator would solve this by letting Suresh quickly generate professional-looking photo IDs for his events without the high costs or technical complexity.
 
 ##### **Project Setup**
 
-First, install the required library:
-
+Install a new dependency:
 
 ```bash
 uv add pillow
@@ -592,13 +561,13 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod51.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-camera1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod52.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-camera2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/cameramod53.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-camera3tldraw.png">
 
 
 ---
@@ -606,21 +575,17 @@ streamlit run app.py
 #### **Step-by-Step Walkthrough**
 
 
- -  **Pillow (PIL)**: Python’s most popular image processing library. It provides tools to open, manipulate, and save images in various formats. In this app, PIL is used for:
-
-	-   Converting captured camera photos into editable Image objects (`Image.open()`)
-	    
-	-   Resizing images (`resize()`)
-	    
-	-   Creating new image canvases (`Image.new()`)
-	    
-	-   Adding text overlays (`ImageDraw.Draw()`)
-
-- **Camera Input**: `st.camera_input()` opens the device camera and captures a photo, returning it as an image file object.
-
-- **Creating the ID Card Layout:** The captured photo is resized, pasted onto a new white background canvas, and positioned on the left side of the ID card.
-
-- **Adding Text**: `ImageDraw.Draw()` overlays text for the title, name, and ID number at specific coordinates with chosen colors.
+-   **Camera Input**: `st.camera_input()` opens the device camera and captures a photo, returning it as an image file object.
+    
+-   **Converting the photo**: Convert the uploaded file into a Pillow `Image` object (e.g., via `Image.open()` or `Image.open(io.BytesIO(...))`) so it can be edited.
+    
+-   **Resizing**: Resize the captured photo with `resize()` to fit the ID card photo area.
+    
+-   **Creating the ID card layout**: Create a new white canvas with `Image.new()`, paste the resized photo onto the left side of the canvas, and arrange remaining space for text.
+    
+-   **Adding text**: Use `ImageDraw.Draw()` (and optional `ImageFont`) to overlay the title, name, and ID number at specific coordinates with chosen fonts and colors.
+    
+-   **Saving/output**: Save or export the final ID card image with `save()` or convert it to bytes for display/download in the app.
 
 
 ---
@@ -628,23 +593,23 @@ streamlit run app.py
 
 #### **Conclusion**
 
-Camera functionality integrated with web applications creates seamless workflows where users can capture, process, and generate personalized content without external tools or file transfers. This real-time approach eliminates upload friction while enabling sophisticated applications like document verification systems, interactive kiosks, and automated content generation platforms. These patterns represent essential capabilities for building modern applications that require immediate visual input processing and can adapt instantly to user-generated content.
+Camera functionality integrated with web applications creates seamless workflows where users can capture, process, and generate personalized content without external tools or file transfers. This real-time approach eliminates upload friction while enabling sophisticated applications like document verification systems, interactive kiosks, and automated content generation platforms. 
 
 ----
 
 ### Topic 5.7: Video
 
-<br>
+---
 
 #### **Introduction**
 
-Modern applications increasingly rely on video content to convey complex information, demonstrate processes, or engage users through rich media experiences. However, implementing video playback in web applications traditionally requires handling multiple formats, browser compatibility issues, and custom player controls, creating significant development overhead. Streamlit's `st.video()` widget simplifies this complexity by providing a robust, browser-native video player with familiar controls like play, pause, seek, volume, and fullscreen capabilities.
-The `st.video()` function works seamlessly with uploaded files, byte streams, or URLs, supporting formats like **MP4**, **MOV**, and **WebM** to ensure smooth playback across devices. 
+Video content has become essential for conveying complex information, demonstrating processes, and creating engaging user experiences across countless applications. However, implementing video playback in web applications traditionally requires handling multiple formats, browser compatibility issues, and custom player controls, creating significant development overhead. Users expect seamless video integration that works reliably across different devices and browsers without technical complications.
+
+Streamlit's `st.video()` widget simplifies video implementation by providing a robust, browser-native player with familiar controls like play, pause, seek, volume, and fullscreen capabilities. The function works seamlessly with uploaded files, byte streams, or URLs, supporting formats like MP4, MOV, and WebM to ensure smooth playbook across devices, enabling you to create interactive learning platforms, content preview systems, and multimedia applications with minimal complexity.
 
 #### **Mini Project**
 
-Alok is a film enthusiast who downloads movie trailers and promotional videos from various sources to build his personal collection, but his computer's default video player is frustrating to use. The interface is cluttered with features he doesn't need, it takes forever to load, and sometimes it doesn't even support certain video formats he's downloaded. He just wants a clean, simple way to watch his trailer collection without dealing with buggy software or compatibility issues that interrupt his viewing experience.
-A streamlined video player would give Alok the smooth, hassle-free viewing experience he wants for his personal video collection without the bloat and technical problems of complicated media software.
+Alok is a film enthusiast who downloads movie trailers and promotional videos from various sources to build his personal collection, but his computer's default video player is frustrating to use. The interface is cluttered with features he doesn't need, it takes forever to load, and sometimes it doesn't even support certain video formats he's downloaded. He just wants a clean, simple way to watch his trailer collection without dealing with buggy software or compatibility issues that interrupt his viewing experience. A streamlined video player would give Alok the smooth, hassle-free viewing experience he wants for his personal video collection without the bloat and technical problems of complicated media software.
 
 ##### **Project Setup**
 
@@ -668,6 +633,7 @@ if uploaded_video is not None:
     st.write(f"File name: {uploaded_video.name}")
     st.write(f"File size: {len(uploaded_video.getvalue())} bytes")
     
+    )
     
     st.success("Video uploaded successfully! Use the player controls to watch your trailer.")
     
@@ -684,30 +650,36 @@ streamlit run app.py
 
 ##### **Output**
 
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/vid1mod5.png">
-
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/vid2mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-videotldraw1.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/video3mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-video2tldraw.png">
+
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-video3tldraw.png">
 
 
 ----
 
 #### **Step-by-Step Walkthrough**
 
--   `st.file_uploader()` is configured with `type=["mp4", "mov", "avi"]` to restrict uploads to common video formats, ensuring compatibility with the built-in video player.
-        
- -   `st.video(uploaded_video)` creates a browser-native HTML5 video player with controls such as play/pause, progress bar, volume adjustment, and fullscreen. The uploaded video plays directly without conversion.
-        
- -   `uploaded_video.name` retrieves the original filename.
 
- -   `len(uploaded_video.getvalue())` calculates the file size in bytes, giving users quick insight into their uploaded video.
+-   **`st.file_uploader()`** is configured with `type=["mp4", "mov", "avi"]` to restrict uploads to common video formats, ensuring compatibility with the built-in video player.
+    
+-   **`st.video(uploaded_video, format="video/mp4", start_time=0)`** embeds a browser-native HTML5 video player.
+    
+    -   **`uploaded_video`**: The video file (or URL) to be played.
+        
+    -   **`format`**: (optional) MIME type of the video, e.g., `"video/mp4"` for MP4 files.
+        
+    -   **`start_time`**: (optional) Position in seconds from which playback begins.  
+        The player includes controls such as play/pause, progress bar, volume, and fullscreen, and plays the uploaded file directly without conversion.
+        
+-   **`uploaded_video.name`** retrieves the original filename.
+    
+-   **`len(uploaded_video.getvalue())`** calculates the file size in bytes, giving users quick insight into their uploaded video.
 
 ---
 
@@ -720,22 +692,21 @@ The combination of intuitive video upload and instant playback capabilities esta
 
 ### Topic 5.8: PDFs
 
-<br>
+---
 
 #### **Introduction**
 
-PDF documents are ubiquitous in professional workflows—from reports and research papers to forms and legal documents—but working with them in web applications traditionally requires users to download files or switch between multiple applications to view content. This fragmented experience slows down productivity and creates barriers in data processing workflows where PDF content needs to be analyzed, searched, or transformed. Streamlit eliminates these friction points by providing built-in PDF display capabilities that allow users to interact with documents directly within the application interface.
+PDF documents are ubiquitous in professional workflows—from reports and research papers to forms and legal documents—but working with them in web applications traditionally requires users to download files or switch between multiple applications to view content. This fragmented experience slows down productivity and creates barriers in data processing workflows where PDF content needs to be analyzed, searched, or transformed. Users need seamless document interaction that keeps them focused within a single interface.
 
-Streamlit's PDF display functions enable comprehensive document processing workflows where users can upload PDFs, view them inline with page navigation, extract metadata like page counts, and pull text content for further analysis.
+Streamlit eliminates these friction points by providing built-in PDF display capabilities that allow users to interact with documents directly within the application interface. This integrated approach enables you to build document-focused applications where PDF viewing becomes part of the workflow rather than a separate step, creating seamless experiences for document review, content analysis, and research applications.
 
 #### **Mini Project**
 
-Lisa works at a law firm where she constantly deals with lengthy legal documents, but she only needs specific pages from these massive PDFs for different cases. Instead of sending entire 50-page contracts to clients when they only need to see page 12, she wastes time opening heavy PDF editors, navigating through dozens of pages, and trying to extract just the sections she needs. Her clients get frustrated receiving unnecessary pages, and she spends too much time on what should be a simple task.
-A PDF preview and extraction app would let Lisa quickly browse through documents, identify the exact pages she needs, and download only those specific pages to share with clients efficiently.
+Meera works at a law firm where she constantly deals with lengthy legal documents, but she only needs specific pages from these massive PDFs for different cases. Instead of sending entire 50-page contracts to clients when they only need to see page 12, she wastes time opening heavy PDF editors, navigating through dozens of pages, and trying to extract just the sections she needs. A PDF preview and extraction app would let Meera quickly browse through documents, identify the exact pages she needs, and download only those specific pages to share with clients efficiently.
 
 ##### **Project Setup**
 
-First, install the required library:
+Install a new dependency:
 
 ```bash
 uv add PyPDF2
@@ -808,14 +779,13 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/pdf1mod5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-pdf1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5pdf2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-pdf2tldraw.png">
 
 
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5pdf3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%205/mod5-pdf3tldraw.png">
 
 
 ---

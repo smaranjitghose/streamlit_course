@@ -2,17 +2,17 @@
 
 ### Topic 9.1: Session State (single page)
 
-<br>
+----
 
 #### **Introduction**
 
-Imagine filling out a long form online, getting halfway through, and then accidentally hitting a button that makes everything disappear—you'd have to start over from scratch. This frustrating experience happens in basic Streamlit apps because, by default, the entire script reruns with every user interaction, resetting all variables to their initial values. While this stateless behavior keeps apps simple and predictable, real-world applications often need to remember information across interactions—like maintaining user preferences, tracking accumulated calculations, or preserving data between different interface actions.
-Streamlit's `st.session_state` solves this memory problem by providing persistent storage that survives script reruns, enabling stateful applications that can accumulate and maintain data over multiple user interactions. Session state works as a dictionary-like object where you can store any Python data type and access them throughout your application, creating sophisticated user experiences that handle complex workflows while maintaining consistency across interactions.
+Web applications face a fundamental challenge with user data persistence—every interaction triggers a complete refresh that wipes out previously entered information, forcing users to repeatedly input the same data or lose their progress entirely. This stateless behavior, while simple to implement, creates frustrating experiences where accumulated work disappears with a single misclick, breaking user workflows and making complex interactions nearly impossible to manage effectively.
+
+Streamlit's `st.session_state` solves this memory problem by providing persistent storage that survives script reruns, enabling applications to remember and maintain data across multiple user interactions. Session state functions as a dictionary-like object where you can store any Python data type and access it throughout your application, creating sophisticated user experiences that handle complex workflows while preserving user progress and maintaining data consistency across all interactions.
 
 #### **Mini Project**
 
-Jake is shopping online for his home office setup, carefully selecting a desk, chair, and accessories across multiple product pages, but every time he navigates back to browse more items, his cart empties and he has to start over. He's frustrated by losing his selections and having to remember what he already picked, especially when he wants to compare different combinations of items or remove something he's changed his mind about.
-An online store with persistent cart functionality would let Jake build up his order gradually, make changes as he shops, and maintain his selections throughout his entire browsing session without losing progress.
+Deepak is shopping online for his home office setup, carefully selecting a desk, chair, and accessories across multiple product pages, but every time he navigates back to browse more items, his cart empties and he has to start over. He's frustrated by losing his selections and having to remember what he already picked. An online store with persistent cart functionality would let Deepak build up his order gradually, make changes as he shops, and maintain his selections throughout his entire browsing session without losing progress.
 
 ##### **Project Setup**
 
@@ -85,7 +85,6 @@ else:
 
 ```
 streamlit run app.py
-
 ```
 
 ##### **Output**
@@ -174,10 +173,12 @@ streamlit run app.py
     -   If `st.session_state.cart` is empty, displays `"Your cart is empty"`.
         
     -   Keeps the interface informative when no items have been added yet.
+    
+----
 
 #### **Conclusion**
 
-State management patterns transform stateless web frameworks into platforms capable of building persistent applications that maintain user context across interactions. These techniques enable developers to create seamless user experiences for complex workflows, from multi-step processes to interactive data pipelines that accumulate information over time. Mastering state persistence opens the door to creating applications that remember user preferences, track progress, and provide continuity across sessions—essential capabilities for any serious web application.
+State management techniques allow applications to remember user information and maintain continuity across different sessions and interactions. These patterns create seamless experiences where progress is saved, preferences are remembered, and users can pick up exactly where they left off. The ability to persist state bridges the gap between simple, one-time tools and comprehensive platforms that build lasting relationships with users through consistent, personalized experiences.
 
 -------
 
@@ -188,12 +189,12 @@ State management patterns transform stateless web frameworks into platforms capa
 #### **Introduction**
 
 Consider an e-commerce application where users browse products on one page, add items to their cart on another, and proceed to checkout on a third page. Without proper state management, users would lose their cart contents every time they navigate between pages, forcing them to repeatedly add the same items or abandon their purchase entirely. This fragmented experience breaks user expectations and creates significant barriers to completing multi-step processes. Streamlit's session state solves this cross-page persistence challenge by automatically maintaining user context across all pages in your application.
+
 Session state in Streamlit works seamlessly across page navigation, enabling sophisticated application flows like user authentication systems, multi-step wizards, or personalized experiences where each page can access and modify shared data. This capability allows developers to build cohesive applications that feel integrated and stateful rather than disconnected collections of individual tools, creating smooth user experiences that maintain context throughout the entire application journey.
 
 #### **Mini Project**
 
-Maria is using her company's project management app, but every time she clicks between the dashboard, reports, and settings pages, she gets kicked back to the login screen and has to enter her credentials again. This constant re-authentication interrupts her workflow and wastes time, especially during busy days when she needs to quickly jump between different sections to update projects and check team progress.
-A multi-page application with persistent authentication would let Maria log in once and seamlessly navigate between all sections without losing her session, keeping her workflow smooth and uninterrupted.
+Ravi is using his company's project management app, but every time he clicks between the dashboard, reports, and settings pages, he gets kicked back to the login screen and has to enter his credentials again. This constant re-authentication interrupts his workflow and wastes time during busy days. A multi-page application with persistent authentication would let Ravi log in once and seamlessly navigate between all sections without losing his session, keeping his workflow smooth and uninterrupted.
 
 ##### **Project Setup**
 
@@ -208,7 +209,8 @@ app/
 
 ```
 
-**main.py** (Login page):
+**`main.py`** (Login page):
+
 ```python
 import streamlit as st
 
@@ -247,7 +249,7 @@ else:
 
 ```
 
-**pages/1_Dashboard.py**:
+**`pages/1_Dashboard.py`**:
 
 ```python
 import streamlit as st
@@ -275,7 +277,7 @@ if st.button("Logout"):
 
 ```
 
-**pages/2_Reports.py**
+**`pages/2_Reports.py`**
 
 ```python
 
@@ -303,7 +305,7 @@ if st.button("Logout"):
     st.switch_page("main.py")
 
 ```
-**pages/3_Settings.py**
+**`pages/3_Settings.py`**
 
 ```python
 
@@ -412,7 +414,6 @@ streamlit run main.py
 
 Multi-page session state management unlocks the ability to build comprehensive applications like e-commerce platforms, learning management systems, and enterprise dashboards that maintain user context across sections. This persistent state capability enables developers to create applications where user progress, preferences, and data flow seamlessly between different functional areas. Mastering cross-page state management is essential for building web applications that compete with traditional desktop software in terms of user experience and functionality.
 
-
 ----
 
 ### Topic 9.3: Widget Callbacks
@@ -421,14 +422,13 @@ Multi-page session state management unlocks the ability to build comprehensive a
 
 #### **Introduction**
 
-Imagine building a data dashboard where users need to filter datasets, update charts, and modify parameters—but every single interaction forces them to wait while the entire application reloads from scratch. This sluggish experience plagues traditional web applications, where clicking a button to add an item to a list, submitting a form, or adjusting a slider triggers a complete page refresh. Users become frustrated with the delays, especially when performing multiple related actions that should flow seamlessly together. The problem intensifies in complex data applications where immediate feedback is crucial for maintaining user engagement and workflow momentum.
+Data-intensive applications face a fundamental user experience challenge—every user interaction triggers a complete application reload, creating frustrating delays between actions and responses. When users filter datasets, update charts, or modify parameters, they expect immediate feedback, not spinning loading indicators that break their analytical flow. Traditional web applications force users to wait through full page refreshes for simple actions like adding items to lists or adjusting sliders, creating sluggish experiences that feel disconnected from the fluid interactions users expect in modern applications.
 
-Streamlit's widget callback system eliminates these delays by allowing specific functions to execute instantly when users interact with widgets, rather than forcing the entire app to rerun. This creates responsive, desktop-application-like experiences where button clicks, input changes, and widget interactions trigger immediate responses. Widget callbacks are particularly powerful for managing complex state changes, processing form data dynamically, and coordinating multiple widgets to work together seamlessly—transforming sluggish web apps into fluid, interactive experiences that respond in real-time to user actions.
+Streamlit's widget callback system eliminates these delays by allowing specific functions to execute instantly when users interact with widgets, rather than forcing entire application reruns. This creates responsive, desktop-like experiences where button clicks, input changes, and widget interactions trigger immediate responses. Widget callbacks enable complex state management, dynamic form processing, and coordinated widget interactions, transforming sluggish web applications into fluid, real-time experiences that maintain user engagement and workflow momentum.
 
 #### **Mini Project**
 
-David is a project manager who currently tracks his tasks across sticky notes, email drafts, and a basic notepad app. Throughout his busy days, he constantly loses track of what he's already completed, forgets to add new urgent tasks that come up during meetings, and wastes time manually crossing out or erasing outdated items when priorities change.
-A dedicated task tracker would give David one central place to instantly add new tasks, check off completed work for immediate visual clarity, and remove irrelevant items with a simple delete action, transforming his chaotic task management into a streamlined daily workflow.
+Nikhil is a project manager who currently tracks his tasks across sticky notes, email drafts, and a basic notepad app. Throughout his busy days, he constantly loses track of what he's completed, forgets to add new urgent tasks from meetings, and wastes time manually crossing out outdated items when priorities change. A dedicated task tracker would give Nikhil one central place to add new tasks, check off completed work, and remove irrelevant items, transforming his chaotic task management into a streamlined daily workflow.
 
 ##### **Project Setup**
 
@@ -488,7 +488,7 @@ for i, task in enumerate(st.session_state.tasks):
 **Run your app with:**
 
 ```bash
-streamlit run main.py
+streamlit run app.py
 ```
 ---
 
@@ -560,15 +560,12 @@ This callback pattern establishes a foundation for building responsive user inte
 
 #### **Introduction**
 
-Picture a data analysis app that fetches information from an API, loads a large CSV file, and trains a machine learning model every single time a user adjusts a filter or clicks a button. Each interaction forces users to wait through the same expensive operations repeatedly—the API call takes 3 seconds, the file load takes 2 seconds, and model training takes 10 seconds—even when the underlying data hasn't changed. This creates a painfully slow user experience where simple interactions result in 15+ second delays, making the app practically unusable for real-world scenarios where users need to explore data interactively.
+Data applications often become painfully slow because they repeat the same expensive work over and over again—every time a user clicks a button, the app might re-download the same large dataset, re-query the same database, or re-train the same machine learning model, even though nothing has actually changed. These redundant operations create unnecessary delays where users wait for computations that have already been done before. Instead of instantly showing results from previous work, applications waste time and resources by starting from scratch with every interaction.
 
-Streamlit's caching system eliminates this performance bottleneck by intelligently storing the results of expensive operations and reusing them when inputs remain unchanged. Through two main caching decorators—`st.cache_data` for data operations like API calls and calculations, and `st.cache_resource` for global resources like database connections or ML models—Streamlit transforms sluggish apps into snappy, responsive tools. When users interact with a cached app, operations that previously took seconds now execute instantly, creating fluid experiences where data exploration feels seamless and immediate rather than frustratingly slow.
-
+Streamlit's caching system eliminates this waste by intelligently storing expensive operation results and reusing them when inputs remain unchanged. Through `st.cache_data` for data operations and `st.cache_resource` for global resources like database connections, caching transforms slow, repetitive applications into fast, responsive tools where previously time-consuming operations now execute instantly, enabling seamless data exploration that feels immediate and encourages user engagement.
 #### **Mini Project**
 
-Emma is researching universities abroad and constantly switches between searching for schools in different countries. Each time she revisits a country she's already explored, she has to wait for the same slow loading times as the system fetches identical university data from scratch, making her research process frustratingly repetitive.
-
-A smart university finder would cache her previous searches, instantly showing universities from countries she's already explored while fetching fresh data for new searches, eliminating unnecessary wait times during her university research.
+Shreya is researching universities abroad and constantly switches between searching for schools in different countries. Each time she revisits a country she's already explored, she has to wait for the same slow loading times as the system fetches identical university data from scratch, making her research process frustratingly repetitive. A smart university finder would cache her previous searches, instantly showing universities from countries she's already explored while fetching fresh data for new searches, eliminating unnecessary wait times.
 
 ##### **Project Setup**
 
@@ -637,30 +634,33 @@ streamlit run app.py
 
 #### **Step-by-Step Walkthrough**
 
--   **`import requests`** → allows the app to make HTTP requests to external APIs (here, to fetch university data).
-        
+-   **`requests`**: A Python library that lets you send HTTP requests (GET, POST, etc.) to external servers or APIs and handle responses in formats like JSON, HTML, or text.
+    
 -   **Fetch universities with caching**
     
-    -   `@st.cache_data` wraps `fetch_universities(country)` → caches results based on the country parameter.
+    -   **`@st.cache_data`** wraps `fetch_universities(country)` → caches function output **based on input parameters**.
         
-    -   First search triggers an API call; subsequent searches for the same country return cached data instantly.
+    -   The first search triggers an API call; subsequent searches for the same country **return cached results instantly**, improving performance.
         
 -   **Global resource caching**
     
-    -   `@st.cache_resource` wraps `get_api_base_url()` → stores global configuration that doesn’t depend on parameters.
+    -   **`@st.cache_resource`** wraps `get_api_base_url()` → caches resources **that do not depend on input parameters**, like global configuration, database connections, or API clients.
         
 -   **Loading feedback**
     
-    -   `st.spinner()` shows a loading message while the API request is in progress.
-        
+    -   **`st.spinner()`** displays a loading message while the API request is in progress, giving users visual feedback.
         
 -   **Cache behavior explanation**
     
-    -   Streamlit automatically invalidates cache if the input parameter (`country`) changes.
+    -   **Parameter-based invalidation**: Streamlit automatically refreshes `st.cache_data` if the input parameter (`country`) changes.
         
-    -   The same function code works without modification; Streamlit handles caching transparently.
+    -   **Transparent caching**: The same function code works without modifications; Streamlit handles storage and retrieval automatically.
         
-    -   `st.info()` reminds users that selecting the same country again loads results instantly from cache.
+    -   **User notice**: `st.info()` can remind users that selecting the same country again loads results instantly from cache.
+        
+
+This way, `st.cache_data` is used for **parameter-dependent outputs**, while `st.cache_resource` is for **global or reusable objects**.
+
 
 #### **Conclusion**
 
@@ -668,17 +668,15 @@ Strategic caching implementation dramatically improves application performance a
 
 ----
 
-### Topic 9.5: Progress & Status
-
 #### **Introduction**
 
 Imagine uploading a large dataset to your Streamlit app for processing—clicking the "Analyze" button only to be met with a completely static screen for several minutes. Users have no idea if the app is working, frozen, or broken, leading many to refresh the page or abandon the process entirely. This scenario repeats across data applications whenever users trigger long-running operations like file processing, API calls, or complex calculations. Without visual feedback, even a 30-second operation feels endless, creating anxiety and uncertainty that drives users away from otherwise functional applications.
 
-Streamlit's progress indicators and status messaging tools solve this communication gap by keeping users informed and engaged during lengthy operations. Through `st.progress()` for visual progress bars showing completion percentages, `st.spinner()` for animated loading indicators with custom messages, and status containers for multi-step process updates, Streamlit transforms potentially frustrating wait times into reassuring progress updates. These feedback mechanisms turn user anxiety into confidence, ensuring that long-running processes feel manageable and professional rather than broken or unresponsive.
+Streamlit's progress indicators and status messaging tools solve this communication gap by keeping users informed and engaged during lengthy operations. Through `st.progress()` for visual progress bars, `st.spinner()` for animated loading indicators with custom messages, and status containers for multi-step updates, these tools transform potentially frustrating wait times into reassuring progress communication. This turns user anxiety into confidence, ensuring that long-running processes feel manageable and professional rather than broken or unresponsive.
 
 #### **Mini Project**
-Marcus is a market research analyst who dreads Monday mornings when his inbox fills with chaotic CSV files—customer surveys with typos, sales reports missing crucial columns, and product data riddled with duplicates from different regional offices. He currently spends his entire morning playing detective with spreadsheets, manually hunting down errors and inconsistencies, never knowing if he's missed something critical or how to explain his cleaning process to his skeptical boss.
-A transparent data cleaning pipeline would let Marcus drag and drop his messy files and watch as the system methodically identifies and fixes each issue, providing a clear log of what was cleaned and timing estimates, transforming his Monday morning nightmare into a confident, trackable process.
+
+Rahul is a market research analyst who dreads Monday mornings when his inbox fills with chaotic CSV files—customer surveys with typos, sales reports missing columns, and product data riddled with duplicates from different regional offices. He spends his entire morning manually hunting down errors and inconsistencies, never knowing if he's missed something critical. A CSV cleanup app would let Rahul upload messy files and automatically detect and fix common data problems, transforming his chaotic Monday morning routine into a quick, reliable process.
 
 ##### **Project Setup**
 
@@ -752,20 +750,25 @@ streamlit run app.py
 #### **Step-by-Step Walkthrough**
 
 
--   `st.button("Start Cleaning")` triggers the cleaning pipeline when clicked, starting the sequential data cleaning steps.
+-   **`clean_step(data, step, progress, i, total)`**: Performs individual cleaning operations (e.g., removing duplicates, filling missing values, standardizing text) and updates the progress bar and status message for each step.
     
--   `clean_step(data, step, progress, i, total)` performs individual cleaning operations (remove duplicates, fill missing values, standardize text) and updates the progress bar and status message for each step.
+    -   **`progress`**: The `st.progress` object used to visually update completion status.
+        
+    -   **`i` / `total`**: Current step index and total steps, used to calculate progress percentage.
+        
+-   **`st.progress(value=0)`**: Creates a progress bar.
     
--   `st.progress(0)` creates a progress bar that updates after each cleaning step to show progress visually.
+    -   **`value`** (`int` 0–100): Initial completion percentage.
+        
+    -   The progress bar can be updated dynamically by calling `progress.progress(new_value)` as cleaning steps are completed.
+        
+-   **`st.empty()`**: Creates a placeholder container for dynamic content, here used to display real-time status messages during cleaning.
     
--   `st.empty()` provides a placeholder for dynamic status messages during the cleaning process.
+-   **`st.success("🎉 Cleaning complete!")`**: Shows a success message when all cleaning steps are finished, giving visual feedback to the user.
     
--   `st.success("🎉 Cleaning complete!")` signals completion, giving users visual feedback that all steps have finished.
-    
--   `st.dataframe(cleaned.head())` displays the first 5 rows of the cleaned data so users can immediately see the effect of the cleaning steps.
+-   **`st.dataframe(cleaned.head())`**: Displays the first 5 rows of the cleaned DataFrame so users can immediately see the results of the cleaning operations.
 
 
 #### **Conclusion**
 
-Progress indicators and status messaging are essential UX patterns that prevent user abandonment and build trust across any application involving time-intensive operations. Implementing appropriate feedback mechanisms—whether spinners, progress bars, or status updates—becomes critical for maintaining user engagement in data processing tools, file uploads, API integrations, and batch operations. These user experience principles directly impact application adoption and user satisfaction, making them fundamental skills for developing professional software that handles complex or lengthy tasks.
-
+Progress indicators and status messaging keep users informed and engaged during longer operations, preventing confusion and abandonment. These visual cues transform waiting experiences into predictable interactions where users understand what's happening and how long it might take. Clear progress communication is essential for building user trust and ensuring smooth experiences in any application that involves processing or multi-step operations.

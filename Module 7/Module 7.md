@@ -2,25 +2,23 @@
 
 ### Topic 7.1: Columns
 
-<br>
+---
 
 #### **Introduction**
 
-Imagine trying to compare two snacks at the store. If you look at one, put it back, and then walk over to check the other, you end up juggling details in your memory. But when both are side by side, the choice feels effortless—you can see ingredients, prices, and packaging at once. Our brains naturally handle information more easily this way because direct comparisons cut down on mental effort. 
+Information becomes exponentially more useful when presented for direct comparison rather than forcing users to remember details while scrolling between separate sections. Our cognitive processing naturally excels at side-by-side evaluation, where related data points can be assessed simultaneously without the mental overhead of holding multiple pieces of information in working memory. Traditional single-column layouts create unnecessary friction by separating related content that users need to compare or contrast.
 
-Streamlit’s `st.columns()` works the same way for apps, letting you place related content next to each other, so comparisons feel clear, natural, and easy to follow. The `st.columns()` function transforms your linear app layout into flexible, side-by-side presentations. Instead of forcing users to scroll through information vertically, you can create intuitive comparison layouts where related information sits adjacent to each other. This spatial organization mirrors how we naturally think about choices and makes complex comparisons feel effortless by reducing mental load and enabling direct visual comparison.
+Streamlit's `st.columns()` function transforms linear app layouts into flexible, side-by-side presentations that enable intuitive comparison experiences. This spatial organization mirrors natural thinking patterns about choices and decision-making, allowing you to create layouts where related information sits adjacent to each other, reducing mental load and enabling direct visual comparison that makes complex evaluations feel effortless and clear.
 
 #### **Mini Project** 
 
-Siesha has been researching smartphones for weeks, jumping between different websites to compare the iPhone 15 and Samsung Galaxy S24, but she's overwhelmed by scattered information across multiple tabs. One site has great photos but missing specs, another lists features but no real-world pros and cons, and she's tired of trying to remember details while switching back and forth. She just wants to see both phones side-by-side with all the important information in one place to make her decision.
-
-A smartphone comparison app would eliminate this research chaos by presenting both options clearly alongside each other, helping Siesha quickly identify the differences and make a confident purchase decision.
+Sneha has been researching smartphones for weeks, jumping between different websites to compare the iPhone 15 and Samsung Galaxy S24, but she's overwhelmed by scattered information across multiple tabs. One site has great photos but missing specs, another lists features but no real-world pros and cons, and she's tired of trying to remember details while switching back and forth. A smartphone comparison app would eliminate this research chaos by presenting both options clearly alongside each other, helping Sneha quickly identify the differences and make a confident purchase decision.
 
 ##### **Project Setup**
 
 Create a new file `app.py`:
 
-```python
+```
 import streamlit as st
 
 st.title("📱 Smartphone Comparison Tool")
@@ -114,36 +112,40 @@ streamlit run app.py
 
 ##### **Output**
 
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col1mod7.png">
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-col1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/col3mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-col2tldraw.png">
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-col3tldraw.png">
 
 -----
 
 #### **Step-by-Step Walkthrough**
 
--   **`st.columns()`**: Creates a multi-column layout, enabling side-by-side comparison instead of stacking content vertically.
+-   **`st.columns(specs, gap="small")`**: Creates a multi-column layout for side-by-side content.
     
--   **Column scoping (`with col:`)**: Ensures all elements inside render within that specific column, keeping each phone’s details aligned.
+    -   **`specs`**: Number of columns (e.g., `2`) or a list specifying relative widths (e.g., `[2, 1]`).
+        
+    -   **`gap`** (optional): Spacing between columns, can be `"small"`, `"medium"`, or `"large"`.
+        
+-   **Context Manager with columns (`with col:`)**: Ensures all Streamlit elements inside the block render within that specific column, keeping content aligned.
     
--   **`zip([col1, col2], phones)`**: Pairs each column with a phone entry so both devices are rendered in parallel without code duplication.
+-   **`zip([col1, col2], phones)`**: Pairs each column object with a phone entry, allowing multiple items to be displayed side-by-side without duplicating code.
     
--   **Nested columns (`colA, colB = st.columns(2)`)**: Reused again for the “Quick Decision Helper,” showing how columns can organize content into clear comparison boxes.
+-   **Nested columns (`colA, colB = st.columns(2)`)**: Columns can be nested or reused to organize content, such as creating “Quick Decision Helper” boxes for easy comparison.
 
 #### **Conclusion**
 
 The strategic use of `st.columns()` elevates basic Streamlit applications into professional-grade interfaces that maximize screen real estate while improving information hierarchy. This layout flexibility transforms single-purpose tools into comprehensive dashboards where metrics, comparisons, and controls coexist harmoniously, creating user experiences that rival dedicated business intelligence platforms while maintaining Streamlit's signature development simplicity.
 
+
 ----
 
 ### Topic 7.2: Tabs
 
-<br>
+---
 
 #### **Introduction**
 
@@ -153,9 +155,7 @@ Streamlit’s `st.tabs()` provides exactly this solution. By dividing content in
 
 #### **Mini Project**
 
-Raj is a young professional who has diversified his investments across Indian stocks, US equities, cryptocurrencies, and ETFs, but tracking everything has become a nightmare. He bounces between five different apps and websites daily—Zerodha for Indian stocks, his US brokerage app, a crypto exchange, and separate platforms for ETFs—trying to get a complete picture of his portfolio performance. By the time he checks all his investments, he's lost track of how they're performing relative to each other and can't make informed decisions about rebalancing.
-
-An all-in-one investment dashboard would consolidate Raj's scattered financial data into organized, easy-to-navigate sections, giving him the complete portfolio overview he needs to make smart investment decisions.
+Arjun is a young professional who has diversified his investments across Indian stocks, US equities, and cryptocurrencies, but tracking everything has become a nightmare. He bounces between multiple apps and websites daily—Zerodha for Indian stocks, his US brokerage app, and a crypto exchange—trying to get a complete picture of his portfolio performance. An all-in-one investment dashboard would consolidate Arjun's scattered financial data into organized, easy-to-navigate sections, giving him the complete portfolio overview he needs to make smart investment decisions
 
 ##### **Project Setup**
 
@@ -208,17 +208,6 @@ with tab3:
     })
     st.line_chart(data.set_index("Date"))
 
-# --- Tab 4: ETFs ---
-with tab4:
-    st.header("ETF Holdings")
-    st.metric("Total Value", "$28,900", "+$450")
-    
-    data = pd.DataFrame({
-        "Date": dates,
-        "Value": np.cumsum(np.random.randn(30) * 200) + 25000
-    })
-    st.line_chart(data.set_index("Date"))
-
 ```
 
 **Run your app with:**
@@ -231,49 +220,57 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs1mod7.png">
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-tab1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-tab2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs3mod7.png">
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/tabs4mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-tab3tldraw.png">
 
 
 ----
 #### **Step-by-Step Walkthrough**
 
--   **Numpy:** is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
-
--   Generating random numbers to simulate daily investment value changes `np.random.randn()`
-
--   Calculating cumulative sums to show portfolio growth over time `np.cumsum()`
-
--   **`st.tabs(["🇮🇳 Stocks India", "🇺🇸 Stocks US", "₿ Crypto", "📊 ETFs"])`**: Creates four tab objects (`tab1, tab2, tab3, tab4`) for different asset classes.
+-   **NumPy**: A Python library for working with **large, multi-dimensional arrays and matrices**, offering high-level mathematical functions to efficiently operate on these arrays.
     
--   **`with tab1:` / `with tab2:` / ...**: Directs all subsequent Streamlit elements (headers, metrics, charts) into the respective tab.
+-   **`np.random.randn()`**: Generates random numbers from a standard normal distribution.
     
--   **Consistent structure across tabs:** By repeating a uniform layout (header → metric → chart) inside each tab, users develop expectations and can navigate the dashboard intuitively.
+    -   Used here to **simulate daily investment value changes** for stocks or crypto.
+        
+-   **`np.cumsum()`**: Computes the cumulative sum of array elements.
     
--   **Content isolation**: Each tab shows only its assigned content without affecting other tabs.
+    -   Used to **track portfolio growth over time** by accumulating daily changes.
+        
+-   **`st.tabs(tabs, width="stretch", default=None)`**: Creates multiple tabs in the app so users can switch between different content areas without scrolling.
     
--   **Seamless switching**: Users can move between tabs without losing displayed data or app state.
+    -   **`tabs`** (`list of str`): Names of the tabs. Can include text, Markdown, or small icons.
+        
+    -   **`width`** (`"stretch"` or int, optional): Width of the tab container; `"stretch"` makes it match the parent container.
+        
+    -   **`default`** (`str` or None, optional): The tab that is initially selected. Defaults to the first tab.
+        
+-   **Returns**: A list of tab container objects (`tab1, tab2, ...`) corresponding to each tab label.
+    
+-   **Context manager with tabs (`with tab1:` / `with tab2:` / ...)**: Ensures all Streamlit elements (headers, charts, metrics) inside the block are added to that specific tab.
+    
+-   **Content isolation**: Each tab only shows its assigned content, keeping different views separate.
+    
+-   **Seamless switching**: Users can navigate between tabs without losing displayed data or app state.
     
 
 ----------
 
 #### **Conclusion**
 
-Tabbed interfaces transform complex applications by organizing multi-category content into clean, navigable sections that improve user experience across web and desktop platforms. These organizational patterns enable users to switch seamlessly between logical groups while keeping interfaces uncluttered and workflows focused, essential for building professional-grade applications. This approach proves invaluable for creating multi-asset dashboards, comparison tools, and any interface where related but distinct information must coexist within unified user experiences.
+Tab interface transform complex applications by organizing multi-category content into clean, navigable sections that improve user experience across web and desktop platforms. These organizational patterns enable users to switch seamlessly between logical groups while keeping interfaces uncluttered and workflows focused, essential for building professional-grade applications. This approach proves invaluable for creating multi-asset dashboards, comparison tools, and any interface where related but distinct information must coexist within unified user experiences.
 
 ----
 
 ### Topic 7.3: Expanders
 
-<br>
+---
 
 #### **Introduction**
 
@@ -283,14 +280,14 @@ Streamlit’s  `st.expander()`  brings this idea into practice by creating colla
 
 #### **Mini Project**
 
-You're building a customer support FAQ page for a software company. Users arrive with specific problems and need quick answers. You'll create an organized FAQ system where each question appears as a clickable header, and the detailed answer (including step-by-step instructions and links) only shows when the user needs it, keeping the page clean and scannable.
+Rohit encounters a software bug during an important project deadline but the company's support page overwhelms him with a wall of text containing every possible answer. He has to scroll through dozens of irrelevant solutions just to find help for his specific issue. A clean FAQ system with expandable sections would let Rohit quickly scan for his specific problem and access detailed solutions only when needed, making support efficient and stress-free.
 
 ##### **Project Setup**
-
+ 
 Create a new file `app.py`:
 
 
-```python
+```
 import streamlit as st
 
 st.title("🆘 Customer Support FAQ")
@@ -355,10 +352,10 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/expander1mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-expander1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/expander2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-expander2tldraw.png">
 
 ----
 
@@ -380,7 +377,7 @@ The power of `st.expander()` lies in shifting control from the application to th
 
 ### Topic 7.4: Sidebar
 
-<br>
+----
 
 #### **Introduction**
 
@@ -390,8 +387,7 @@ When users open your app, they immediately understand where to find controls (th
 
 #### **Mini Project**
 
-Jake settles in for movie night but wastes 30 minutes scrolling through his streaming service's massive catalog, hunting for a decent sci-fi film from the last few years while constantly skipping over romantic comedies, horror movies, and outdated releases that don't interest him.
-A smart movie filter would let Jake quickly set his preferences and instantly see only the films that match his exact criteria, turning his frustrating browsing sessions into efficient discoveries of his perfect Friday night watch.
+Rohan settles in for movie night but wastes 30 minutes scrolling through his streaming service's massive catalog, hunting for a decent sci-fi film from the last few years while constantly skipping over romantic comedies, horror movies, and outdated releases that don't interest him. A smart movie filter would let Jake quickly set his preferences and instantly see only the films that match his exact criteria, turning his frustrating browsing sessions into efficient discoveries of his perfect Friday night watch.
 
 ##### **Project Setup**
 
@@ -440,7 +436,7 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/sidemod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-sidetldraw.png">
 
 
 -----
@@ -465,18 +461,17 @@ Sidebar interfaces establish essential organizational patterns that transform si
 
 ### Topic 7.5: Containers & Placeholders
 
-<br>
+---
 
 #### **Introduction**
 
-You know that annoying thing when you click a button in an app and it just keeps adding more stuff to the screen? Click three times and you get three results piled up. Good apps don't do this - when something needs to update, it replaces the old info cleanly instead of making a mess.
+Apps often struggle with content management—when users interact with buttons or controls, new information either gets stacked messily on top of existing content or fails to update properly, creating cluttered and confusing interfaces. Users expect clean, organized displays where updates happen smoothly without visual chaos, but achieving this behavior is traditionally challenging.
 
-Streamlit containers and placeholders let you control this. Placeholders are spots you can update in place - perfect for things like counters or status messages. Containers group things together and let you keep adding to them - great for lists or feeds. With these two tools, your apps start looking clean and working the way users expect.
+Streamlit's containers and placeholders fix this by giving you control over where content appears and how it updates. Placeholders let you update specific spots (like counters or status messages) without adding more clutter, while containers help you organize and group related elements together. These tools turn messy, unpredictable interfaces into clean, organized ones that work the way users expect.
 
 #### **Mini Project**
 
-David is a basketball coach who manually updates a group chat with scores and play-by-play, but parents constantly ask "What's the current score?" while important updates get buried in the conversation thread. His phone buzzes non-stop with messages, making it impossible for everyone to stay properly informed about ongoing games.
-A live sports scoreboard would solve this chaos by displaying the current score prominently while maintaining a clear feed of game commentary that everyone can follow in real-time.
+Dravid is a basketball coach who manually updates a group chat with scores and play-by-play, but parents constantly ask "What's the current score?" while important updates get buried in the conversation thread. His phone buzzes non-stop with messages, making it impossible for everyone to stay properly informed about ongoing games. A live sports scoreboard would solve this chaos by displaying the current score prominently while maintaining a clear feed of game commentary that everyone can follow in real-time.
 
 ##### **Project Setup**
 
@@ -532,10 +527,9 @@ streamlit run app.py
 
 ##### **Output**
 
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-cont1tldraw.png">
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/cont1mod7.png">
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/cont2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-cont1tldraw.png">
 
 
 ----
@@ -569,9 +563,7 @@ Streamlit's `st.popover()` keeps main interfaces focused on core functionality w
 
 #### **Mini Project**
 
-Emma manages a small team and wants to collect honest feedback on project ideas, but her current survey tool overwhelms people with too many visible options upfront. Team members get distracted by privacy settings and mood indicators instead of focusing on writing thoughtful comments, leading to rushed or shallow responses. She needs a way for people to share detailed feedback while still having control over who sees their input and how they want to express their sentiment.
-
-A streamlined comment system would let users focus on writing meaningful feedback while keeping additional options like privacy settings and mood indicators easily accessible but not distracting.
+Priya manages a small team and wants to collect honest feedback on project ideas, but her current survey tool overwhelms people with too many visible options upfront. Team members get distracted by privacy settings and mood indicators instead of focusing on writing thoughtful comments, leading to rushed or shallow responses. A streamlined comment system would let users focus on writing meaningful feedback while keeping additional options like privacy settings and mood indicators easily accessible but not distracting.
 
 ##### **Project Setup**
 
@@ -617,19 +609,18 @@ if st.button("Post Comment"):
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop1mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-pop1tldraw.png">
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-pop1tldraw.png">
 
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/pop3mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-pop1tldraw.png">
 
 
 ----
 
 #### **Step-by-Step Walkthrough**
 
-- **st.popover()** creates a clickable button that opens a popup window. The button shows "⚙️ Settings" but you can put any text or emoji. When clicked, it reveals the content inside without taking up permanent space on your page.
+- **`st.popover()`** creates a clickable button that opens a popup window. The button shows "⚙️ Settings" but you can put any text or emoji. When clicked, it reveals the content inside without taking up permanent space on your page.
 
 - **Inside the popover**, the selectbox widgets work exactly like normal, but they're hidden until the user clicks the popover button. This keeps the main interface focused on the comment text area while making additional options easily accessible.
 
@@ -638,13 +629,13 @@ if st.button("Post Comment"):
 
 #### **Conclusion**
 
-Contextual popovers establish essential interface patterns that balance simplicity with functionality by revealing secondary options only when needed. This progressive disclosure approach creates cleaner applications that avoid overwhelming users while maintaining access to comprehensive feature sets. These layered interface techniques represent fundamental design principles for building accessible yet powerful applications across web and desktop platforms.
+Contextual popovers establish essential interface patterns that balance simplicity with functionality by revealing secondary options only when needed. This progressive disclosure approach creates cleaner applications that avoid overwhelming users while maintaining access to comprehensive feature sets.
 
 ---
 
 ### Topic 7.7: Modal Dialog
 
-<br>
+---
 
 #### **Introduction**
 
@@ -654,9 +645,7 @@ Modal dialogs are like having a conversation where someone gently taps you on th
 
 #### **Mini Project**
 
-Aaron built a productivity app for his small company, but when users encounter bugs, they email him scattered reports with missing details or don't report issues at all. His main app interface works great for daily tasks, but adding a prominent bug reporting section would clutter the clean design and distract from the core functionality. Users need an easy way to report problems with proper details, but only when they actually need it.
-
-A discreet bug reporting feature would keep the app's main interface clean and focused while giving users quick access to submit detailed reports exactly when they encounter issues.
+Arun built a productivity app for his company, but users either don't report bugs or send him incomplete details via email. Adding a prominent bug reporting section would clutter his clean interface and distract from core functionality. A discreet bug reporting feature would keep the main interface clean while giving users quick access to submit detailed reports when needed.
 
 ##### **Project Setup**
 
@@ -705,16 +694,16 @@ streamlit run app.py
 
 ##### **Output**
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug1mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-bug1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug2mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-bug2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug3mod7.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/mod7-bug3tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%207/bug4mod7.png">
+
 
 
 ----

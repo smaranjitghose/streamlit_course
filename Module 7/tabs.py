@@ -9,7 +9,7 @@ st.write("Organize your investments into clean sections with tabs")
 dates = pd.date_range("2024-01-01", periods=30, freq="D")
 
 # Tabs for different asset classes
-tab1, tab2, tab3, tab4 = st.tabs(["🇮🇳 Stocks India", "🇺🇸 Stocks US", "₿ Crypto", "📊 ETFs"])
+tab1, tab2, tab3= st.tabs(["🇮🇳 Stocks India", "🇺🇸 Stocks US", "₿ Crypto"])
 
 # --- Tab 1: Indian Stocks ---
 with tab1:
@@ -44,13 +44,4 @@ with tab3:
     })
     st.line_chart(data.set_index("Date"))
 
-# --- Tab 4: ETFs ---
-with tab4:
-    st.header("ETF Holdings")
-    st.metric("Total Value", "$28,900", "+$450")
-    
-    data = pd.DataFrame({
-        "Date": dates,
-        "Value": np.cumsum(np.random.randn(30) * 200) + 25000
-    })
-    st.line_chart(data.set_index("Date"))
+

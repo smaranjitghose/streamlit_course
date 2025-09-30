@@ -2,7 +2,7 @@
 
 ### Topic 6.1: Built-in Charts
 
-<br>
+----
 
 #### **Introduction**
 
@@ -12,8 +12,7 @@ Each chart type has its own personality: line charts trace change over time, are
 
 #### **Mini Project**
 
-Jake has been tracking his steps, workouts, calories, and sleep for months but feels like he's making no progress. His fitness app shows basic daily numbers, but he can't see if his efforts are actually working or how his different health metrics connect to each other. Without clear insights into patterns and trends, Jake feels discouraged and unsure if his routine is effective.
-A comprehensive fitness dashboard would reveal the hidden progress in Jake's data and show him which habits have the biggest impact on his overall wellness.
+Karan has been tracking his steps, workouts, calories, and sleep for months but feels like he's making no progress. His fitness app shows basic daily numbers, but he can't see if his efforts are actually working or how his different health metrics connect to each other. Without clear insights into patterns and trends, Karan feels discouraged and unsure if his routine is effective. A comprehensive fitness dashboard would reveal the hidden progress in Karan's data and show him which habits have the biggest impact on his overall wellness.
 
 ##### **Project Setup**
 
@@ -75,19 +74,19 @@ streamlit run app.py
 #### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-chart1tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-chart2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-chart3tldraw.png">
 
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6chart4.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-chart4tldraw.png">
 
 
 
@@ -161,18 +160,17 @@ Built-in Streamlit charts democratize professional data visualization by making 
 
 ### Topic 6.2: Matplotlib Integration
 
-<br>
+---
 
 #### **Introduction**
-
 Think about the last time you needed a specific type of chart - maybe a violin plot for statistical analysis, or a subplot with multiple visualizations. While Streamlit provides excellent built-in charting functions like `st.line_chart()` and `st.bar_chart()`, you quickly hit their limits when you need something more specialized. What if you could access Python's most powerful visualization library directly in your Streamlit apps?
 
 The `st.pyplot()` function bridges this gap, allowing you to display any Matplotlib figure directly in your Streamlit interface. This integration opens up advanced visualization possibilities - from statistical plots and subplots to highly customized charts that match your exact specifications. Whether you're creating scientific visualizations, detailed analytical dashboards, or simply need plotting features beyond Streamlit's native options, `st.pyplot()` gives you access to the entire Matplotlib ecosystem without leaving the simplicity of Streamlit.
 
 #### **Mini Project**
 
-Ms. Rodriguez teaches multiple subjects at Roosevelt High School and notices her students seem to be struggling more than usual this semester, but she can't pinpoint exactly where the problems lie. She has spreadsheets full of test scores and grades, but staring at rows and columns of numbers doesn't reveal the patterns she needs to see. Are students consistently weak in certain subjects? Is performance getting worse over time? Without clear visual insights, she can't identify which students need extra help or adjust her teaching strategies effectively.
-A grade analysis app would transform her confusing spreadsheet data into clear visual patterns, helping Ms. Rodriguez understand her students' performance trends and make informed decisions about where to focus her teaching efforts.
+Ms. Sharma teaches multiple subjects at Delhi Public School and notices her students struggling more than usual, but she can't pinpoint where the problems lie. She has spreadsheets full of test scores, but staring at rows of numbers doesn't reveal the patterns she needs to see. A grade analysis app would transform her confusing spreadsheet data into clear visual patterns, helping Ms. Sharma understand student performance trends and make informed decisions about where to focus her teaching efforts.
+
 
 ##### **Project Setup**
 
@@ -245,22 +243,22 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-matplot1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot2.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-matplot2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-matplot3tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6matplot4.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-matplot4tldraw.png">
 
 ---
 
 #### **Step-by-Step Walkthrough**
 
--   **Matplotlib (`matplotlib.pyplot`)**: A plotting library for the Python programming language. Used for creating custom plots (histograms, boxplots, line plots) with full control over styling and layout.
+-   **Matplotlib (`matplotlib.pyplot`)**: A Python plotting library used to create graphs and charts—such as line plots, bar charts, histograms, and scatter plots—for visualizing and analyzing data.
     
 -   **`plt.subplots()`**: Creates a Figure (`fig`) and Axes (`ax`) where charts are drawn.
     
@@ -281,31 +279,29 @@ streamlit run app.py
 
 #### **Conclusion**
 
-By bridging Streamlit's simplicity with Matplotlib's comprehensive visualization ecosystem, st.pyplot() provides an elegant upgrade path from basic charts to professional-grade analytics. This capability transforms Streamlit applications from simple dashboards into sophisticated analytical platforms capable of handling complex statistical visualizations, custom branding requirements, and specialized plotting needs that rival dedicated visualization software.
-
+By bridging Streamlit's simplicity with Matplotlib's comprehensive visualization ecosystem, `st.pyplot()` provides an elegant upgrade path from basic charts to professional-grade analytics. This capability transforms Streamlit applications from simple dashboards into sophisticated analytical platforms capable of handling complex statistical visualizations, custom branding requirements, and specialized plotting needs that rival dedicated visualization software.
 
 ---
 
 ### Topic 6.3: Plotly Integration
 
-<br>
+---
 
 #### **Introduction**
 
-Have you ever wished your Streamlit charts could zoom, pan, and respond to user interaction? While static charts tell a story, interactive visualizations let your users explore the data themselves. Imagine being able to hover over data points for detailed information, zoom into specific time periods, or click on legend items to filter the view - all without writing complex JavaScript.  
+Think about the last time you looked at a chart on a website and instinctively tried to hover over a data point to see more details, or attempted to zoom into an interesting section—only to realize it was just a static image. This frustration highlights how modern users expect visual data to be interactive and explorable, not just decorative. While static charts tell a predetermined story, interactive visualizations empower users to discover their own insights through exploration, turning passive viewers into active data investigators. 
 
-The `st.plotly_chart()` function brings Plotly's powerful interactive visualization capabilities directly into your Streamlit apps. Unlike static matplotlib figures, Plotly charts are naturally interactive, responsive, and web-ready. This integration transforms your dashboards from simple displays into engaging analytical tools where users can dive deep into the data with intuitive gestures like hovering, clicking, and zooming.  
+Streamlit's Plotly integration bridges this gap between expectation and reality. The `st.plotly_chart()` function brings Plotly's powerful interactive visualization capabilities directly into Streamlit apps, enabling users to hover over data points for detailed information, zoom into specific time periods, click legend items to filter views, and manipulate data through intuitive gestures. This transforms static dashboards into dynamic analytical experiences where data exploration becomes natural and engaging. 
 
 #### **Mini Project**
-You're helping a small business owner analyze their sales performance across different regions and product categories. They need an interactive dashboard where they can explore revenue trends over time, see the breakdown of sales by category, and compare performance across regions.  
 
-The interactivity is crucial - they want to zoom into specific months, hover for exact values, and click to focus on particular categories. Static charts won't give them the exploratory power they need.  
+Arun owns a small electronics business across three cities but struggles to understand which products are selling where and when. He has monthly sales data scattered across spreadsheets, but can't easily spot trends, compare regional performance, or identify his best-selling categories. Static reports don't let him explore the details he needs to make smart inventory and marketing decisions. A Sales dashboard would let Arun explore his revenue trends, zoom into specific time periods, and compare regional performance with the detailed insights he needs to grow his business effectively.
 
 ##### **Project Setup**
 
 Create a new file **`app.py`**:
 
-```python
+```
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -388,28 +384,28 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly1.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-plotly1tldraw.png">
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly2.png">
-
-
-
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly3.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-plotly2tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly4.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-plotly3tldraw.png">
 
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6plotly5.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-plotly4tldraw.png">
+
+
+
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-plotly5tldraw.png">
 
 
 ---
 
 #### **Step-by-Step Walkthrough**
 
--   **Plotly (`plotly.express` / `plotly.graph_objects`)**: An interactive visualization library for Python that creates web-ready, browser-based charts with built-in interactivity (zoom, hover, click).
+-   **Plotly (`plotly.express` / `plotly.graph_objects`)**: A Python library for interactive, browser-based visualizations that lets you create charts—like line, bar, and scatter plots—with features such as zooming, hovering, and clickable elements.
     
 -   **px.line()**: Creates an interactive line chart for time-series data, showing trends and allowing hover for exact values.
     
@@ -438,22 +434,17 @@ By combining Streamlit's deployment simplicity with Plotly's interactive sophist
 
 #### **Introduction**
 
-Have you ever looked at a chart and wondered, “What does this really tell me?” A single visualization only shows part of the story. Comparative visualization combines multiple charts and key metrics to create a fuller, more meaningful picture.
-
-By placing different visual elements side by side—like trends, category comparisons, and performance indicators—you can see patterns, relationships, and insights that would be hard to notice in isolation.
-
-Streamlit makes it easy to mix line charts, bar charts, and metrics in a single dashboard, allowing each element to complement the others. This approach transforms scattered data points into clear, actionable insights, helping you make smarter, data-driven decisions.
+Individual visualizations often tell incomplete stories—you might see that sales are up but not understand seasonality patterns, or notice a data spike without context about underlying causes. Real insights emerge when multiple visualization approaches work together to reveal different aspects of the same data, creating comprehensive understanding that single charts cannot provide. Streamlit's comparative visualization capabilities enable this multi-faceted approach by combining different chart types and visual elements to create fuller, more meaningful data stories that reveal patterns, relationships, and insights invisible in isolation. By leveraging built-in charting functions alongside advanced libraries like Matplotlib and Plotly, you can craft comprehensive dashboards where each visualization complements the others, transforming scattered data points into clear, actionable insights that drive smarter decision-making.
 
 #### **Mini Project**
 
-Maya is a food blogger who collects restaurant reviews from various sources but struggles to make sense of the overwhelming data scattered across spreadsheets. She has hundreds of reviews with ratings, cuisines, and dates, but can't easily identify which types of restaurants are trending, whether certain cuisines consistently perform better, or which establishments deserve her next feature article. Manually sorting through rows of data to find meaningful patterns takes hours and often leads to missed opportunities.
-A restaurant review analyzer would transform Maya's messy data into clear visual insights, helping her quickly spot dining trends and identify the standout restaurants worth writing about. 
+Ananya is a food blogger who collects restaurant reviews from various sources but struggles to make sense of the overwhelming data scattered across spreadsheets. She has hundreds of reviews with ratings, cuisines, and dates, but can't easily identify which types of restaurants are trending. Manually sorting through rows of data to find meaningful patterns takes hours and often leads to missed opportunities. A restaurant review analyzer would transform Ananya's messy data into clear visual insights, helping her quickly spot dining trends and identify the standout restaurants worth writing about.
 
 ##### **Project Setup**
 
 Create a new file `app.py`:
 
-```python
+```
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -512,18 +503,18 @@ streamlit run app.py
 ##### **Output**
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual1mod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-visual1tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual2mod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-visual2tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual3mod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-visual3tldraw.png">
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual4mod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-visual4tldraw.png">
 
 
-<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/visual5mod6.png">
+<img src="https://github.com/smaranjitghose/streamlit_course/blob/master/images/Module%206/mod6-visual5tldraw.png">
 
 ---
 
@@ -540,6 +531,20 @@ streamlit run app.py
 -   **Additional Insights:** Highlights extremes, averages, and monthly changes to provide context.
     
 -   **Integrated Storytelling:** Metrics, trend charts, and category charts work together to reveal patterns and support decision-making.
+
+---
+
+#### **Key Learning Points**
+
+-   **Data Preparation:** Correct parsing of dates and proper aggregation ensures accurate analysis.
+    
+-   **Visual Variety:** Use Matplotlib for static charts and Plotly for interactive exploration.
+    
+-   **Trend versus Category Analysis:** Line charts show when events occur, while bar charts show what categories contribute most.
+    
+-   **Contextual Insights:** Totals, averages, and top categories provide meaningful context to the charts.
+    
+-   **Simplicity and Workflow:** A clear layout and structured sequence guide the narrative effectively.
 
 ---
 
